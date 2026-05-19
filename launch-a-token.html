@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Launch a token — punk.fun</title>
+<meta name="description" content="Step-by-step guide to launching a token on punk.fun.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Guide &middot; For launchers</div>
+    <h1>Launch a token</h1>
+    <p class="lead">This is the full walkthrough for launching a token, from creating it to handing off liquidity. Most of the work is just a few confirmations &mdash; the heavy lifting happens automatically.</p>
+
+    <div class="callout">
+        <span class="callout-label">Before you start</span>
+        <p>You'll need a wallet, a little of the network's currency for transaction fees, and a token to launch. This guide covers a <strong>FUN launch</strong> &mdash; the launch style available today &mdash; where you create the token as the first step. PUNK launches (bring your own token) are <a href="fun-vs-punk.html">on the roadmap</a> but not live yet.</p>
+    </div>
+
+    <h2>Step 1 — Create your token</h2>
+    <p>For a FUN launch, you use punk.fun's token creator. You provide a name, a symbol, and a total supply. The entire supply is minted to your wallet. The token is fixed-supply with no owner and no admin powers &mdash; that's intentional and cannot be changed afterwards.</p>
+    <p class="lead" style="font-size:0.95rem"><span class="pill soon">Coming soon</span> &nbsp;PUNK launches will let you skip creation and use an existing token's address instead. That path isn't available yet.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">Choosing a supply</span>
+        <p>Total supply is mostly cosmetic &mdash; a token with 1 billion units isn't "worth less" than one with 1 million. What matters is how much value the market assigns to the whole supply. Pick a round number you're happy to see quoted everywhere.</p>
+    </div>
+
+    <h2>Step 2 — Create the auction</h2>
+    <p>Next you create the auction itself. This is where you set the rules of the sale. You'll pick the token and a handful of auction settings:</p>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Setting</th><th>What it controls</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Start</strong></td><td>When the auction becomes active. Can be immediate or a future point.</td></tr>
+            <tr><td><strong>Starting price</strong></td><td>The price per token at the top of the first tranche.</td></tr>
+            <tr><td><strong>First tranche size</strong></td><td>How many tokens are in the first batch.</td></tr>
+            <tr><td><strong>Price decay</strong></td><td>How fast the price falls while a tranche is waiting for buyers.</td></tr>
+            <tr><td><strong>Minimum price</strong></td><td>A floor &mdash; the price never falls below this.</td></tr>
+            <tr><td><strong>Tranche multipliers</strong></td><td>How each new tranche changes in size, price, and decay speed compared to the last.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <p>Every setting has a sensible allowed range, so it's hard to create something nonsensical. The launch interface will guide you and show the limits for each field.</p>
+
+    <div class="callout warn">
+        <span class="callout-label">What you don't control</span>
+        <p>Fees, the liquidity destination, and the 50/50 split are all set by the protocol, not by you. This is deliberate &mdash; it means buyers can trust those parts are the same for every launch.</p>
+    </div>
+
+    <h2>Step 3 — Fund the auction</h2>
+    <p>Creating the auction doesn't put any tokens into it. After it exists, you transfer your launch supply into the auction. The launch interface will show you the exact balance the auction has received so you can confirm it's correct before moving on.</p>
+
+    <div class="callout danger">
+        <span class="callout-label">Send the right amount</span>
+        <p>The 50/50 split is calculated from whatever balance is actually in the auction when you confirm it &mdash; not from what you intended to send. Double-check the displayed balance before the next step.</p>
+    </div>
+
+    <h2>Step 4 — Configure the inventory</h2>
+    <p>This is a one-click confirmation. It locks in the split: half of the funded supply becomes the sale allocation, half becomes the liquidity reserve. After this point the split is fixed and cannot be redone.</p>
+    <p>If the auction's start point has already passed, it goes live immediately. If you set a future start, it waits until then.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">Made a mistake?</span>
+        <p>If you funded the wrong amount, you can withdraw the tokens back out &mdash; but <strong>only before</strong> you configure the inventory. Once configured, withdrawal is closed. Use this escape hatch if the displayed balance looks wrong.</p>
+    </div>
+
+    <h2>Step 5 — The auction runs</h2>
+    <p>From here, you don't need to do anything. Buyers commit funds, tranches roll over, and the price moves according to the rules you set. You can watch progress, but the sale runs on its own.</p>
+
+    <h2>Step 6 — Settlement happens automatically</h2>
+    <p>When the sale allocation is fully sold, settlement fires in the same transaction as the final purchase. The proceeds and the liquidity reserve are placed into a trading pool, and buyers can begin claiming their tokens.</p>
+    <p>In the rare case the automatic step fails for an external reason, anyone can trigger a retry &mdash; the sale itself remains valid. You don't lose the raise.</p>
+
+    <h2>After the launch</h2>
+    <p>Once settled, the token has a live market and the launch is essentially done. What happens to the liquidity position and any ongoing rewards is covered in <a href="after-the-sale.html">After the sale</a>.</p>
+
+    <div class="callout">
+        <span class="callout-label">Reality check</span>
+        <p>A successful launch needs <em>demand</em>. punk.fun gives you fair mechanics and an automatic market, but it can't create buyers. In this version an auction only completes by selling out &mdash; if there isn't enough interest, the sale simply won't finish. Plan your community and marketing before you launch.</p>
+    </div>
+
+    <div class="page-nav">
+        <a href="fun-vs-punk.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; FUN vs PUNK</span>
+        </a>
+        <a class="next" href="buy-in-an-auction.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Buy in an auction &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

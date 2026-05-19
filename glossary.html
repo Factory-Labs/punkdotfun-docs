@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glossary — punk.fun</title>
+<meta name="description" content="Plain-English definitions of punk.fun terms.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Reference</div>
+    <h1>Glossary</h1>
+    <p class="lead">Plain-English definitions of the terms used across this documentation. If a word in another page is unfamiliar, it's probably here.</p>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Term</th><th>What it means</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Auction</strong></td><td>The sale process for a launch. punk.fun uses a falling-price (Dutch) auction.</td></tr>
+            <tr><td><strong>Claim</strong></td><td>The action a buyer takes after the sale ends to collect the tokens they committed to during the auction.</td></tr>
+            <tr><td><strong>Commit</strong></td><td>Buying in the auction. You commit funds and lock in an entitlement to tokens; you receive the tokens later by claiming.</td></tr>
+            <tr><td><strong>Decay</strong></td><td>The steady fall in price while a tranche waits for buyers.</td></tr>
+            <tr><td><strong>Dutch auction</strong></td><td>An auction where the price starts high and falls over time, rather than buyers bidding upward. Buyers purchase when the falling price reaches a level they're happy with.</td></tr>
+            <tr><td><strong>FUN launch</strong></td><td>A launch using a token created through punk.fun's own token creator. The fast, from-scratch path.</td></tr>
+            <tr><td><strong>Fixed supply</strong></td><td>A token whose total amount can never increase. No more can be minted after creation.</td></tr>
+            <tr><td><strong>Launcher</strong></td><td>The person running a launch &mdash; creating the token and the auction.</td></tr>
+            <tr><td><strong>Liquidity</strong></td><td>The funds and tokens placed in a trading pool that let people buy and sell the token.</td></tr>
+            <tr><td><strong>Liquidity reserve</strong></td><td>The half of the launch supply held back from the auction and later used to seed the trading pool.</td></tr>
+            <tr><td><strong>Minimum price</strong></td><td>A floor price set by the launcher. The auction price never decays below it.</td></tr>
+            <tr><td><strong>PUNK launch</strong></td><td>A launch that uses a token the launcher already has ("bring your own token"). On the roadmap &mdash; not yet available.</td></tr>
+            <tr><td><strong>Protocol</strong></td><td>The punk.fun system itself &mdash; the set of rules and contracts every launch runs on.</td></tr>
+            <tr><td><strong>Protocol fee</strong></td><td>A small fee taken at settlement from the raised funds and the liquidity reserve. It never comes out of buyers' tokens.</td></tr>
+            <tr><td><strong>Sale allocation</strong></td><td>The half of the launch supply that is actually sold to buyers in the auction.</td></tr>
+            <tr><td><strong>Settlement</strong></td><td>The automatic process, triggered by a sell-out, that takes fees, creates the trading pool, and opens claims.</td></tr>
+            <tr><td><strong>Slippage protection</strong></td><td>A maximum price a buyer can set on a buy, so the purchase is rejected rather than filled if the price has risen too far.</td></tr>
+            <tr><td><strong>Total supply</strong></td><td>The entire amount of a token that exists. With a fixed-supply token, this never changes.</td></tr>
+            <tr><td><strong>Tranche</strong></td><td>A batch of tokens in the auction sold at its own price band. When one tranche sells out, the next begins &mdash; usually larger and starting higher.</td></tr>
+            <tr><td><strong>Trading pool</strong></td><td>The market created at settlement where the token can be freely bought and sold afterwards.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="page-nav">
+        <a href="after-the-sale.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; After the sale</span>
+        </a>
+        <a class="next" href="faq.html">
+            <span class="dir">Next</span>
+            <span class="ttl">FAQ &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

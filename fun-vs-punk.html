@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUN vs PUNK — punk.fun</title>
+<meta name="description" content="The difference between FUN and PUNK launches on punk.fun, and which one to pick.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Start here</div>
+    <h1>FUN vs PUNK</h1>
+    <p class="lead">punk.fun has two launch styles. They run on the same auction engine, so the buying experience is identical. The difference is where the token comes from and what happens to the liquidity afterwards.</p>
+
+    <div class="callout soon">
+        <span class="callout-label">Coming soon</span>
+        <p><strong>FUN is the launch style available today.</strong> PUNK is on the roadmap and runs on the same engine, but it isn't live yet. This page explains both so you understand the full picture &mdash; if you're launching now, you're launching FUN.</p>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th></th><th><span class="pill fun">FUN</span></th><th><span class="pill punk">PUNK</span></th></tr></thead>
+        <tbody>
+            <tr><td><strong>Best for</strong></td><td>Quick community &amp; memecoin launches</td><td>Projects with an existing token</td></tr>
+            <tr><td><strong>Token source</strong></td><td>Created via punk.fun's token creator</td><td>Bring your own existing token</td></tr>
+            <tr><td><strong>Auction mechanics</strong></td><td colspan="2" style="text-align:center;color:var(--text-dim)">Identical &mdash; same Dutch auction, same tranches</td></tr>
+            <tr><td><strong>After the sale</strong></td><td>Liquidity placed in a trading pool, with the position held by the protocol</td><td>Liquidity routed to a protocol-controlled destination</td></tr>
+            <tr><td><strong>Setup effort</strong></td><td>Lowest &mdash; create and launch in one flow</td><td>Slightly more &mdash; you supply the token</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h2><span class="pill fun">FUN</span> launches</h2>
+    <p>FUN is the fast path. You don't need a token beforehand &mdash; punk.fun creates one for you. It's a minimal, fixed-supply token with no owner and no admin controls, designed to be simple and predictable. This makes FUN ideal for community tokens and memecoins where speed and a clean, trustless token matter most.</p>
+    <p>FUN tokens must come from punk.fun's own token creator. You can't point a FUN launch at an outside token &mdash; that guarantee is part of what makes a FUN launch a FUN launch.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">Pick FUN if</span>
+        <p>You're starting from scratch, want the quickest possible path from idea to live market, and don't need any special token features.</p>
+    </div>
+
+    <h2><span class="pill punk">PUNK</span> launches <span class="pill soon">Coming soon</span></h2>
+    <p>PUNK is the bring-your-own-token path. If your project already has a token &mdash; or you've created one elsewhere with features a minimal token doesn't have &mdash; a PUNK launch lets you run it through the same auction without recreating it.</p>
+    <p>PUNK places no restriction on where the token came from. Any standard token works, including one that happens to have been created by punk.fun's token creator.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">Pick PUNK if</span>
+        <p>You already have a token you want to sell, or you need a token with custom behaviour that the built-in creator doesn't provide.</p>
+    </div>
+
+    <h2>What's the same</h2>
+    <p>Everything a buyer experiences is identical between the two:</p>
+    <ul>
+        <li>The same falling-price Dutch auction.</li>
+        <li>The same tranche structure and price decay.</li>
+        <li>The same 50/50 split between the sale allocation and the liquidity reserve.</li>
+        <li>The same commit-now, claim-later flow.</li>
+        <li>The same "sells out to complete" finish line.</li>
+    </ul>
+    <p>If you're buying, you don't need to care whether a launch is FUN or PUNK &mdash; the process is the same either way.</p>
+
+    <h2>What's different</h2>
+    <p>The only meaningful differences are at the two ends of the process:</p>
+    <ol class="steps">
+        <li><strong>The start</strong>FUN creates the token for you; PUNK uses a token you supply.</li>
+        <li><strong>The end</strong>Both end with a live trading pool, but the post-sale liquidity is handled along a route specific to each style. In both cases the resulting position is controlled by the protocol, not the launcher.</li>
+    </ol>
+
+    <div class="callout soon">
+        <span class="callout-label">Status</span>
+        <p>FUN is the launch style you can use today. PUNK shares the same auction engine and is planned, but it isn't available yet &mdash; treat the PUNK details above as a preview of what's coming. Check current product status on <a href="https://punk.fun">punk.fun</a> before planning a launch.</p>
+    </div>
+
+    <div class="page-nav">
+        <a href="how-it-works.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; How it works</span>
+        </a>
+        <a class="next" href="launch-a-token.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Launch a token &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

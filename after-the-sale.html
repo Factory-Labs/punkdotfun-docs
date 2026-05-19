@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>After the sale — punk.fun</title>
+<meta name="description" content="What happens once a punk.fun auction sells out: settlement, the trading pool, fees, and claims.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Guide</div>
+    <h1>After the sale</h1>
+    <p class="lead">When an auction sells out, a sequence of automatic steps turns the raise into a real, tradeable market. Here's exactly what happens, where the money and tokens go, and what each side ends up with.</p>
+
+    <h2>Settlement, step by step</h2>
+    <p>Settlement begins the instant the sale allocation is fully sold &mdash; it runs inside the same transaction as the final purchase. No one has to press a button.</p>
+    <ol class="steps">
+        <li><strong>Fees are calculated</strong>A small protocol fee is taken from two things: the funds raised, and the liquidity reserve tokens. The fee rate is the same for both.</li>
+        <li><strong>The trading pool is seeded</strong>What's left after fees &mdash; the remaining funds and the remaining reserve tokens &mdash; is placed together into a trading pool. This pool is what makes the token tradeable.</li>
+        <li><strong>Claims open</strong>Buyers can now collect the tokens they committed to during the auction.</li>
+    </ol>
+
+    <div class="callout tip">
+        <span class="callout-label">Fees never touch buyer tokens</span>
+        <p>The fee comes only out of the liquidity side &mdash; the raised funds and the reserve. The tokens buyers committed to are kept whole. A buyer always claims exactly what they bought.</p>
+    </div>
+
+    <h2>Where everything ends up</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Asset</th><th>Destination</th></tr></thead>
+        <tbody>
+            <tr><td>Sale allocation tokens</td><td>Claimed by the buyers who committed for them</td></tr>
+            <tr><td>Most of the raised funds</td><td>Into the trading pool as liquidity</td></tr>
+            <tr><td>Most of the liquidity reserve</td><td>Into the trading pool, paired with the funds</td></tr>
+            <tr><td>The protocol fee (funds + tokens)</td><td>To the protocol's designated recipient</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h2>If settlement's automatic step fails</h2>
+    <p>Settlement involves an external step &mdash; building the trading pool. If that step fails for any reason, punk.fun is designed so the sale itself <strong>does not</strong> fail. The auction simply waits in a "ready to settle" state, and the settlement can be <strong>retried</strong> by anyone. Once a retry succeeds, claims open as normal. No funds or tokens are lost in this scenario.</p>
+
+    <h2>Claiming (buyers)</h2>
+    <p>Once claims are open, each buyer claims their full entitlement in a single action. There's no deadline. See the <a href="buy-in-an-auction.html">buyer guide</a> for the full claim walkthrough.</p>
+
+    <h2>The liquidity position (launchers &amp; protocol)</h2>
+    <p>The trading pool created at settlement holds real value. The position representing that liquidity is <strong>controlled by the protocol</strong>, not handed to the launcher. This is a deliberate design choice: it removes the launcher's ability to pull the market's liquidity, which is a common failure mode in token launches elsewhere.</p>
+
+    <h3>FUN launches</h3>
+    <p>For a <span class="pill fun">FUN</span> launch, the pooled liquidity is placed into a staking position on the underlying exchange, with the protocol's designated recipient as the beneficiary. That recipient is also where the settlement fees and any small leftover amounts go. Over time, that staked position can earn rewards &mdash; collecting and managing those rewards is an ongoing protocol-side operation, not something the launcher or buyers need to do.</p>
+
+    <h3>PUNK launches <span class="pill soon">Coming soon</span></h3>
+    <p>PUNK launches will run on the same engine, with post-sale assets routed to a protocol-controlled destination. This launch style isn't available yet &mdash; every launch on punk.fun today is a FUN launch, so the FUN behaviour above is what currently applies.</p>
+
+    <div class="callout">
+        <span class="callout-label">In short</span>
+        <p>Buyers get their tokens. The market gets its liquidity. The protocol holds the liquidity position so it can't be rugged. Everyone's outcome is fixed by the rules, not by anyone's discretion after the fact.</p>
+    </div>
+
+    <h2>What "done" looks like</h2>
+    <p>After a successful settlement:</p>
+    <ul>
+        <li>The token has a live trading pool &mdash; anyone can buy or sell it.</li>
+        <li>Auction buyers can claim, then trade their claimed tokens freely.</li>
+        <li>The launcher's job is complete; there's nothing further they must do.</li>
+        <li>The launch is, in every meaningful sense, finished.</li>
+    </ul>
+
+    <div class="page-nav">
+        <a href="buy-in-an-auction.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Buy in an auction</span>
+        </a>
+        <a class="next" href="glossary.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Glossary &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

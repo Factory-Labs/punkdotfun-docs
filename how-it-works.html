@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How it works — punk.fun</title>
+<meta name="description" content="How a punk.fun launch works, start to finish: create, auction, settle, and trade.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Start here</div>
+    <h1>How it works</h1>
+    <p class="lead">A punk.fun launch always follows the same path: a token is created, half of it is sold in a falling-price auction, and the proceeds are turned into a trading pool. Here is each stage in detail.</p>
+
+    <h2>The big picture</h2>
+    <p>Think of a launch as a relay with three legs. Each leg hands off cleanly to the next, and most of it happens automatically.</p>
+    <ol class="steps">
+        <li><strong>Create the token</strong>A token with a fixed total supply is created. Nothing can ever mint more of it later.</li>
+        <li><strong>Run the auction</strong>Half the supply is offered for sale. The price falls steadily until buyers decide it's worth it. Buyers commit funds; they don't receive tokens yet.</li>
+        <li><strong>Settle into a market</strong>Once the sale half is fully sold, the money raised plus the other half of the supply are placed into a trading pool. Buyers can now collect their tokens, and anyone can trade.</li>
+    </ol>
+
+    <h2>Stage 1 — Creating the token</h2>
+    <p>Every launch needs a token. On a <span class="pill fun">FUN</span> launch you create one through punk.fun's built-in token creator: you pick a name, a symbol, and a total supply, and the entire supply is sent to your wallet. The token has a <strong>fixed supply</strong> &mdash; there is no owner, no admin switch, and no way to create more of it afterwards.</p>
+    <p>On a <span class="pill punk">PUNK</span> launch you'd skip this step and bring a token you already have. <span class="pill soon">Coming soon</span> &mdash; PUNK isn't available yet; every launch today is a FUN launch.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">Why fixed supply matters</span>
+        <p>Because no more tokens can ever be minted, buyers can trust the supply they see is the supply that exists. There's no hidden dilution risk from the token itself.</p>
+    </div>
+
+    <h2>Stage 2 — Funding and the 50/50 split</h2>
+    <p>After the auction is created, the launcher sends the launch supply into it and confirms. At that moment the supply is split into two fixed halves:</p>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Half</th><th>What it's for</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Sale allocation (50%)</strong></td><td>The tokens actually sold to buyers in the auction.</td></tr>
+            <tr><td><strong>Liquidity reserve (50%)</strong></td><td>Held back and later paired with the money raised to create the trading pool.</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>This split is automatic and cannot be changed. It's the reason a market exists at the end: half the tokens were always reserved to seed it.</p>
+
+    <h2>Stage 3 — The auction</h2>
+    <p>punk.fun uses a <strong>Dutch auction</strong>. Instead of a fixed price, the price starts high and falls. Buyers watch it drop and buy when they think it's fair. This naturally finds a price the market agrees on, without the launcher having to guess.</p>
+
+    <h3>Tranches</h3>
+    <p>The sale doesn't happen at one single price. It's divided into batches called <strong>tranches</strong>. Within a tranche the price falls block by block. When a tranche sells out, the next one begins &mdash; typically larger, and starting at a higher price. Early buyers in a quiet launch get cheaper tokens; later buyers in a busy launch pay more. <a href="buy-in-an-auction.html">The buyer guide covers this in detail.</a></p>
+
+    <h3>Commit now, collect later</h3>
+    <p>This is the most important thing to understand about the auction: <strong>when you buy, you don't receive tokens immediately</strong>. You commit funds and lock in an entitlement. You collect ("claim") your tokens only after the whole sale finishes and settles. This keeps the accounting clean and the same for everyone.</p>
+
+    <h2>Stage 4 — Settlement</h2>
+    <p>The auction has exactly one finish line: the entire sale allocation is sold. There's no timer and no manual "end" button. When the last token in the sale half is committed, settlement happens <strong>automatically in that same transaction</strong>:</p>
+    <ol class="steps">
+        <li><strong>Fees are taken</strong>A small protocol fee is taken from the money raised and from the liquidity reserve.</li>
+        <li><strong>The pool is created</strong>The remaining money and the remaining reserve tokens are placed together into a trading pool.</li>
+        <li><strong>Claims open</strong>Buyers can now collect the tokens they committed to during the auction.</li>
+    </ol>
+    <p>If the automatic step fails for any external reason, the sale still stands &mdash; settlement can simply be retried. Nothing is lost.</p>
+
+    <div class="callout warn">
+        <span class="callout-label">Important</span>
+        <p>In this version, selling out is the <em>only</em> way an auction completes. There is no time-based expiry. If a token never sells its full sale allocation, the auction stays open and committed funds stay committed. Read the <a href="faq.html">FAQ</a> for what this means for you.</p>
+    </div>
+
+    <h2>Stage 5 — A live market</h2>
+    <p>Once settlement succeeds, the token has a real trading pool behind it. Anyone can buy or sell it on the open market, and buyers from the auction can claim and then trade their tokens. The launch is complete.</p>
+    <p>For what happens to that pool afterwards &mdash; how the liquidity is held and why it can't be rugged &mdash; see <a href="after-the-sale.html">After the sale</a>.</p>
+
+    <h2>Recap</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Stage</th><th>Who acts</th><th>Result</th></tr></thead>
+        <tbody>
+            <tr><td>Create</td><td>Launcher</td><td>A fixed-supply token exists</td></tr>
+            <tr><td>Fund &amp; configure</td><td>Launcher</td><td>Supply split 50/50</td></tr>
+            <tr><td>Auction</td><td>Buyers</td><td>Sale half is committed</td></tr>
+            <tr><td>Settle</td><td>Automatic</td><td>Trading pool created, claims open</td></tr>
+            <tr><td>Trade</td><td>Anyone</td><td>Token is freely tradeable</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="page-nav">
+        <a href="index.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Overview</span>
+        </a>
+        <a class="next" href="fun-vs-punk.html">
+            <span class="dir">Next</span>
+            <span class="ttl">FUN vs PUNK &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

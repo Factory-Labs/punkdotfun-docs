@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>punk.fun — Documentation</title>
+<meta name="description" content="Plain-English documentation for punk.fun: how to launch a token, how to buy in an auction, and how the protocol works.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="hero">
+        <div class="hero-mark">// Token launchpad</div>
+        <h1>Launch a token. Sell it fairly. Build a market.</h1>
+        <p class="lead">punk.fun is a token launchpad. You create a token, run a falling-price auction to sell it, and the proceeds automatically seed a trading pool so the token can be traded freely afterwards. This site explains all of that in plain English &mdash; no smart-contract knowledge required.</p>
+    </div>
+
+    <div class="card-grid">
+        <a class="card" href="how-it-works.html">
+            <div class="card-icon">New here?</div>
+            <h3>How it works</h3>
+            <p>The whole journey from token to tradeable market, start to finish.</p>
+        </a>
+        <a class="card" href="launch-a-token.html">
+            <div class="card-icon">For launchers</div>
+            <h3>Launch a token</h3>
+            <p>Step-by-step: create a token, run an auction, hand off liquidity.</p>
+        </a>
+        <a class="card" href="buy-in-an-auction.html">
+            <div class="card-icon">For buyers</div>
+            <h3>Buy in an auction</h3>
+            <p>How pricing works, how to buy, and how to claim your tokens.</p>
+        </a>
+        <a class="card" href="faq.html">
+            <div class="card-icon">Quick answers</div>
+            <h3>FAQ</h3>
+            <p>Common questions about fees, risks, refunds, and timing.</p>
+        </a>
+    </div>
+
+    <h2>What punk.fun does</h2>
+    <p>Most token launches have the same two problems: setting a fair starting price is hard, and there's often no real market to trade in once the launch ends. punk.fun is built to solve both in a single flow.</p>
+
+    <p>Every launch moves through three stages:</p>
+    <ol class="steps">
+        <li><strong>Create</strong>A token is created with a fixed supply. The full supply goes to the person launching it.</li>
+        <li><strong>Auction</strong>Half of the supply is sold through a <em>Dutch auction</em> &mdash; the price starts high and falls over time until buyers step in. Buyers commit funds during the auction and collect their tokens once it ends.</li>
+        <li><strong>Settle</strong>When the sale finishes, the money raised and the other half of the supply are automatically placed into a trading pool. The token is now freely tradeable.</li>
+    </ol>
+
+    <div class="callout tip">
+        <span class="callout-label">The short version</span>
+        <p>You don't have to guess a price, you don't have to manually create a market afterwards, and buyers never overpay &mdash; the auction finds the price for you.</p>
+    </div>
+
+    <h2>Two launch styles</h2>
+    <p>punk.fun supports two kinds of launch. They share the same auction engine but differ in where the token comes from and what happens to liquidity afterwards.</p>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Style</th><th>Best for</th><th>Token source</th></tr></thead>
+        <tbody>
+            <tr>
+                <td><span class="pill fun">FUN</span></td>
+                <td>Quick community / memecoin launches</td>
+                <td>A token created through punk.fun's own token creator</td>
+            </tr>
+            <tr>
+                <td><span class="pill punk">PUNK</span> <span class="pill soon">Soon</span></td>
+                <td>Projects that already have their own token</td>
+                <td>Any existing token you bring yourself</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Not sure which applies to you? <a href="fun-vs-punk.html">Read the FUN vs PUNK comparison &rarr;</a></p>
+
+    <h2>Who this is for</h2>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon">Launchers</div>
+            <h3>People launching a token</h3>
+            <p>You want to sell a token and end up with a working market. Start with <a href="launch-a-token.html">Launch a token</a>.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">Buyers</div>
+            <h3>People buying in</h3>
+            <p>You want to buy a token during its launch auction. Start with <a href="buy-in-an-auction.html">Buy in an auction</a>.</p>
+        </div>
+    </div>
+
+    <div class="callout">
+        <span class="callout-label">A note on risk</span>
+        <p>Buying newly launched tokens is risky. Prices can move sharply and there is no guarantee a token holds value. This documentation explains how the mechanics work &mdash; it is not financial advice. Only ever commit funds you are prepared to lose.</p>
+    </div>
+
+    <div class="page-nav">
+        <span></span>
+        <a class="next" href="how-it-works.html">
+            <span class="dir">Next</span>
+            <span class="ttl">How it works &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

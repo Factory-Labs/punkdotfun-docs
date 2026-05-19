@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy in an auction — punk.fun</title>
+<meta name="description" content="How buying works in a punk.fun auction: pricing, tranches, committing, and claiming.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Guide &middot; For buyers</div>
+    <h1>Buy in an auction</h1>
+    <p class="lead">Buying in a punk.fun auction is straightforward, but it works differently from a normal "fixed price" sale. The price falls over time, and you collect your tokens after the sale ends rather than instantly. Here's everything you need to know.</p>
+
+    <h2>How the price works</h2>
+    <p>punk.fun runs a <strong>Dutch auction</strong>: the price starts high and falls. There's no fixed sticker price &mdash; you decide the moment the price is worth it to you, and buy then.</p>
+    <p>The sale is split into batches called <strong>tranches</strong>. Here's the rhythm:</p>
+    <ul>
+        <li>A tranche opens at a set price.</li>
+        <li>While it waits for buyers, the price <strong>falls steadily</strong>, block by block, down toward a minimum floor.</li>
+        <li>When the tranche sells out, the next tranche opens &mdash; usually larger, and starting at a higher price.</li>
+    </ul>
+    <p>The result is a sawtooth pattern: price drifts down, then jumps up at each new tranche. In a quiet launch you can catch low prices; in a busy one, prices climb as tranches roll over quickly.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">There's a price floor</span>
+        <p>The price within a tranche never falls below the launcher's set minimum. It can't decay to zero.</p>
+    </div>
+
+    <h2>Commit now, claim later</h2>
+    <p>This is the single most important thing to understand. When you buy in the auction:</p>
+    <ol class="steps">
+        <li><strong>You commit funds</strong>You send the network's currency and lock in an entitlement to a number of tokens at the current price.</li>
+        <li><strong>You do not receive tokens yet</strong>Your tokens are recorded as owed to you, but they aren't transferred during the auction.</li>
+        <li><strong>You claim after settlement</strong>Once the whole sale finishes and settles, you come back and claim &mdash; that's when the tokens land in your wallet.</li>
+    </ol>
+    <p>This is normal and applies to everyone equally. It keeps the auction's accounting clean and predictable.</p>
+
+    <h2>Placing a buy</h2>
+    <p>When you buy, you send an amount of the network's currency. The auction works out how many tokens that buys at the current price and records them to you. Two practical things to know:</p>
+
+    <h3>Slippage protection</h3>
+    <p>When you submit a buy you can set a <strong>maximum price</strong> you're willing to pay per token. If the price has moved above that by the time your transaction is processed (for example, a tranche rolled over), the buy is safely rejected instead of going through at a worse price. Setting this is recommended.</p>
+
+    <h3>Buying across a tranche boundary</h3>
+    <p>If your buy is larger than what's left in the current tranche, you get what remains of that tranche, and the <strong>excess funds are refunded</strong> to you automatically. You don't accidentally overpay or get pulled into the next tranche.</p>
+
+    <div class="callout warn">
+        <span class="callout-label">About the preview</span>
+        <p>An auction can show you a preview of what a given amount will buy. The preview reflects the <em>current tranche only</em> &mdash; it doesn't simulate rolling into the next one. If your buy would spill across a boundary, treat the preview as an estimate.</p>
+    </div>
+
+    <h2>Claiming your tokens</h2>
+    <p>After the auction sells out and settlement succeeds, claiming opens. Claiming is simple: one action transfers your full entitlement to your wallet at once. There's nothing to calculate &mdash; you receive everything you committed to during the auction.</p>
+    <p>You can claim any time after settlement; there's no rush and no deadline to claim.</p>
+
+    <h2>What can go wrong</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Situation</th><th>What happens</th></tr></thead>
+        <tbody>
+            <tr><td>Price moved above your max</td><td>Your buy is rejected. Nothing is spent. Try again at the new price.</td></tr>
+            <tr><td>Your buy exceeds the tranche</td><td>You get what's left of the tranche; the rest of your funds are refunded.</td></tr>
+            <tr><td>Settlement's automatic step fails</td><td>The sale still stands. Anyone can retry settlement. Claims open once it succeeds.</td></tr>
+            <tr><td>The auction never sells out</td><td>It stays open. There is no expiry and, in this version, <strong>no refund path</strong> for committed funds. See the warning below.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="callout danger">
+        <span class="callout-label">Read this before buying</span>
+        <p>An auction completes <strong>only</strong> by selling its full sale allocation. There is no timer that ends it and no built-in way to reclaim committed funds if a sale stalls. If you commit to a launch that never sells out, those funds can stay committed indefinitely. Only buy into launches you believe will complete, and only with funds you can afford to lose.</p>
+    </div>
+
+    <h2>Quick checklist</h2>
+    <ul>
+        <li>Understand you're <strong>committing</strong> funds, then <strong>claiming</strong> tokens later.</li>
+        <li>Set a sensible <strong>maximum price</strong> for slippage protection.</li>
+        <li>Expect a <strong>refund</strong> if your buy overshoots a tranche.</li>
+        <li>Remember the price <strong>falls</strong> within a tranche &mdash; waiting can mean a better price, but a tranche can also sell out before you act.</li>
+        <li>Know the <strong>completion rule</strong>: sells out, or stays open. There's no expiry refund.</li>
+    </ul>
+
+    <div class="page-nav">
+        <a href="launch-a-token.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Launch a token</span>
+        </a>
+        <a class="next" href="after-the-sale.html">
+            <span class="dir">Next</span>
+            <span class="ttl">After the sale &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

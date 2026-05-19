@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — punk.fun</title>
+<meta name="description" content="Frequently asked questions about launching and buying on punk.fun.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Guides</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+    <div class="eyebrow">Reference</div>
+    <h1>Frequently asked questions</h1>
+    <p class="lead">Short answers to the most common questions. For the full picture, follow the links into the guides.</p>
+
+    <h2>General</h2>
+
+    <details>
+        <summary>What is punk.fun in one sentence?</summary>
+        <div class="faq-body"><p>A token launchpad that sells a token through a fair falling-price auction and automatically turns the proceeds into a live trading market.</p></div>
+    </details>
+    <details>
+        <summary>Do I need to understand smart contracts to use it?</summary>
+        <div class="faq-body"><p>No. This documentation is written for non-technical users. You interact through an interface; the contract logic runs underneath without you needing to read it.</p></div>
+    </details>
+    <details>
+        <summary>What's the difference between FUN and PUNK?</summary>
+        <div class="faq-body"><p>FUN creates a brand-new token for you; PUNK lets you launch a token you already have. The auction itself is identical. FUN is the style available today &mdash; PUNK is on the roadmap but not yet live. See <a href="fun-vs-punk.html">FUN vs PUNK</a>.</p></div>
+    </details>
+
+    <h2>For buyers</h2>
+
+    <details>
+        <summary>Why didn't I get my tokens immediately after buying?</summary>
+        <div class="faq-body"><p>That's expected. Buying <em>commits</em> funds and locks in an entitlement. You <em>claim</em> the actual tokens after the whole sale finishes and settles. It works the same way for every buyer.</p></div>
+    </details>
+    <details>
+        <summary>Why does the price keep changing?</summary>
+        <div class="faq-body"><p>It's a Dutch auction. Within a tranche the price falls steadily; when a tranche sells out the next one starts higher. You buy when the falling price reaches a level you're comfortable with.</p></div>
+    </details>
+    <details>
+        <summary>Can I overpay if the price jumps while I'm buying?</summary>
+        <div class="faq-body"><p>You can protect yourself by setting a maximum price on your buy. If the price has risen above it, the buy is rejected rather than filled at a worse price. Setting this is recommended.</p></div>
+    </details>
+    <details>
+        <summary>What if I try to buy more than a tranche has left?</summary>
+        <div class="faq-body"><p>You receive what's left of that tranche, and the excess funds are automatically refunded to you. You won't be silently pulled into the next tranche.</p></div>
+    </details>
+    <details>
+        <summary>Is there a deadline to claim my tokens?</summary>
+        <div class="faq-body"><p>No. Once claims are open after settlement, you can claim at any time.</p></div>
+    </details>
+    <details>
+        <summary>What happens if the auction never sells out?</summary>
+        <div class="faq-body"><p>In this version, selling out is the only way an auction completes &mdash; there's no time-based expiry and no built-in refund path for committed funds. If a sale stalls, committed funds can remain committed indefinitely. Only buy into launches you believe will complete.</p></div>
+    </details>
+
+    <h2>For launchers</h2>
+
+    <details>
+        <summary>How much of my token gets sold?</summary>
+        <div class="faq-body"><p>Half. The launch supply is split 50/50: half is the sale allocation sold in the auction, half is the liquidity reserve used to seed the trading pool. This split is fixed.</p></div>
+    </details>
+    <details>
+        <summary>Do I set the fees and the liquidity destination?</summary>
+        <div class="faq-body"><p>No. Fees, the liquidity destination, and the 50/50 split are set by the protocol, not the launcher. You control the auction parameters &mdash; price, tranche sizes, decay, and start.</p></div>
+    </details>
+    <details>
+        <summary>I sent the wrong amount of tokens. Can I fix it?</summary>
+        <div class="faq-body"><p>Yes &mdash; but only before you confirm the inventory configuration. Up to that point you can withdraw the tokens back out. After configuration, withdrawal is closed. Always check the displayed balance first.</p></div>
+    </details>
+    <details>
+        <summary>Do I control the liquidity after the sale?</summary>
+        <div class="faq-body"><p>No. The liquidity position is held by the protocol, not the launcher. This is intentional &mdash; it prevents the launcher from removing the market's liquidity later.</p></div>
+    </details>
+    <details>
+        <summary>What do I need to do during the auction?</summary>
+        <div class="faq-body"><p>Nothing. Once it's funded and configured, the auction runs on its own and settlement is automatic. Your real job is building demand <em>before</em> the launch.</p></div>
+    </details>
+
+    <h2>Fees, risk &amp; safety</h2>
+
+    <details>
+        <summary>What fees are there?</summary>
+        <div class="faq-body"><p>A small protocol fee is taken at settlement from the funds raised and from the liquidity reserve. It is never taken from the tokens buyers committed to &mdash; buyers always claim their full amount. (You'll also pay normal network transaction fees, as with any on-chain action.)</p></div>
+    </details>
+    <details>
+        <summary>Can the token supply be inflated after launch?</summary>
+        <div class="faq-body"><p>For FUN tokens, no &mdash; they're fixed-supply with no minting function and no owner. (PUNK launches, which let you bring an existing token, are on the roadmap but not yet available; when they arrive, that will depend on the token you bring.)</p></div>
+    </details>
+    <details>
+        <summary>Is buying a newly launched token safe?</summary>
+        <div class="faq-body"><p>No token launch is "safe." Newly launched tokens are highly volatile and can lose value quickly. punk.fun makes the <em>mechanics</em> fair and transparent, but it cannot make a token a good investment. This documentation is not financial advice &mdash; only commit funds you can afford to lose.</p></div>
+    </details>
+
+    <h2>Still stuck?</h2>
+    <p>If something here didn't answer your question, the guides go deeper: <a href="how-it-works.html">How it works</a>, <a href="launch-a-token.html">Launch a token</a>, and <a href="buy-in-an-auction.html">Buy in an auction</a>. For product updates and support, visit <a href="https://punk.fun">punk.fun</a>.</p>
+
+    <div class="page-nav">
+        <a href="glossary.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Glossary</span>
+        </a>
+        <a class="next" href="index.html">
+            <span class="dir">Back to</span>
+            <span class="ttl">Overview &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
