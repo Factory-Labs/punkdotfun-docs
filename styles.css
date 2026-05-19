@@ -1,37 +1,38 @@
 /* ============================================================
    punk.fun documentation — shared styles
-   Themed to match the punk.fun product: near-black background,
-   hot-pink brand accent, mono type. Calmer than the marketing
+   Themed to the official punk.fun brand sheet:
+   green primary (Green Apple), blue secondary (Blue Raspberry),
+   utility accents, typewriter type. Calmer than the marketing
    site — built for sustained reading.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-    --bg: #0a0a0c;
-    --bg-raised: #131316;
-    --bg-card: #161619;
-    --border: #2a2a30;
-    --border-bright: #3c3c45;
-    --text: #d7d7dc;
-    --text-dim: #8d8d97;
-    --text-faint: #5b5b64;
-    --accent: #ff2dbd;       /* punk.fun hot pink — primary brand */
-    --accent-dim: #c71f93;
-    --accent-soft: rgba(255, 45, 189, 0.07);
-    --accent-line: rgba(255, 45, 189, 0.4);
-    /* multicolour "UNRUGGABLE" accent set — used sparingly for
-       section markers and the glossary */
-    --c-pink:   #ff2dbd;
-    --c-teal:   #2bb6c4;
-    --c-green:  #36b24a;
-    --c-orange: #e08a2c;
-    --c-yellow: #e5c233;
-    --blue: #5ea9ff;
-    --green: #36b24a;
+    --bg: #1a1a1a;
+    --bg-raised: #232323;
+    --bg-card: #262626;
+    --border: #363636;
+    --border-bright: #484848;
+    --text: #d6d6d0;          /* brand off-white */
+    --text-dim: #989890;
+    --text-faint: #6a6a64;
+    --accent: #7ed760;        /* Green Apple — primary brand */
+    --accent-dim: #5fa847;
+    --accent-soft: rgba(126, 215, 96, 0.08);
+    --accent-line: rgba(126, 215, 96, 0.42);
+    /* brand utility accent set — used per their stated roles */
+    --c-green:  #7ed760;      /* primary / CTAs / active */
+    --c-blue:   #5fbef5;      /* Blue Raspberry — links, secondary */
+    --c-lime:   #e5f4ad;      /* highlight / tags / glow */
+    --c-orange: #ec9f30;      /* Orange Sunshine — special moments */
+    --c-purple: #9d5cd0;      /* Purple Haze — flavour / badges */
+    --c-yellow: #f1f152;      /* Lemondrop — small spice */
+    --blue: #5fbef5;
+    --green: #7ed760;
     --red: #f6543d;
-    --mono: 'Space Mono', 'SF Mono', Menlo, monospace;
-    --sans: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', 'Space Mono', 'SF Mono', Menlo, monospace;
+    --sans: 'JetBrains Mono', 'Space Mono', 'SF Mono', Menlo, monospace;
     --maxw: 880px;
 }
 
@@ -44,9 +45,9 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 /* subtle grid backdrop — very faint, no busy watermark behind text */
@@ -55,8 +56,8 @@ body::before {
     position: fixed;
     inset: 0;
     background-image:
-        linear-gradient(rgba(255, 45, 189, 0.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 45, 189, 0.022) 1px, transparent 1px);
+        linear-gradient(rgba(126, 215, 96, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126, 215, 96, 0.02) 1px, transparent 1px);
     background-size: 56px 56px;
     pointer-events: none;
     z-index: 0;
@@ -92,10 +93,11 @@ a:hover { text-decoration: underline; }
     align-items: baseline;
     gap: 0;
     font-family: var(--mono);
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
     margin-bottom: 0.2rem;
+    text-transform: lowercase;
 }
 .brand .punk { color: var(--accent); }
 .brand .dot   { color: var(--text-faint); }
@@ -124,7 +126,7 @@ a:hover { text-decoration: underline; }
 .nav-link {
     display: block;
     color: var(--text-dim);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     padding: 0.32rem 0.6rem;
     border-radius: 6px;
     border-left: 2px solid transparent;
@@ -168,18 +170,18 @@ a:hover { text-decoration: underline; }
 }
 
 h1 {
-    font-size: 2.35rem;
+    font-size: 2.15rem;
     font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     margin-bottom: 1rem;
     color: #fff;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.005em;
     margin: 2.8rem 0 0.9rem;
     color: #fff;
     padding-top: 0.6rem;
@@ -195,21 +197,21 @@ h2::before {
 }
 
 h3 {
-    font-size: 1.13rem;
-    font-weight: 600;
+    font-size: 1.08rem;
+    font-weight: 700;
     margin: 1.9rem 0 0.55rem;
     color: #fff;
 }
 
 p { margin-bottom: 1rem; color: var(--text); }
 .lead {
-    font-size: 1.13rem;
+    font-size: 1.05rem;
     color: var(--text-dim);
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.6rem;
 }
 
-strong { color: #fff; font-weight: 600; }
+strong { color: #fff; font-weight: 700; }
 
 ul, ol { margin: 0 0 1.1rem 1.3rem; }
 li { margin-bottom: 0.45rem; color: var(--text); }
@@ -217,7 +219,7 @@ li::marker { color: var(--accent); }
 
 code {
     font-family: var(--mono);
-    font-size: 0.84em;
+    font-size: 0.86em;
     background: var(--bg-raised);
     border: 1px solid var(--border);
     padding: 0.1rem 0.38rem;
@@ -234,17 +236,17 @@ hr {
 /* ---------- callouts ---------- */
 .callout {
     border: 1px solid var(--border);
-    border-left: 3px solid var(--blue);
+    border-left: 3px solid var(--c-blue);
     background: var(--bg-card);
     border-radius: 8px;
     padding: 1rem 1.2rem;
     margin: 1.4rem 0;
-    font-size: 0.93rem;
+    font-size: 0.92rem;
 }
 .callout.warn  { border-left-color: var(--c-orange); }
 .callout.danger{ border-left-color: var(--red); }
-.callout.tip   { border-left-color: var(--c-teal); }
-.callout.soon  { border-left-color: var(--c-teal); }
+.callout.tip   { border-left-color: var(--c-green); }
+.callout.soon  { border-left-color: var(--c-purple); }
 .callout-label {
     font-family: var(--mono);
     font-size: 0.68rem;
@@ -272,7 +274,7 @@ hr {
     display: block;
 }
 a.card:hover {
-    border-color: var(--border-bright);
+    border-color: var(--accent-line);
     transform: translateY(-2px);
     text-decoration: none;
 }
@@ -284,8 +286,8 @@ a.card:hover {
     letter-spacing: 0.1em;
     margin-bottom: 0.5rem;
 }
-.card h3 { margin: 0 0 0.35rem; font-size: 1.04rem; }
-.card p { font-size: 0.88rem; color: var(--text-dim); margin: 0; }
+.card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.card p { font-size: 0.86rem; color: var(--text-dim); margin: 0; }
 
 /* ---------- steps ---------- */
 .steps { counter-reset: step; list-style: none; margin-left: 0; }
@@ -302,7 +304,7 @@ a.card:hover {
     left: 0; top: -0.1rem;
     width: 2rem; height: 2rem;
     background: var(--bg-raised);
-    border: 1px solid var(--border-bright);
+    border: 1px solid var(--accent-line);
     color: var(--accent);
     border-radius: 50%;
     display: flex;
@@ -344,6 +346,7 @@ tr:hover td { background: var(--accent-soft); }
     display: inline-block;
     font-family: var(--mono);
     font-size: 0.68rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     padding: 0.12rem 0.5rem;
@@ -351,11 +354,11 @@ tr:hover td { background: var(--accent-soft); }
     border: 1px solid var(--border-bright);
 }
 .pill.fun  { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
-.pill.punk { color: var(--c-teal); border-color: rgba(43,182,196,0.4); background: rgba(43,182,196,0.07); }
+.pill.punk { color: var(--c-blue); border-color: rgba(95,190,245,0.4); background: rgba(95,190,245,0.08); }
 .pill.soon {
-    color: var(--text-dim);
-    border-color: var(--border-bright);
-    background: var(--bg-raised);
+    color: var(--c-purple);
+    border-color: rgba(157,92,208,0.45);
+    background: rgba(157,92,208,0.08);
 }
 
 /* ---------- hero (index) ---------- */
@@ -363,7 +366,7 @@ tr:hover td { background: var(--accent-soft); }
     margin-bottom: 2.4rem;
 }
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.7rem;
 }
 .hero-mark {
     font-family: var(--mono);
@@ -386,12 +389,12 @@ details {
 summary {
     cursor: pointer;
     padding: 0.95rem 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     color: #fff;
     list-style: none;
     position: relative;
     padding-right: 2.6rem;
-    font-size: 0.97rem;
+    font-size: 0.94rem;
 }
 summary::-webkit-details-marker { display: none; }
 summary::after {
@@ -424,7 +427,7 @@ details[open] summary { border-bottom: 1px solid var(--border); }
     padding: 0.85rem 1.1rem;
     transition: border-color 0.15s;
 }
-.page-nav a:hover { border-color: var(--border-bright); text-decoration: none; }
+.page-nav a:hover { border-color: var(--accent-line); text-decoration: none; }
 .page-nav .dir {
     font-family: var(--mono);
     font-size: 0.66rem;
@@ -434,7 +437,7 @@ details[open] summary { border-bottom: 1px solid var(--border); }
     display: block;
     margin-bottom: 0.15rem;
 }
-.page-nav .ttl { color: var(--text); font-size: 0.92rem; }
+.page-nav .ttl { color: var(--text); font-size: 0.9rem; }
 .page-nav .next { text-align: right; }
 
 footer {
@@ -465,7 +468,7 @@ footer a { color: var(--text-dim); }
         position: absolute;
         right: 1.25rem; top: 1.4rem;
         background: var(--bg-raised);
-        border: 1px solid var(--border-bright);
+        border: 1px solid var(--accent-line);
         color: var(--accent);
         font-family: var(--mono);
         font-size: 0.75rem;
@@ -475,7 +478,7 @@ footer a { color: var(--text-dim); }
         text-transform: uppercase;
     }
     .content { padding: 2rem 1.4rem 4rem; }
-    .hero h1 { font-size: 2.1rem; }
-    h1 { font-size: 1.9rem; }
+    .hero h1 { font-size: 2rem; }
+    h1 { font-size: 1.75rem; }
     .card-grid { grid-template-columns: 1fr; }
 }
