@@ -9,12 +9,20 @@ step, no dependencies, no framework. It works the moment the files are served.
 |------|---------|
 | `index.html` | Overview / home |
 | `how-it-works.html` | Full launch lifecycle |
-| `fun-vs-punk.html` | FUN vs PUNK comparison |
-| `launch-a-token.html` | Launcher guide |
+| `punk.html` | PUNK, coming soon |
 | `buy-in-an-auction.html` | Buyer guide |
-| `after-the-sale.html` | Settlement & liquidity |
+| `pricing.html` | Batches, growth, decay, reading the chart |
+| `batch-average.html` | The two pricing modes |
+| `refunds.html` | When a sale doesn't sell out |
+| `after-the-sale.html` | Claiming, the pool, trading |
+| `launch-a-token.html` | Launcher guide, every form setting |
+| `fees.html` | Fees and who gets what |
+| `the-pool.html` | The pool at sellout and the opening price |
+| `sale-states.html` | Every sale badge explained |
 | `glossary.html` | Term definitions |
 | `faq.html` | Frequently asked questions |
+| `fun-vs-punk.html` | Redirect to `punk.html`, kept so old links work |
+| `img/` | Screenshots from the alpha (`.webp`) and diagrams (`.svg`) |
 | `styles.css` / `app.js` | Shared styling and the mobile-nav script |
 
 ## Publishing on GitHub Pages

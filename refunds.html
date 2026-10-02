@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When a sale doesn't sell out | punk.fun docs</title>
+<meta name="description" content="What happens when a punk.fun sale reaches its deadline without selling out: buying stops and every buyer withdraws exactly what they paid.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Guide &middot; For buyers</div>
+    <h1>When a sale doesn't sell out</h1>
+    <p class="lead">A sale that doesn't sell out isn't left hanging. Every sale has a deadline, and after it everyone gets their money back in full.</p>
+
+    <h2>The deadline</h2>
+    <p>Every sale has one, set by the launcher at launch between 1 and 30 days. You can see the time left on the sale page. Buying stops when it passes.</p>
+
+    <h2>Getting your ETH back</h2>
+    <figure class="shot wide">
+        <img src="img/sale-unsold.webp" alt="A sale page marked UNSOLD with a Your Refund card showing 0.0582 ETH available to withdraw" loading="lazy">
+        <figcaption>A sale that missed its deadline. The Your Refund card shows what you can take back.</figcaption>
+    </figure>
+    <p>Open the sale and press <strong>Withdraw</strong> on the Your Refund card. You get back exactly what you paid. Not a share, not minus a fee: the same amount. There's no deadline to withdraw, so there's no rush.</p>
+
+    <div class="callout">
+        <span class="callout-label">The first withdrawal closes the sale</span>
+        <p>Before anyone has withdrawn, the sale shows as <strong>UNSOLD</strong>. The first person to withdraw also closes the sale for everyone. Your wallet does both in one confirmation, which costs a little extra gas. After that the sale shows as <strong>EXPIRED</strong> and everyone else just withdraws.</p>
+    </div>
+
+    <figure class="shot">
+        <img src="img/refund-expired.webp" alt="The Your Refund card on an expired sale with a Withdraw 0.0776 ETH button" loading="lazy">
+        <figcaption>On an expired sale, withdrawing is a single ordinary transaction.</figcaption>
+    </figure>
+
+    <p>Your <strong>Profile</strong> page also lists anything you can withdraw, so you don't have to remember which sales you were in.</p>
+
+    <h2>What happens to the tokens</h2>
+    <p>No trading pool is created, no fees are taken, and no tokens go to buyers. The unsold supply can be taken back by the launcher's wallet. There's no button for that in the app yet.</p>
+
+    <div class="callout warn">
+        <span class="callout-label">Once a sale sells out, there are no refunds</span>
+        <p>The refund path only exists for sales that miss their deadline. As soon as a sale sells out, the ETH goes into the pool and your tokens are there to claim.</p>
+    </div>
+
+    <div class="page-nav">
+        <a href="batch-average.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Batch-average pricing</span>
+        </a>
+        <a class="next" href="after-the-sale.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Claiming and after the sale &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

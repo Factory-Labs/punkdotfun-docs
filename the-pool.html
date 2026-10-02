@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The pool at sellout | punk.fun docs</title>
+<meta name="description" content="What goes into the Uniswap pool when a punk.fun sale sells out, why trading opens at the average price paid, and the launch price multiplier.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Guide &middot; For launchers and buyers</div>
+    <h1>The pool at sellout</h1>
+    <p class="lead">When a sale sells out, a market is created straight away. This page explains what goes into it and what price it opens at, because that price surprises people.</p>
+
+    <h2>What happens in the final buy</h2>
+    <p>The buy that takes the last token also takes the fees, pairs the remaining ETH with the remaining reserve tokens in a Uniswap pool, sends the LP tokens to a dead address and opens claims. All in one transaction.</p>
+    <p>Because nobody holds the LP tokens, nobody can withdraw that liquidity. Not the launcher, not punk.fun. There's no unlock date because there's nothing left to unlock.</p>
+
+    <h2>The price it opens at</h2>
+    <p>The pool opens at the average price paid across the whole sale: the total ETH paid divided by the tokens sold. The fees come out of both sides equally, so they don't move that price.</p>
+    <p>That's worth taking in, because it means trading doesn't open at the price the last batch paid.</p>
+
+    <h2>A worked example</h2>
+    <p>Take a sale on the default settings, where each batch is twice the size and twice the price of the last, with no decay.</p>
+
+    <figure class="diagram">
+        <img src="img/diagram-opening-price.svg" alt="Ten batches doubling in price from 1 to 512 gwei per token. The pool opens at the average, about 338 gwei, which is above the first nine batches and about 34% below the last.">
+    </figure>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th></th><th>Figure</th></tr></thead>
+        <tbody>
+            <tr><td>Total raised</td><td>About 169 ETH across 10 batches</td></tr>
+            <tr><td>Share raised in the last batch</td><td>74%</td></tr>
+            <tr><td>Price the last batch paid</td><td>512 gwei per token</td></tr>
+            <tr><td>Average price across the sale</td><td>About 338 gwei per token</td></tr>
+            <tr><td>Price the pool opens at</td><td>About 338 gwei per token</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <p>So the last batch, which is three quarters of the money in the sale, starts about 34% below what it paid before anyone has traded. Earlier batches start above what they paid. This isn't a bug or a fee, it's arithmetic: the average is always below the top of a rising price ladder.</p>
+
+    <figure class="shot wide">
+        <img src="img/sale-soldout.webp" alt="A sold-out sale with an average paid line at 4.26 gwei, below the last batch's bar" loading="lazy">
+        <figcaption>The same thing on a real sale on the alpha. The dashed line is the average paid, 4.26 gwei. The last batch paid 7.60 gwei, so trading opened about 44% below it.</figcaption>
+    </figure>
+
+    <div class="callout warn">
+        <span class="callout-label">What that means for you</span>
+        <p>If you buy early, you're likely to be up when trading opens. If you buy in one of the last batches, you may be down straight away. The gap is bigger the more the price climbs during the sale.</p>
+    </div>
+
+    <h2>The launch price multiplier</h2>
+    <p>A launcher can choose to open the pool above the average by putting fewer reserve tokens into it and burning the rest. This is the <strong>launch price multiplier</strong> in the launch form's advanced settings, anywhere from 1x to 3x.</p>
+    <ul>
+        <li>At <strong>1x</strong>, the default, nothing is burned and the pool opens at the average price.</li>
+        <li>At <strong>1.5x</strong>, a third of the pool's tokens are burned and the pool opens at 1.5 times the average. At the default settings, that's roughly where the last batch breaks even.</li>
+        <li>Above 1x the pool is thinner, because it holds fewer tokens. You're buying price headroom, not depth, so the price moves more on each trade.</li>
+    </ul>
+    <p>The burned tokens are destroyed for good, which lowers the total supply. It doesn't change what buyers or the launcher receive.</p>
+
+    <div class="page-nav">
+        <a href="fees.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Fees and who gets what</span>
+        </a>
+        <a class="next" href="sale-states.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Sale states &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

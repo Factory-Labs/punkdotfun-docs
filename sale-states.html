@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale states | punk.fun docs</title>
+<meta name="description" content="Every badge a punk.fun sale can show, what it means, and what you can do.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Reference</div>
+    <h1>Sale states</h1>
+    <p class="lead">Every sale shows a badge next to its name. Here's what each one means and what you can do.</p>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Badge</th><th>What it means</th><th>What you can do</th></tr></thead>
+        <tbody>
+            <tr><td><span class="pill st-soon">Soon</span></td><td>Funded and scheduled. Buying hasn't opened yet.</td><td>Wait, or set a reminder for when it opens.</td></tr>
+            <tr><td><span class="pill st-live">Live</span></td><td>Buying is open. The price follows the batch rules.</td><td>Buy.</td></tr>
+            <tr><td><span class="pill st-claim">Claim</span></td><td>Sold out. The pool is live.</td><td>Claim your tokens, then trade.</td></tr>
+            <tr><td><span class="pill st-bad">Unsold</span></td><td>The deadline passed without a sellout and nobody has withdrawn yet.</td><td>Withdraw what you paid. The first withdrawal also closes the sale.</td></tr>
+            <tr><td><span class="pill st-bad">Expired</span></td><td>The sale has been closed and refunds are open.</td><td>Withdraw exactly what you paid, whenever you like.</td></tr>
+            <tr><td><span class="pill st-grey">Not funded</span></td><td>The launcher started a launch but didn't finish it, so the sale never opened.</td><td>Nothing to buy or claim. Only the launcher can finish it.</td></tr>
+            <tr><td><span class="pill st-live">Settling</span></td><td>Sold out, pool not created yet. Settlement normally happens inside the final buy, so you shouldn't see this.</td><td>Nothing. It's a safety state.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h2>Soon</h2>
+    <figure class="shot wide">
+        <img src="img/sale-upcoming.webp" alt="A sale marked SOON with a countdown to when the auction opens and a Notify Me When Live button" loading="lazy">
+        <figcaption>A scheduled sale. The page counts down to the block where buying opens.</figcaption>
+    </figure>
+
+    <h2>Live</h2>
+    <figure class="shot wide">
+        <img src="img/sale-live-overview.webp" alt="A live sale with the price, progress, chart and Buy Tokens panel" loading="lazy">
+        <figcaption>A live sale. See <a href='buy-in-an-auction.html'>Buy in an auction</a>.</figcaption>
+    </figure>
+
+    <h2>Claim</h2>
+    <figure class="shot wide">
+        <img src="img/sale-soldout.webp" alt="A sold-out sale with the Claim Your Tokens panel" loading="lazy">
+        <figcaption>A sold-out sale. See <a href='after-the-sale.html'>Claiming and after the sale</a>.</figcaption>
+    </figure>
+
+    <h2>Unsold and Expired</h2>
+    <figure class="shot wide">
+        <img src="img/sale-expired.webp" alt="A sale marked EXPIRED with a Your Refund card and a Withdraw button" loading="lazy">
+        <figcaption>An expired sale with refunds open. See <a href='refunds.html'>When a sale doesn't sell out</a>.</figcaption>
+    </figure>
+
+    <h2>Not funded</h2>
+    <figure class="shot wide">
+        <img src="img/sale-notfunded.webp" alt="A sale marked NOT FUNDED saying setup is incomplete" loading="lazy">
+        <figcaption>A launch that was started but not finished. This only happens with wallets that need four confirmations to launch.</figcaption>
+    </figure>
+
+    <div class="page-nav">
+        <a href="the-pool.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; The pool at sellout</span>
+        </a>
+        <a class="next" href="glossary.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Glossary &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Launch a token — punk.fun</title>
-<meta name="description" content="Step-by-step guide to launching a token on punk.fun.">
+<title>Launch a token | punk.fun docs</title>
+<meta name="description" content="A walkthrough of launching a token on punk.fun: every setting on the launch form, launching in one signature, and how the sale ends.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,16 +21,25 @@
             <div class="nav-group-title">Start here</div>
             <a class="nav-link" href="index.html">Overview</a>
             <a class="nav-link" href="how-it-works.html">How it works</a>
-            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Guides</div>
-            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
-            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
         </div>
         <div class="nav-group">
             <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
             <a class="nav-link" href="glossary.html">Glossary</a>
             <a class="nav-link" href="faq.html">FAQ</a>
         </div>
@@ -38,93 +47,113 @@
 </aside>
 
 <main class="content">
-    <div class="eyebrow">Guide &middot; For launchers</div>
+<div class="eyebrow">Guide &middot; For launchers</div>
     <h1>Launch a token</h1>
-    <p class="lead">This is the full walkthrough for launching a token, from creating it to handing off liquidity. Most of the work is just a few confirmations &mdash; the heavy lifting happens automatically.</p>
+    <p class="lead">This is the full walkthrough for launching, from filling in the form to the market going live. Most of it happens automatically.</p>
 
-    <div class="callout">
-        <span class="callout-label">Before you start</span>
-        <p>You'll need a wallet, a little of the network's currency for transaction fees, and a token to launch. This guide covers a <strong>FUN launch</strong> &mdash; the launch style available today &mdash; where you create the token as the first step. PUNK launches (bring your own token) are <a href="fun-vs-punk.html">on the roadmap</a> but not live yet.</p>
-    </div>
+    <h2>Before you start</h2>
+    <p>You need a wallet with a little ETH for gas. That's it. The launch form makes the token for you. If there's a fee for creating a token it's shown at the top of the form before you sign. On the alpha, launching is free apart from gas.</p>
 
-    <h2>Step 1 — Create your token</h2>
-    <p>For a FUN launch, you use punk.fun's token creator. You provide a name, a symbol, and a total supply. The entire supply is minted to your wallet. The token is fixed-supply with no owner and no admin powers &mdash; that's intentional and cannot be changed afterwards.</p>
-    <p class="lead" style="font-size:0.95rem"><span class="pill soon">Coming soon</span> &nbsp;PUNK launches will let you skip creation and use an existing token's address instead. That path isn't available yet.</p>
-
-    <div class="callout tip">
-        <span class="callout-label">Choosing a supply</span>
-        <p>Total supply is mostly cosmetic &mdash; a token with 1 billion units isn't "worth less" than one with 1 million. What matters is how much value the market assigns to the whole supply. Pick a round number you're happy to see quoted everywhere.</p>
-    </div>
-
-    <h2>Step 2 — Create the auction</h2>
-    <p>Next you create the auction itself. This is where you set the rules of the sale. You'll pick the token and a handful of auction settings:</p>
-
+    <h2>Step 1: Your token</h2>
+    <figure class="shot">
+        <img src="img/launch-details.webp" alt="The token details section of the launch form: name, ticker, fixed supply of 1,000,000,000, description, X account and image" loading="lazy">
+        <figcaption>The top of the launch form. Supply is fixed at 1 billion, so there's nothing to choose there.</figcaption>
+    </figure>
     <div class="table-wrap">
     <table>
-        <thead><tr><th>Setting</th><th>What it controls</th></tr></thead>
+        <thead><tr><th>Field</th><th>What it's for</th></tr></thead>
         <tbody>
-            <tr><td><strong>Start</strong></td><td>When the auction becomes active. Can be immediate or a future point.</td></tr>
-            <tr><td><strong>Starting price</strong></td><td>The price per token at the top of the first tranche.</td></tr>
-            <tr><td><strong>First tranche size</strong></td><td>How many tokens are in the first batch.</td></tr>
-            <tr><td><strong>Price decay</strong></td><td>How fast the price falls while a tranche is waiting for buyers.</td></tr>
-            <tr><td><strong>Minimum price</strong></td><td>A floor &mdash; the price never falls below this.</td></tr>
-            <tr><td><strong>Tranche multipliers</strong></td><td>How each new tranche changes in size, price, and decay speed compared to the last.</td></tr>
+            <tr><td>Name and ticker</td><td>Required. How your token shows up everywhere.</td></tr>
+            <tr><td>Number of tokens</td><td>Fixed at 1 billion. Half is sold in the auction and half backs the pool.</td></tr>
+            <tr><td>Description</td><td>Optional. Stored off-chain and shown on your sale page.</td></tr>
+            <tr><td>Project X account</td><td>Optional. Log in with X to prove you own the account, and buyers see it marked as verified on the sale page.</td></tr>
+            <tr><td>Token image</td><td>Optional. PNG, JPG or GIF up to 4MB.</td></tr>
         </tbody>
     </table>
     </div>
 
-    <p>Every setting has a sensible allowed range, so it's hard to create something nonsensical. The launch interface will guide you and show the limits for each field.</p>
+    <h2>Step 2: Sale settings</h2>
+    <figure class="shot">
+        <img src="img/launch-sale-settings.webp" alt="The sale settings section: sale start, opening price, sale length with 1 day, 1 week and 30 days buttons, the amount the sale must raise, and pricing mode" loading="lazy">
+        <figcaption>Sale settings. The box under the sale length tells you how much ETH your sale has to raise to sell out.</figcaption>
+    </figure>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Setting</th><th>What it controls</th></tr></thead>
+        <tbody>
+            <tr><td>Sale start</td><td>How many blocks from now buying opens. Leave it blank to open as soon as the launch lands. A delay lets you announce the sale in advance.</td></tr>
+            <tr><td>Opening price</td><td>The price per token at the start of the first batch, in ETH.</td></tr>
+            <tr><td>Sale length</td><td>Between 1 and 30 days, set in blocks. There are buttons for 1 day, 1 week and 30 days. If the sale hasn't sold out by then, every buyer is refunded.</td></tr>
+            <tr><td>Pricing mode</td><td>Pay at buy time, or batch average. It only makes a difference when decay is above zero. See <a href="batch-average.html">Batch-average pricing</a>.</td></tr>
+        </tbody>
+    </table>
+    </div>
 
     <div class="callout warn">
-        <span class="callout-label">What you don't control</span>
-        <p>Fees, the liquidity destination, and the 50/50 split are all set by the protocol, not by you. This is deliberate &mdash; it means buyers can trust those parts are the same for every launch.</p>
+        <span class="callout-label">Check what your sale has to raise</span>
+        <p>The form shows how much ETH the sale must raise to sell out, and how much of that is the last batch. At the default settings that's about 169 ETH across 10 batches, with 74% in the last one. Anything less than a full sellout refunds every buyer, so set a target your community can actually reach.</p>
     </div>
 
-    <h2>Step 3 — Fund the auction</h2>
-    <p>Creating the auction doesn't put any tokens into it. After it exists, you transfer your launch supply into the auction. The launch interface will show you the exact balance the auction has received so you can confirm it's correct before moving on.</p>
-
-    <div class="callout danger">
-        <span class="callout-label">Send the right amount</span>
-        <p>The 50/50 split is calculated from whatever balance is actually in the auction when you confirm it &mdash; not from what you intended to send. Double-check the displayed balance before the next step.</p>
+    <h2>Step 3: Advanced settings</h2>
+    <p>These are filled in with the defaults. You only need to open them if you want a different shape of sale.</p>
+    <figure class="shot">
+        <img src="img/launch-advanced.webp" alt="The advanced configuration section with first batch size, minimum price, price decay, batch size growth, batch price growth, decay growth and launch price multiplier" loading="lazy">
+        <figcaption>Advanced settings, filled in with the defaults. Each one shows its allowed range underneath.</figcaption>
+    </figure>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Setting</th><th>What it controls</th><th>Default</th></tr></thead>
+        <tbody>
+            <tr><td>First batch size</td><td>How many tokens are in the first batch.</td><td>500,000</td></tr>
+            <tr><td>Minimum price</td><td>The floor. Decay can never take the price below this, and it can't be above your opening price.</td><td>Same as the opening price</td></tr>
+            <tr><td>Price decay</td><td>How much the price drops each block inside a batch while nobody buys. Zero keeps it flat.</td><td>0</td></tr>
+            <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 0.5x to 3x.</td><td>2x</td></tr>
+            <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of where the last batch closed. 0.5x to 3x.</td><td>2x</td></tr>
+            <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>2x</td></tr>
+            <tr><td>Launch price multiplier</td><td>Opens the trading pool above the average sale price by putting fewer tokens in and burning the rest. 1x to 3x. See <a href="the-pool.html">The pool at sellout</a>.</td><td>1x, burns nothing</td></tr>
+        </tbody>
+    </table>
     </div>
-
-    <h2>Step 4 — Configure the inventory</h2>
-    <p>This is a one-click confirmation. It locks in the split: half of the funded supply becomes the sale allocation, half becomes the liquidity reserve. After this point the split is fixed and cannot be redone.</p>
-    <p>If the auction's start point has already passed, it goes live immediately. If you set a future start, it waits until then.</p>
 
     <div class="callout tip">
-        <span class="callout-label">Made a mistake?</span>
-        <p>If you funded the wrong amount, you can withdraw the tokens back out &mdash; but <strong>only before</strong> you configure the inventory. Once configured, withdrawal is closed. Use this escape hatch if the displayed balance looks wrong.</p>
+        <span class="callout-label">What you don't control</span>
+        <p>Fees, the 50/50 split, the 1 billion supply and where the liquidity goes are all fixed by the protocol. That's deliberate: buyers can rely on those being the same for every launch.</p>
     </div>
 
-    <h2>Step 5 — The auction runs</h2>
-    <p>From here, you don't need to do anything. Buyers commit funds, tranches roll over, and the price moves according to the rules you set. You can watch progress, but the sale runs on its own.</p>
+    <h2>Step 4: Launch</h2>
+    <figure class="shot">
+        <img src="img/launch-submit.webp" alt="The Launch Token button with the estimated network fee, a note that the wallet signs the whole launch once, and the fees at settlement" loading="lazy">
+        <figcaption>If your wallet can batch transactions, you sign the whole launch once.</figcaption>
+    </figure>
+    <p>Press <strong>Launch Token</strong>. If your wallet can batch transactions, you sign once and that one signature creates your token, creates the sale, funds it with the full supply and opens it.</p>
+    <p>If your wallet can't batch, the launch takes four confirmations instead. If one gets interrupted, come back to the form and you can pick up where you left off. Until you finish, the sale shows as <strong>NOT FUNDED</strong> and nobody can buy.</p>
+    <p>If you set a start in the future, the sale shows as <strong>SOON</strong> until buying opens.</p>
 
-    <h2>Step 6 — Settlement happens automatically</h2>
-    <p>When the sale allocation is fully sold, settlement fires in the same transaction as the final purchase. The proceeds and the liquidity reserve are placed into a trading pool, and buyers can begin claiming their tokens.</p>
-    <p>In the rare case the automatic step fails for an external reason, anyone can trigger a retry &mdash; the sale itself remains valid. You don't lose the raise.</p>
+    <h2>While the sale runs</h2>
+    <p>There's nothing for you to do. Buyers commit, batches roll over, and the price follows the rules you set. You can watch progress on your sale page. You hold no tokens while the sale runs, and if you buy in your own sale you pay the same price as everyone else.</p>
 
-    <h2>After the launch</h2>
-    <p>Once settled, the token has a live market and the launch is essentially done. What happens to the liquidity position and any ongoing rewards is covered in <a href="after-the-sale.html">After the sale</a>.</p>
+    <h2>How it ends</h2>
+    <p>If the sale sells out, the pool is created in the same transaction as the final buy and buyers can claim. You receive 2.5% of the supply in tokens at that point. You don't receive any ETH from the sale: it all goes into the pool apart from the platform's 5%. See <a href="fees.html">Fees and who gets what</a>.</p>
+    <p>If the sale doesn't sell out by its deadline, buying stops and everyone is refunded in full. No pool is created and no fees are taken.</p>
 
-    <div class="callout">
+    <div class="callout warn">
         <span class="callout-label">Reality check</span>
-        <p>A successful launch needs <em>demand</em>. punk.fun gives you fair mechanics and an automatic market, but it can't create buyers. In this version an auction only completes by selling out &mdash; if there isn't enough interest, the sale simply won't finish. Plan your community and marketing before you launch.</p>
+        <p>A launch needs demand. punk.fun gives you fair mechanics and an automatic market, but it can't find buyers for you. A sale that doesn't sell out refunds everyone and leaves you where you started, minus gas. Line up your community before you launch.</p>
     </div>
 
     <div class="page-nav">
-        <a href="fun-vs-punk.html">
+        <a href="after-the-sale.html">
             <span class="dir">Previous</span>
-            <span class="ttl">&larr; FUN vs PUNK</span>
+            <span class="ttl">&larr; Claiming and after the sale</span>
         </a>
-        <a class="next" href="buy-in-an-auction.html">
+        <a class="next" href="fees.html">
             <span class="dir">Next</span>
-            <span class="ttl">Buy in an auction &rarr;</span>
+            <span class="ttl">Fees and who gets what &rarr;</span>
         </a>
     </div>
 
     <footer>
-        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
     </footer>
 </main>
 
