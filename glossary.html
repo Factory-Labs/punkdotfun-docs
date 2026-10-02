@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glossary — punk.fun</title>
-<meta name="description" content="Plain-English definitions of punk.fun terms.">
+<title>Glossary | punk.fun docs</title>
+<meta name="description" content="Plain-English definitions of the terms used on punk.fun.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,16 +21,25 @@
             <div class="nav-group-title">Start here</div>
             <a class="nav-link" href="index.html">Overview</a>
             <a class="nav-link" href="how-it-works.html">How it works</a>
-            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Guides</div>
-            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
-            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
         </div>
         <div class="nav-group">
             <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
             <a class="nav-link" href="glossary.html">Glossary</a>
             <a class="nav-link" href="faq.html">FAQ</a>
         </div>
@@ -38,42 +47,45 @@
 </aside>
 
 <main class="content">
-    <div class="eyebrow">Reference</div>
+<div class="eyebrow">Reference</div>
     <h1>Glossary</h1>
-    <p class="lead">Plain-English definitions of the terms used across this documentation. If a word in another page is unfamiliar, it's probably here.</p>
+    <p class="lead">The terms you'll see on punk.fun and in these docs, in plain English.</p>
 
     <div class="table-wrap">
     <table>
         <thead><tr><th>Term</th><th>What it means</th></tr></thead>
         <tbody>
-            <tr><td><strong>Auction</strong></td><td>The sale process for a launch. punk.fun uses a falling-price (Dutch) auction.</td></tr>
-            <tr><td><strong>Claim</strong></td><td>The action a buyer takes after the sale ends to collect the tokens they committed to during the auction.</td></tr>
-            <tr><td><strong>Commit</strong></td><td>Buying in the auction. You commit funds and lock in an entitlement to tokens; you receive the tokens later by claiming.</td></tr>
-            <tr><td><strong>Decay</strong></td><td>The steady fall in price while a tranche waits for buyers.</td></tr>
-            <tr><td><strong>Dutch auction</strong></td><td>An auction where the price starts high and falls over time, rather than buyers bidding upward. Buyers purchase when the falling price reaches a level they're happy with.</td></tr>
-            <tr><td><strong>FUN launch</strong></td><td>A launch using a token created through punk.fun's own token creator. The fast, from-scratch path.</td></tr>
-            <tr><td><strong>Fixed supply</strong></td><td>A token whose total amount can never increase. No more can be minted after creation.</td></tr>
-            <tr><td><strong>Launcher</strong></td><td>The person running a launch &mdash; creating the token and the auction.</td></tr>
-            <tr><td><strong>Liquidity</strong></td><td>The funds and tokens placed in a trading pool that let people buy and sell the token.</td></tr>
-            <tr><td><strong>Liquidity reserve</strong></td><td>The half of the launch supply held back from the auction and later used to seed the trading pool.</td></tr>
-            <tr><td><strong>Minimum price</strong></td><td>A floor price set by the launcher. The auction price never decays below it.</td></tr>
-            <tr><td><strong>PUNK launch</strong></td><td>A launch that uses a token the launcher already has ("bring your own token"). On the roadmap &mdash; not yet available.</td></tr>
-            <tr><td><strong>Protocol</strong></td><td>The punk.fun system itself &mdash; the set of rules and contracts every launch runs on.</td></tr>
-            <tr><td><strong>Protocol fee</strong></td><td>A small fee taken at settlement from the raised funds and the liquidity reserve. It never comes out of buyers' tokens.</td></tr>
-            <tr><td><strong>Sale allocation</strong></td><td>The half of the launch supply that is actually sold to buyers in the auction.</td></tr>
-            <tr><td><strong>Settlement</strong></td><td>The automatic process, triggered by a sell-out, that takes fees, creates the trading pool, and opens claims.</td></tr>
-            <tr><td><strong>Slippage protection</strong></td><td>A maximum price a buyer can set on a buy, so the purchase is rejected rather than filled if the price has risen too far.</td></tr>
-            <tr><td><strong>Total supply</strong></td><td>The entire amount of a token that exists. With a fixed-supply token, this never changes.</td></tr>
-            <tr><td><strong>Tranche</strong></td><td>A batch of tokens in the auction sold at its own price band. When one tranche sells out, the next begins &mdash; usually larger and starting higher.</td></tr>
-            <tr><td><strong>Trading pool</strong></td><td>The market created at settlement where the token can be freely bought and sold afterwards.</td></tr>
+            <tr><td><strong>Auction</strong></td><td>The sale for a launch. It runs in batches at rising prices.</td></tr>
+            <tr><td><strong>Batch</strong></td><td>A block of tokens sold at its own price. The app also calls it a tranche, shown as T1, T2 and so on. When one sells out, the next opens.</td></tr>
+            <tr><td><strong>Batch average</strong></td><td>A pricing mode where everyone in a batch is allocated at that batch's average price.</td></tr>
+            <tr><td><strong>Buy</strong></td><td>A purchase at the current price. It fills straight away. There's no bidding and nobody can outbid you.</td></tr>
+            <tr><td><strong>Buy at any price</strong></td><td>An option on the buy panel that removes the price cap, so your buy goes through even if the batch sells out first.</td></tr>
+            <tr><td><strong>Claim</strong></td><td>Collecting the tokens you bought, once the sale has sold out.</td></tr>
+            <tr><td><strong>Commit</strong></td><td>What a buy does: you send ETH now and claim tokens later.</td></tr>
+            <tr><td><strong>Deadline</strong></td><td>When buying stops if the sale hasn't sold out. Set at launch, between 1 and 30 days.</td></tr>
+            <tr><td><strong>Decay</strong></td><td>How much the price drops each block inside a batch, down to the minimum price.</td></tr>
+            <tr><td><strong>Fixed supply</strong></td><td>1 billion tokens, and no way to mint more.</td></tr>
+            <tr><td><strong>Launch price multiplier</strong></td><td>An optional setting that opens the pool above the average sale price by burning some of the pool's tokens. 1x to 3x.</td></tr>
+            <tr><td><strong>Launcher</strong></td><td>The person running the launch.</td></tr>
+            <tr><td><strong>Launcher fee</strong></td><td>5% of the liquidity reserve, which is 2.5% of supply, paid to the launcher in tokens at sellout.</td></tr>
+            <tr><td><strong>Liquidity reserve</strong></td><td>The half of the supply held back to seed the pool.</td></tr>
+            <tr><td><strong>LP tokens</strong></td><td>The tokens that represent ownership of the pool. On punk.fun they go to a dead address, so nobody owns the pool.</td></tr>
+            <tr><td><strong>Max price</strong></td><td>The most you'll pay per token on a buy. By default it's the open batch's price.</td></tr>
+            <tr><td><strong>Minimum price</strong></td><td>The floor the price never decays below.</td></tr>
+            <tr><td><strong>Platform fee</strong></td><td>5% of the ETH raised, taken at sellout.</td></tr>
+            <tr><td><strong>Pool opening price</strong></td><td>The price trading starts at: the average price paid across the sale, times the launch price multiplier.</td></tr>
+            <tr><td><strong>Refund</strong></td><td>Getting back exactly the ETH you paid when a sale misses its deadline.</td></tr>
+            <tr><td><strong>Sale allocation</strong></td><td>The half of the supply sold to buyers.</td></tr>
+            <tr><td><strong>Settlement</strong></td><td>What happens at sellout: fees taken, pool created, claims opened. All inside the final buy.</td></tr>
+            <tr><td><strong>Trading pool</strong></td><td>The Uniswap market created at sellout.</td></tr>
         </tbody>
     </table>
     </div>
 
     <div class="page-nav">
-        <a href="after-the-sale.html">
+        <a href="sale-states.html">
             <span class="dir">Previous</span>
-            <span class="ttl">&larr; After the sale</span>
+            <span class="ttl">&larr; Sale states</span>
         </a>
         <a class="next" href="faq.html">
             <span class="dir">Next</span>
@@ -82,7 +94,7 @@
     </div>
 
     <footer>
-        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
     </footer>
 </main>
 

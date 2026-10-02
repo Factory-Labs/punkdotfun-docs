@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>After the sale — punk.fun</title>
-<meta name="description" content="What happens once a punk.fun auction sells out: settlement, the trading pool, fees, and claims.">
+<title>Claiming and after the sale | punk.fun docs</title>
+<meta name="description" content="What happens when a punk.fun sale sells out: fees, the Uniswap pool, burned liquidity, and claiming your tokens.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,16 +21,25 @@
             <div class="nav-group-title">Start here</div>
             <a class="nav-link" href="index.html">Overview</a>
             <a class="nav-link" href="how-it-works.html">How it works</a>
-            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Guides</div>
-            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
-            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
         </div>
         <div class="nav-group">
             <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
             <a class="nav-link" href="glossary.html">Glossary</a>
             <a class="nav-link" href="faq.html">FAQ</a>
         </div>
@@ -38,78 +47,66 @@
 </aside>
 
 <main class="content">
-    <div class="eyebrow">Guide</div>
-    <h1>After the sale</h1>
-    <p class="lead">When an auction sells out, a sequence of automatic steps turns the raise into a real, tradeable market. Here's exactly what happens, where the money and tokens go, and what each side ends up with.</p>
+<div class="eyebrow">Guide &middot; For buyers</div>
+    <h1>Claiming and after the sale</h1>
+    <p class="lead">When a sale sells out, everything below happens inside that final buy. Nobody has to press anything except to claim their own tokens.</p>
 
-    <h2>Settlement, step by step</h2>
-    <p>Settlement begins the instant the sale allocation is fully sold &mdash; it runs inside the same transaction as the final purchase. No one has to press a button.</p>
     <ol class="steps">
-        <li><strong>Fees are calculated</strong>A small protocol fee is taken from two things: the funds raised, and the liquidity reserve tokens. The fee rate is the same for both.</li>
-        <li><strong>The trading pool is seeded</strong>What's left after fees &mdash; the remaining funds and the remaining reserve tokens &mdash; is placed together into a trading pool. This pool is what makes the token tradeable.</li>
-        <li><strong>Claims open</strong>Buyers can now collect the tokens they committed to during the auction.</li>
+        <li><strong>Fees are taken</strong>5% of the ETH goes to the platform, and 5% of the reserve tokens (2.5% of supply) go to the launcher.</li>
+        <li><strong>The pool is seeded</strong>The remaining ETH and reserve tokens are paired in a Uniswap pool.</li>
+        <li><strong>The liquidity is locked for good</strong>The pool's LP tokens are sent to a dead address that nobody controls, so the liquidity can never be withdrawn.</li>
+        <li><strong>Claims open</strong>Buyers can collect their tokens.</li>
     </ol>
 
-    <div class="callout tip">
-        <span class="callout-label">Fees never touch buyer tokens</span>
-        <p>The fee comes only out of the liquidity side &mdash; the raised funds and the reserve. The tokens buyers committed to are kept whole. A buyer always claims exactly what they bought.</p>
-    </div>
+    <figure class="shot wide">
+        <img src="img/sale-soldout.webp" alt="A sold-out sale marked CLAIM, with all four batches filled, a Claim Your Tokens panel and a Trade on Uniswap button" loading="lazy">
+        <figcaption>A sold-out sale. Every batch has filled, the claim panel is open, and there's a link to trade the token on Uniswap.</figcaption>
+    </figure>
 
-    <h2>Where everything ends up</h2>
-    <div class="table-wrap">
-    <table>
-        <thead><tr><th>Asset</th><th>Destination</th></tr></thead>
-        <tbody>
-            <tr><td>Sale allocation tokens</td><td>Claimed by the buyers who committed for them</td></tr>
-            <tr><td>Most of the raised funds</td><td>Into the trading pool as liquidity</td></tr>
-            <tr><td>Most of the liquidity reserve</td><td>Into the trading pool, paired with the funds</td></tr>
-            <tr><td>The protocol fee (funds + tokens)</td><td>To the protocol's designated recipient</td></tr>
-        </tbody>
-    </table>
-    </div>
+    <h2>Claiming</h2>
+    <figure class="shot narrow">
+        <img src="img/claim-panel.webp" alt="The Claim Your Tokens panel showing 150,000,000 DINGO claimable and a Claim button" loading="lazy">
+        <figcaption>One press claims everything you're owed.</figcaption>
+    </figure>
+    <p>One transaction claims everything you're owed. There's no deadline. In a batch-average sale your final amount is set when your batch closes, which has always happened by the time claims open.</p>
+    <p>Your <strong>Profile</strong> page lists everything you can claim or withdraw across all sales, plus your open positions in live ones.</p>
 
-    <h2>If settlement's automatic step fails</h2>
-    <p>Settlement involves an external step &mdash; building the trading pool. If that step fails for any reason, punk.fun is designed so the sale itself <strong>does not</strong> fail. The auction simply waits in a "ready to settle" state, and the settlement can be <strong>retried</strong> by anyone. Once a retry succeeds, claims open as normal. No funds or tokens are lost in this scenario.</p>
+    <figure class="shot wide">
+        <img src="img/profile.webp" alt="The Profile page showing claimable items, open positions and your launches" loading="lazy">
+        <figcaption>Your Profile page, with anything claimable or refundable at the top.</figcaption>
+    </figure>
 
-    <h2>Claiming (buyers)</h2>
-    <p>Once claims are open, each buyer claims their full entitlement in a single action. There's no deadline. See the <a href="buy-in-an-auction.html">buyer guide</a> for the full claim walkthrough.</p>
+    <h2>Trading</h2>
+    <p>Once you've claimed, you can trade the token in its Uniswap pool. The sale page has a <strong>Trade on Uniswap</strong> button that takes you there. Trading opens at the average price paid across the sale, not the last batch's price. <a href="the-pool.html">The pool at sellout</a> explains what that means for you.</p>
 
-    <h2>The liquidity position (launchers &amp; protocol)</h2>
-    <p>The trading pool created at settlement holds real value. The position representing that liquidity is <strong>controlled by the protocol</strong>, not handed to the launcher. This is a deliberate design choice: it removes the launcher's ability to pull the market's liquidity, which is a common failure mode in token launches elsewhere.</p>
-
-    <h3>FUN launches</h3>
-    <p>For a <span class="pill fun">FUN</span> launch, the pooled liquidity is placed into a staking position on the underlying exchange, with the protocol's designated recipient as the beneficiary. That recipient is also where the settlement fees and any small leftover amounts go. Over time, that staked position can earn rewards &mdash; collecting and managing those rewards is an ongoing protocol-side operation, not something the launcher or buyers need to do.</p>
-
-    <h3>PUNK launches <span class="pill soon">Coming soon</span></h3>
-    <p>PUNK launches will run on the same engine, with post-sale assets routed to a protocol-controlled destination. This launch style isn't available yet &mdash; every launch on punk.fun today is a FUN launch, so the FUN behaviour above is what currently applies.</p>
+    <h2>The liquidity</h2>
+    <p>No one holds the pool position: not the launcher, not punk.fun. It can't be withdrawn, staked or moved, and there are no rewards attached to it.</p>
 
     <div class="callout">
-        <span class="callout-label">In short</span>
-        <p>Buyers get their tokens. The market gets its liquidity. The protocol holds the liquidity position so it can't be rugged. Everyone's outcome is fixed by the rules, not by anyone's discretion after the fact.</p>
+        <span class="callout-label">What "unruggable" covers</span>
+        <p>It means the pool's liquidity can't be pulled. It doesn't mean the price can't fall. Anyone holding tokens can sell them into the pool, including the launcher with their 2.5%.</p>
     </div>
 
     <h2>What "done" looks like</h2>
-    <p>After a successful settlement:</p>
     <ul>
-        <li>The token has a live trading pool &mdash; anyone can buy or sell it.</li>
-        <li>Auction buyers can claim, then trade their claimed tokens freely.</li>
-        <li>The launcher's job is complete; there's nothing further they must do.</li>
-        <li>The launch is, in every meaningful sense, finished.</li>
+        <li>The token has a live pool and anyone can trade it.</li>
+        <li>Buyers can claim whenever they like, then trade.</li>
+        <li>The launcher has nothing left to do.</li>
     </ul>
 
     <div class="page-nav">
-        <a href="buy-in-an-auction.html">
+        <a href="refunds.html">
             <span class="dir">Previous</span>
-            <span class="ttl">&larr; Buy in an auction</span>
+            <span class="ttl">&larr; When a sale doesn't sell out</span>
         </a>
-        <a class="next" href="glossary.html">
+        <a class="next" href="launch-a-token.html">
             <span class="dir">Next</span>
-            <span class="ttl">Glossary &rarr;</span>
+            <span class="ttl">Launch a token &rarr;</span>
         </a>
     </div>
 
     <footer>
-        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
     </footer>
 </main>
 

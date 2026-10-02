@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing | punk.fun docs</title>
+<meta name="description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the minimum price, and how to read the auction chart.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Guide &middot; For buyers</div>
+    <h1>Pricing: batches, growth and decay</h1>
+    <p class="lead">A sale doesn't run at one price. It's split into batches, and the price moves in two ways: it steps up at each new batch, and it can drift down inside a batch.</p>
+
+    <figure class="diagram">
+        <img src="img/diagram-sawtooth.svg" alt="The price falls inside each batch and steps up when the next batch opens, never going below the minimum price.">
+    </figure>
+
+    <h2>Batches</h2>
+    <p>The launcher sets the first batch's size and opening price, then two growth settings: how much bigger each batch is than the last, and how each batch's opening price compares to where the previous batch closed. Both can be anywhere from half to three times.</p>
+    <p>With the default settings, each batch is twice the size and twice the price of the one before. That means most of the money is raised in the last few batches. At the defaults, the last batch alone is about three quarters of the total.</p>
+
+    <h2>Decay</h2>
+    <p>If the launcher sets a price decay, the price falls a little every block from the moment the batch opens, until the batch sells out or the price reaches the minimum. Buying doesn't pause it or reset it. Only a new batch resets it.</p>
+    <p>With decay at zero, which is the default, the price is flat inside each batch and only changes when a batch closes.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">There's always a floor</span>
+        <p>The price never decays below the minimum the launcher set, so it can't fall to nothing while a batch waits for buyers.</p>
+    </div>
+
+    <h2>What this means when you buy</h2>
+    <ul>
+        <li>Your buy fills straight away at the current price. There's no bidding and nobody can outbid you.</li>
+        <li>If your buy finishes a batch, the leftover ETH comes back in the same transaction.</li>
+        <li>Your buy is capped at the open batch's price unless you tick Buy at any price.</li>
+        <li>If the sale has decay, waiting can get you a lower price, but the batch may sell out first.</li>
+    </ul>
+
+    <h2>Reading the chart</h2>
+    <figure class="shot wide">
+        <img src="img/chart.webp" alt="The auction history chart with green bars for filled batches, a blue bar for the batch filling now, and a dashed average-paid line" loading="lazy">
+        <figcaption>The chart on a live sale. Three batches have filled and the fourth, in blue, is open now.</figcaption>
+    </figure>
+    <ul>
+        <li><strong>Each bar is a batch.</strong> Its height is the price and its width is its size, so bigger batches are wider.</li>
+        <li><strong>Green bars</strong> have filled. The <strong>blue bar</strong> is the batch you'd buy in now, and it fills up as people buy.</li>
+        <li><strong>The dashed line</strong> is the average price paid so far. That's where trading would open if the sale sold out now. See <a href="the-pool.html">The pool at sellout</a>.</li>
+        <li><strong>The banner</strong> above the chart tells you what just happened, for example that a batch has filled and the next is open.</li>
+        <li>Hover over a bar for its numbers, and use the zoom buttons to look closer.</li>
+    </ul>
+    <p>The <strong>Auction Progress</strong> bar under the price is the share of the 500 million tokens on sale that have been bought. At 100% the sale has sold out.</p>
+
+    <div class="page-nav">
+        <a href="buy-in-an-auction.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Buy in an auction</span>
+        </a>
+        <a class="next" href="batch-average.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Batch-average pricing &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

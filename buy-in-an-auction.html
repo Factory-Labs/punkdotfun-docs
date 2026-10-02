@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buy in an auction — punk.fun</title>
-<meta name="description" content="How buying works in a punk.fun auction: pricing, tranches, committing, and claiming.">
+<title>Buy in an auction | punk.fun docs</title>
+<meta name="description" content="How to buy in a punk.fun sale: how the price moves, the max price cap, claiming your tokens, and what happens if the sale doesn't sell out.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,16 +21,25 @@
             <div class="nav-group-title">Start here</div>
             <a class="nav-link" href="index.html">Overview</a>
             <a class="nav-link" href="how-it-works.html">How it works</a>
-            <a class="nav-link" href="fun-vs-punk.html">FUN vs PUNK<span class="soon-tag">PUNK soon</span></a>
+            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">Guides</div>
-            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
-            <a class="nav-link" href="after-the-sale.html">After the sale</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For launchers</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
         </div>
         <div class="nav-group">
             <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
             <a class="nav-link" href="glossary.html">Glossary</a>
             <a class="nav-link" href="faq.html">FAQ</a>
         </div>
@@ -38,92 +47,90 @@
 </aside>
 
 <main class="content">
-    <div class="eyebrow">Guide &middot; For buyers</div>
+<div class="eyebrow">Guide &middot; For buyers</div>
     <h1>Buy in an auction</h1>
-    <p class="lead">Buying in a punk.fun auction is straightforward, but it works differently from a normal "fixed price" sale. The price falls over time, and you collect your tokens after the sale ends rather than instantly. Here's everything you need to know.</p>
+    <p class="lead">Buying in a punk.fun sale works differently from a normal fixed-price sale. The price moves as batches sell, and you collect your tokens after the sale sells out rather than straight away. Here's what you need to know.</p>
+
+    <h2>Finding a sale</h2>
+    <p>The Explore page lists every launch with a badge showing where it's at. LIVE means you can buy now. The rest are explained on <a href="sale-states.html">Sale states</a>.</p>
+
+    <figure class="shot">
+        <img src="img/explore-list.webp" alt="The All Tokens list on the Explore page, with CLAIM, LIVE, UNSOLD, EXPIRED, SOON and NOT FUNDED badges" loading="lazy">
+        <figcaption>The token list on Explore. Each badge tells you what you can do with that sale right now.</figcaption>
+    </figure>
 
     <h2>How the price works</h2>
-    <p>punk.fun runs a <strong>Dutch auction</strong>: the price starts high and falls. There's no fixed sticker price &mdash; you decide the moment the price is worth it to you, and buy then.</p>
-    <p>The sale is split into batches called <strong>tranches</strong>. Here's the rhythm:</p>
-    <ul>
-        <li>A tranche opens at a set price.</li>
-        <li>While it waits for buyers, the price <strong>falls steadily</strong>, block by block, down toward a minimum floor.</li>
-        <li>When the tranche sells out, the next tranche opens &mdash; usually larger, and starting at a higher price.</li>
-    </ul>
-    <p>The result is a sawtooth pattern: price drifts down, then jumps up at each new tranche. In a quiet launch you can catch low prices; in a busy one, prices climb as tranches roll over quickly.</p>
-
-    <div class="callout tip">
-        <span class="callout-label">There's a price floor</span>
-        <p>The price within a tranche never falls below the launcher's set minimum. It can't decay to zero.</p>
-    </div>
+    <p>The sale is split into batches. The app calls them tranches, so you'll see T1, T2 and so on. A batch opens at a set price. If the launcher set a price decay, the price drifts down block by block towards a floor. When a batch sells out, the next one opens, usually bigger and at a higher price.</p>
+    <p>So the price drifts down, then steps up at each new batch. <a href="pricing.html">Pricing</a> covers this in detail.</p>
 
     <h2>Commit now, claim later</h2>
-    <p>This is the single most important thing to understand. When you buy in the auction:</p>
     <ol class="steps">
-        <li><strong>You commit funds</strong>You send the network's currency and lock in an entitlement to a number of tokens at the current price.</li>
-        <li><strong>You do not receive tokens yet</strong>Your tokens are recorded as owed to you, but they aren't transferred during the auction.</li>
-        <li><strong>You claim after settlement</strong>Once the whole sale finishes and settles, you come back and claim &mdash; that's when the tokens land in your wallet.</li>
+        <li><strong>You commit ETH</strong>You send ETH and lock in your share of tokens at the current price.</li>
+        <li><strong>You don't get tokens yet</strong>They're recorded as owed to you, but they stay in the sale until it finishes.</li>
+        <li><strong>You claim once it sells out</strong>When the last token is bought, claims open and you collect everything you're owed in one go.</li>
     </ol>
-    <p>This is normal and applies to everyone equally. It keeps the auction's accounting clean and predictable.</p>
+    <p>This applies to everyone, the launcher included. The launcher holds no tokens while the sale runs.</p>
 
     <h2>Placing a buy</h2>
-    <p>When you buy, you send an amount of the network's currency. The auction works out how many tokens that buys at the current price and records them to you. Two practical things to know:</p>
+    <figure class="shot narrow">
+        <img src="img/buy-panel.webp" alt="The Buy Tokens panel with the current price, an amount to spend, quick amounts, the Buy at any price option and the Buy button" loading="lazy">
+        <figcaption>The Buy Tokens panel. Enter the ETH you want to spend, or tap one of the quick amounts. The network fee is estimated before you sign.</figcaption>
+    </figure>
+    <p>You enter an amount of ETH. The sale works out how many tokens that buys at the current price and records them against your wallet. Two things are worth knowing.</p>
 
-    <h3>Slippage protection</h3>
-    <p>When you submit a buy you can set a <strong>maximum price</strong> you're willing to pay per token. If the price has moved above that by the time your transaction is processed (for example, a tranche rolled over), the buy is safely rejected instead of going through at a worse price. Setting this is recommended.</p>
+    <h3>Your buy is capped at this batch's price</h3>
+    <p>By default your buy only goes through in the batch that's open now, at up to its current price. If that batch sells out before your transaction lands, your buy is refused rather than filled at the next batch's higher price. Nothing is spent except gas.</p>
+    <p>If you'd rather it went through whatever the price, tick <strong>Buy at any price</strong>. Then if the batch sells out first, your buy fills at whatever the next batch costs.</p>
 
-    <h3>Buying across a tranche boundary</h3>
-    <p>If your buy is larger than what's left in the current tranche, you get what remains of that tranche, and the <strong>excess funds are refunded</strong> to you automatically. You don't accidentally overpay or get pulled into the next tranche.</p>
+    <h3>Buying across a batch boundary</h3>
+    <p>If your buy is bigger than what's left in the current batch, you get what remains and the leftover ETH comes straight back to you in the same transaction. You're never pulled into the next batch by accident.</p>
 
-    <div class="callout warn">
-        <span class="callout-label">About the preview</span>
-        <p>An auction can show you a preview of what a given amount will buy. The preview reflects the <em>current tranche only</em> &mdash; it doesn't simulate rolling into the next one. If your buy would spill across a boundary, treat the preview as an estimate.</p>
+    <div class="callout">
+        <span class="callout-label">The buy that finishes the sale costs more gas</span>
+        <p>If your buy takes the last token, it also creates the trading pool, so the network fee is higher than an ordinary buy. The panel warns you when this applies.</p>
     </div>
 
     <h2>Claiming your tokens</h2>
-    <p>After the auction sells out and settlement succeeds, claiming opens. Claiming is simple: one action transfers your full entitlement to your wallet at once. There's nothing to calculate &mdash; you receive everything you committed to during the auction.</p>
-    <p>You can claim any time after settlement; there's no rush and no deadline to claim.</p>
+    <p>Once the sale has sold out, the panel changes to <strong>Claim Your Tokens</strong>. One transaction sends everything you're owed to your wallet. There's no deadline and no rush. <a href="after-the-sale.html">Claiming and after the sale</a> has more.</p>
+    <p>In a batch-average sale, the number of tokens you see when you buy is an estimate until your batch closes. <a href="batch-average.html">Batch-average pricing</a> explains why.</p>
+
+    <h2>If the sale doesn't sell out</h2>
+    <p>Every sale has a deadline. If it passes without the sale selling out, buying stops and you can withdraw exactly the ETH you paid, with no time limit. <a href="refunds.html">When a sale doesn't sell out</a> has the detail.</p>
 
     <h2>What can go wrong</h2>
     <div class="table-wrap">
     <table>
         <thead><tr><th>Situation</th><th>What happens</th></tr></thead>
         <tbody>
-            <tr><td>Price moved above your max</td><td>Your buy is rejected. Nothing is spent. Try again at the new price.</td></tr>
-            <tr><td>Your buy exceeds the tranche</td><td>You get what's left of the tranche; the rest of your funds are refunded.</td></tr>
-            <tr><td>Settlement's automatic step fails</td><td>The sale still stands. Anyone can retry settlement. Claims open once it succeeds.</td></tr>
-            <tr><td>The auction never sells out</td><td>It stays open. There is no expiry and, in this version, <strong>no refund path</strong> for committed funds. See the warning below.</td></tr>
+            <tr><td>The batch sells out before your buy lands</td><td>Your buy is refused. Only gas is spent. Try again at the new price, or tick Buy at any price.</td></tr>
+            <tr><td>Your buy is bigger than what's left in the batch</td><td>You get what's left and the extra ETH comes back in the same transaction.</td></tr>
+            <tr><td>The sale doesn't sell out by its deadline</td><td>Buying stops and you withdraw exactly what you paid.</td></tr>
+            <tr><td>The final buy can't create the pool</td><td>That buy is rejected and the sale stays open. Nothing is left half-finished.</td></tr>
         </tbody>
     </table>
     </div>
 
-    <div class="callout danger">
-        <span class="callout-label">Read this before buying</span>
-        <p>An auction completes <strong>only</strong> by selling its full sale allocation. There is no timer that ends it and no built-in way to reclaim committed funds if a sale stalls. If you commit to a launch that never sells out, those funds can stay committed indefinitely. Only buy into launches you believe will complete, and only with funds you can afford to lose.</p>
-    </div>
-
-    <h2>Quick checklist</h2>
+    <h2>Before you buy</h2>
     <ul>
-        <li>Understand you're <strong>committing</strong> funds, then <strong>claiming</strong> tokens later.</li>
-        <li>Set a sensible <strong>maximum price</strong> for slippage protection.</li>
-        <li>Expect a <strong>refund</strong> if your buy overshoots a tranche.</li>
-        <li>Remember the price <strong>falls</strong> within a tranche &mdash; waiting can mean a better price, but a tranche can also sell out before you act.</li>
-        <li>Know the <strong>completion rule</strong>: sells out, or stays open. There's no expiry refund.</li>
+        <li>You're committing ETH now and claiming tokens later.</li>
+        <li>Later batches cost more than earlier ones.</li>
+        <li>Trading opens at the average price paid across the whole sale, so a late batch can start below what it paid. See <a href="the-pool.html">The pool at sellout</a>.</li>
+        <li>A sale either sells out and trades, or misses its deadline and refunds. Once it sells out, there are no refunds.</li>
     </ul>
 
     <div class="page-nav">
-        <a href="launch-a-token.html">
+        <a href="punk.html">
             <span class="dir">Previous</span>
-            <span class="ttl">&larr; Launch a token</span>
+            <span class="ttl">&larr; PUNK</span>
         </a>
-        <a class="next" href="after-the-sale.html">
+        <a class="next" href="pricing.html">
             <span class="dir">Next</span>
-            <span class="ttl">After the sale &rarr;</span>
+            <span class="ttl">Pricing &rarr;</span>
         </a>
     </div>
 
     <footer>
-        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
     </footer>
 </main>
 

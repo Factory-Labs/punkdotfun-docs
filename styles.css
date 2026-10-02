@@ -482,3 +482,33 @@ footer a { color: var(--text-dim); }
     h1 { font-size: 1.75rem; }
     .card-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- screenshots and diagrams ---------- */
+figure { margin: 1.6rem 0 1.8rem; }
+figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+figure.shot img { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35); }
+figure.shot.narrow img { max-width: 380px; }
+figure.diagram img { width: 100%; border-color: transparent; }
+figcaption {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    margin-top: 0.6rem;
+    line-height: 1.55;
+}
+
+/* ---------- sale state badges, matching the app ---------- */
+.pill.st-soon  { color: var(--c-orange); border-color: rgba(236,159,48,0.45); background: rgba(236,159,48,0.08); }
+.pill.st-live  { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
+.pill.st-claim { color: var(--c-blue); border-color: rgba(95,190,245,0.45); background: rgba(95,190,245,0.08); }
+.pill.st-bad   { color: var(--red); border-color: rgba(246,84,61,0.45); background: rgba(246,84,61,0.08); }
+.pill.st-grey  { color: var(--text-dim); }
+
+@media (max-width: 860px) {
+    figure.shot.narrow img { max-width: 100%; }
+}
