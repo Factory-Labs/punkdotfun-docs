@@ -14,7 +14,7 @@
     --bg-card: #262626;
     --border: #363636;
     --border-bright: #484848;
-    --text: #d6d6d0;          /* brand off-white */
+    --text: #d6d6d6;          /* brand off-white */
     --text-dim: #989890;
     --text-faint: #6a6a64;
     --accent: #7ed760;        /* Green Apple — primary brand */
@@ -25,9 +25,11 @@
     --c-green:  #7ed760;      /* primary / CTAs / active */
     --c-blue:   #5fbef5;      /* Blue Raspberry — links, secondary */
     --c-lime:   #e5f4ad;      /* highlight / tags / glow */
-    --c-orange: #ec9f30;      /* Orange Sunshine — special moments */
-    --c-purple: #9d5cd0;      /* Purple Haze — flavour / badges */
-    --c-yellow: #f1f152;      /* Lemondrop — small spice */
+    --c-orange: #ec9750;      /* Orange Sunshine — warnings, special moments */
+    --c-purple: #985ce6;      /* Purple Haze — hover, tags, badges */
+    --c-yellow: #f7f752;      /* Lemondrop — small spice */
+    --c-pink:   #ed74ed;      /* Bubblegum — tags, highlights, glow */
+    --c-grey:   #a8b0b7;      /* brand cool grey */
     --blue: #5fbef5;
     --green: #7ed760;
     --red: #f6543d;
@@ -357,8 +359,8 @@ tr:hover td { background: var(--accent-soft); }
 .pill.punk { color: var(--c-blue); border-color: rgba(95,190,245,0.4); background: rgba(95,190,245,0.08); }
 .pill.soon {
     color: var(--c-purple);
-    border-color: rgba(157,92,208,0.45);
-    background: rgba(157,92,208,0.08);
+    border-color: rgba(152,92,230,0.45);
+    background: rgba(152,92,230,0.08);
 }
 
 /* ---------- hero (index) ---------- */
@@ -503,7 +505,7 @@ figcaption {
 }
 
 /* ---------- sale state badges, matching the app ---------- */
-.pill.st-soon  { color: var(--c-orange); border-color: rgba(236,159,48,0.45); background: rgba(236,159,48,0.08); }
+.pill.st-soon  { color: var(--c-orange); border-color: rgba(236,151,80,0.45); background: rgba(236,151,80,0.08); }
 .pill.st-live  { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
 .pill.st-claim { color: var(--c-blue); border-color: rgba(95,190,245,0.45); background: rgba(95,190,245,0.08); }
 .pill.st-bad   { color: var(--red); border-color: rgba(246,84,61,0.45); background: rgba(246,84,61,0.08); }
@@ -511,4 +513,13 @@ figcaption {
 
 @media (max-width: 860px) {
     figure.shot.narrow img { max-width: 100%; }
+}
+
+/* ---------- brand assets ---------- */
+.brand-logo { display: block; width: 200px; max-width: 100%; height: auto; margin-bottom: 0.45rem; }
+.hero-beads { display: block; width: 100%; height: auto; margin: 0 0 2rem; }
+.beads-strip { display: block; width: 100%; height: auto; margin-top: 3rem; opacity: 0.9; }
+@media (max-width: 860px) {
+    .brand-logo { width: 160px; }
+    .sidebar .brand-sub { margin-bottom: 0; }
 }
