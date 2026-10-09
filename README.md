@@ -9,7 +9,7 @@ step, no dependencies, no framework. It works the moment the files are served.
 |------|---------|
 | `index.html` | Overview / home |
 | `how-it-works.html` | Full launch lifecycle |
-| `punk.html` | PUNK, coming soon |
+| `punk.html` | Punk, coming soon |
 | `buy-in-an-auction.html` | Buyer guide |
 | `pricing.html` | Batches, growth, decay, reading the chart |
 | `refunds.html` | When a sale doesn't sell out |
