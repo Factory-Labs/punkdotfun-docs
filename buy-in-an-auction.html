@@ -27,7 +27,6 @@
             <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
             <a class="nav-link" href="pricing.html">Pricing</a>
-            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
             <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
             <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
         </div>
@@ -76,11 +75,14 @@
         <img src="img/buy-panel.webp" alt="The Buy Tokens panel with the current price, an amount to spend, quick amounts, the Buy at any price option and the Buy button" loading="lazy">
         <figcaption>The Buy Tokens panel. Enter the ETH you want to spend, or tap one of the quick amounts. The network fee is estimated before you sign.</figcaption>
     </figure>
-    <p>You enter an amount of ETH. The sale works out how many tokens that buys at the current price and records them against your wallet. Two things are worth knowing.</p>
+    <p>You enter an amount of ETH. The sale works out how many tokens that buys at the current price and records them against your wallet. That number of tokens is fixed from then on. Three things are worth knowing.</p>
 
     <h3>Your buy is capped at this batch's price</h3>
     <p>By default your buy only goes through in the batch that's open now, at up to its current price. If that batch sells out before your transaction lands, your buy is refused rather than filled at the next batch's higher price. Nothing is spent except gas.</p>
     <p>If you'd rather it went through whatever the price, tick <strong>Buy at any price</strong>. Then if the batch sells out first, your buy fills at whatever the next batch costs.</p>
+
+    <h3>You end up paying the batch's final price</h3>
+    <p>Everyone in a batch pays the price the batch sold out at. If the price decayed after you bought, you keep your tokens and get the difference back in ETH once the sale sells out. <a href="pricing.html#one-price">Pricing</a> has a worked example.</p>
 
     <h3>Buying across a batch boundary</h3>
     <p>If your buy is bigger than what's left in the current batch, you get what remains and the leftover ETH comes straight back to you in the same transaction. You're never pulled into the next batch by accident.</p>
@@ -92,7 +94,7 @@
 
     <h2>Claiming your tokens</h2>
     <p>Once the sale has sold out, the panel changes to <strong>Claim Your Tokens</strong>. One transaction sends everything you're owed to your wallet. There's no deadline and no rush. <a href="after-the-sale.html">Claiming and after the sale</a> has more.</p>
-    <p>In a batch-average sale, the number of tokens you see when you buy is an estimate until your batch closes. <a href="batch-average.html">Batch-average pricing</a> explains why.</p>
+    <p>If you're owed ETH back because your batch's price fell after you bought, you collect that once the sale has sold out too. It's separate from claiming your tokens.</p>
 
     <h2>If the sale doesn't sell out</h2>
     <p>Every sale has a deadline. If it passes without the sale selling out, buying stops and you can withdraw exactly the ETH you paid, with no time limit. <a href="refunds.html">When a sale doesn't sell out</a> has the detail.</p>
@@ -114,7 +116,7 @@
     <ul>
         <li>You're committing ETH now and claiming tokens later.</li>
         <li>Later batches cost more than earlier ones.</li>
-        <li>Trading opens at the average price paid across the whole sale, so a late batch can start below what it paid. See <a href="the-pool.html">The pool at sellout</a>.</li>
+        <li>Trading opens at roughly the average price paid across the whole sale, so a late batch can start below what it paid. See <a href="the-pool.html">The pool at sellout</a>.</li>
         <li>A sale either sells out and trades, or misses its deadline and refunds. Once it sells out, there are no refunds.</li>
     </ul>
 

@@ -12,7 +12,6 @@ step, no dependencies, no framework. It works the moment the files are served.
 | `punk.html` | PUNK, coming soon |
 | `buy-in-an-auction.html` | Buyer guide |
 | `pricing.html` | Batches, growth, decay, reading the chart |
-| `batch-average.html` | The two pricing modes |
 | `refunds.html` | When a sale doesn't sell out |
 | `after-the-sale.html` | Claiming, the pool, trading |
 | `launch-a-token.html` | Launcher guide, every form setting |
@@ -22,6 +21,7 @@ step, no dependencies, no framework. It works the moment the files are served.
 | `glossary.html` | Term definitions |
 | `faq.html` | Frequently asked questions |
 | `fun-vs-punk.html` | Redirect to `punk.html`, kept so old links work |
+| `batch-average.html` | Redirect to the one-price section of `pricing.html`; batch-average mode was removed from the contracts |
 | `img/` | Screenshots from the alpha (`.webp`) and diagrams (`.svg`) |
 | `styles.css` / `app.js` | Shared styling and the mobile-nav script |
 
