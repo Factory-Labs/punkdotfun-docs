@@ -27,7 +27,6 @@
             <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
             <a class="nav-link" href="pricing.html">Pricing</a>
-            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
             <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
             <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
         </div>
@@ -74,7 +73,7 @@
 
     <h2>Step 2: Sale settings</h2>
     <figure class="shot">
-        <img src="img/launch-sale-settings.webp" alt="The sale settings section: sale start, opening price, sale length with 1 day, 1 week and 30 days buttons, the amount the sale must raise, and pricing mode" loading="lazy">
+        <img src="img/launch-sale-settings.webp" alt="The sale settings section: sale start, opening price, sale length with 1 day, 1 week and 30 days buttons, and the amount the sale must raise" loading="lazy">
         <figcaption>Sale settings. The box under the sale length tells you how much ETH your sale has to raise to sell out.</figcaption>
     </figure>
     <div class="table-wrap">
@@ -84,7 +83,6 @@
             <tr><td>Sale start</td><td>How many blocks from now buying opens. Leave it blank to open as soon as the launch lands. A delay lets you announce the sale in advance.</td></tr>
             <tr><td>Opening price</td><td>The price per token at the start of the first batch, in ETH.</td></tr>
             <tr><td>Sale length</td><td>Between 1 and 30 days, set in blocks. There are buttons for 1 day, 1 week and 30 days. If the sale hasn't sold out by then, every buyer is refunded.</td></tr>
-            <tr><td>Pricing mode</td><td>Pay at buy time, or batch average. It only makes a difference when decay is above zero. See <a href="batch-average.html">Batch-average pricing</a>.</td></tr>
         </tbody>
     </table>
     </div>
@@ -108,8 +106,9 @@
             <tr><td>Minimum price</td><td>The floor. Decay can never take the price below this, and it can't be above your opening price.</td><td>Same as the opening price</td></tr>
             <tr><td>Price decay</td><td>How much the price drops each block inside a batch while nobody buys. Zero keeps it flat.</td><td>0</td></tr>
             <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 0.5x to 3x.</td><td>2x</td></tr>
-            <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of where the last batch closed. 0.5x to 3x.</td><td>2x</td></tr>
+            <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of the average price paid in the batch before. Never below the minimum price. 0.5x to 3x.</td><td>2x</td></tr>
             <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>2x</td></tr>
+            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply. See <a href="fees.html">Fees and who gets what</a>.</td><td>Set by you</td></tr>
             <tr><td>Launch price multiplier</td><td>Opens the trading pool above the average sale price by putting fewer tokens in and burning the rest. 1x to 3x. See <a href="the-pool.html">The pool at sellout</a>.</td><td>1x, burns nothing</td></tr>
         </tbody>
     </table>
@@ -117,12 +116,12 @@
 
     <div class="callout tip">
         <span class="callout-label">What you don't control</span>
-        <p>Fees, the 50/50 split, the 1 billion supply and where the liquidity goes are all fixed by the protocol. That's deliberate: buyers can rely on those being the same for every launch.</p>
+        <p>The platform fee, the 50/50 split, the 1 billion supply and where the liquidity goes are all fixed by the protocol. That's deliberate: buyers can rely on those being the same for every launch.</p>
     </div>
 
     <h2>Step 4: Launch</h2>
     <figure class="shot">
-        <img src="img/launch-submit.webp" alt="The Launch Token button with the estimated network fee, a note that the wallet signs the whole launch once, and the fees at settlement" loading="lazy">
+        <img src="img/launch-submit.webp" alt="The Launch Token button with the estimated network fee, and a note that the wallet signs the whole launch once" loading="lazy">
         <figcaption>If your wallet can batch transactions, you sign the whole launch once.</figcaption>
     </figure>
     <p>Press <strong>Launch Token</strong>. If your wallet can batch transactions, you sign once and that one signature creates your token, creates the sale, funds it with the full supply and opens it.</p>
@@ -133,7 +132,7 @@
     <p>There's nothing for you to do. Buyers commit, batches roll over, and the price follows the rules you set. You can watch progress on your sale page. You hold no tokens while the sale runs, and if you buy in your own sale you pay the same price as everyone else.</p>
 
     <h2>How it ends</h2>
-    <p>If the sale sells out, the pool is created in the same transaction as the final buy and buyers can claim. You receive 2.5% of the supply in tokens at that point. You don't receive any ETH from the sale: it all goes into the pool apart from the platform's 5%. See <a href="fees.html">Fees and who gets what</a>.</p>
+    <p>If the sale sells out, the pool is created in the same transaction as the final buy and buyers can claim. You receive your creator fee in tokens at that point. You don't receive any ETH from the sale: it all goes into the pool apart from the platform's 5%. See <a href="fees.html">Fees and who gets what</a>.</p>
     <p>If the sale doesn't sell out by its deadline, buying stops and everyone is refunded in full. No pool is created and no fees are taken.</p>
 
     <div class="callout warn">

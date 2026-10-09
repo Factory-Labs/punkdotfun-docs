@@ -27,7 +27,6 @@
             <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
             <a class="nav-link" href="pricing.html">Pricing</a>
-            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
             <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
             <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
         </div>
@@ -68,7 +67,7 @@
     <p>The sale has to hold the whole 1 billion before it can open. Once it does, the supply splits into two fixed halves.</p>
 
     <figure class="diagram">
-        <img src="img/diagram-supply.svg" alt="500 million sold in the auction. 500 million held back as the liquidity reserve, of which 25 million goes to the launcher and 475 million into the pool.">
+        <img src="img/diagram-supply.svg" alt="500 million sold in the auction. 500 million held back as the liquidity reserve. The launcher sets a creator fee of 0% to 20% of the reserve and the rest goes into the pool.">
     </figure>
 
     <div class="table-wrap">
@@ -76,7 +75,7 @@
         <thead><tr><th>Half</th><th>What it's for</th></tr></thead>
         <tbody>
             <tr><td>Sale allocation (500M)</td><td>The tokens sold to buyers in the auction.</td></tr>
-            <tr><td>Liquidity reserve (500M)</td><td>Held back to seed the trading pool if the sale sells out. The launcher's 2.5% of supply comes out of this half.</td></tr>
+            <tr><td>Liquidity reserve (500M)</td><td>Held back to seed the trading pool if the sale sells out. The launcher's creator fee comes out of this half.</td></tr>
         </tbody>
     </table>
     </div>
@@ -84,6 +83,7 @@
 
     <h2>Stage 3: The auction</h2>
     <p>The sale runs in batches, which the app also calls tranches. Each batch has a size and an opening price. When one sells out the next opens, usually bigger and at a higher price. If the launcher has set a price decay, the price also drifts down inside a batch, block by block, towards a floor.</p>
+    <p>Everyone in a batch ends up paying the same price: the price it sold out at. If you bought earlier in the batch at a higher price, you keep your tokens and get the difference back in ETH once the sale sells out.</p>
     <p><a href="pricing.html">Pricing</a> covers the settings and what to expect as a buyer.</p>
 
     <figure class="shot wide">

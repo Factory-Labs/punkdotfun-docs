@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fees and who gets what | punk.fun docs</title>
-<meta name="description" content="punk.fun's fees: 5% of the ETH to the platform and 2.5% of supply to the launcher, both only when a sale sells out.">
+<meta name="description" content="punk.fun's fees: 5% of the ETH to the platform and a creator fee in tokens to the launcher, both only when a sale sells out.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,7 +27,6 @@
             <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
             <a class="nav-link" href="pricing.html">Pricing</a>
-            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
             <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
             <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
         </div>
@@ -49,31 +48,46 @@
 <main class="content">
 <div class="eyebrow">Guide &middot; For launchers</div>
     <h1>Fees and who gets what</h1>
-    <p class="lead">Fees are fixed in the contract and the same for every launch. They're only taken if a sale sells out.</p>
+    <p class="lead">There are two fees. The platform fee is fixed and the same for every launch. The creator fee is set by the launcher when they launch. Both are only taken if a sale sells out.</p>
 
     <figure class="diagram">
-        <img src="img/diagram-eth.svg" alt="At sellout 95% of the ETH goes into the Uniswap pool and 5% is the platform fee. The launcher gets no ETH.">
+        <img src="img/diagram-eth.svg" alt="At sellout any price differences are set aside for buyers first. Of the ETH the sale keeps, 95% goes into the Uniswap pool and 5% is the platform fee. The launcher gets no ETH.">
     </figure>
 
     <div class="table-wrap">
     <table>
         <thead><tr><th>Who</th><th>Gets</th></tr></thead>
         <tbody>
-            <tr><td>The platform</td><td>5% of the ETH raised</td></tr>
-            <tr><td>The launcher</td><td>5% of the liquidity reserve, which is 2.5% of the total supply, in tokens</td></tr>
-            <tr><td>The pool</td><td>The remaining 95% of the ETH and the remaining reserve tokens</td></tr>
-            <tr><td>Buyers</td><td>Exactly the tokens they committed for. Fees never reduce them.</td></tr>
+            <tr><td>The platform</td><td>5% of the ETH the sale keeps, after any price differences have been set aside for buyers</td></tr>
+            <tr><td>The launcher</td><td>The creator fee: a share of the liquidity reserve, in tokens, set at launch between 0% and 20% of the reserve</td></tr>
+            <tr><td>The pool</td><td>The remaining 95% of the ETH and the rest of the reserve tokens</td></tr>
+            <tr><td>Buyers</td><td>Exactly the tokens they bought, plus any ETH owed back from their batch's final price. Fees never reduce either.</td></tr>
         </tbody>
     </table>
     </div>
 
     <figure class="shot narrow">
         <img src="img/token-details.webp" alt="The Token Details card on a sale page listing Platform Fee 5% of ETH raised and Launcher Fee 2.5% of supply" loading="lazy">
-        <figcaption>Every sale page shows the fees in its Token Details card, so buyers can see them before they buy.</figcaption>
+        <figcaption>Every sale page shows its fees in the Token Details card, so buyers can see them before they buy. The app shows the creator fee as Launcher Fee. This sale's was 2.5% of supply.</figcaption>
     </figure>
 
+    <h2>The creator fee</h2>
+    <p>The launcher picks their creator fee when they launch. It's a share of the liquidity reserve, the half of the supply held back for the pool, paid in tokens when the sale sells out. It can't be changed after launch.</p>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Creator fee (share of the reserve)</th><th>Share of total supply</th><th>Tokens</th></tr></thead>
+        <tbody>
+            <tr><td>0%</td><td>0%</td><td>None</td></tr>
+            <tr><td>5%</td><td>2.5%</td><td>25 million</td></tr>
+            <tr><td>10%</td><td>5%</td><td>50 million</td></tr>
+            <tr><td>20%, the most allowed</td><td>10%</td><td>100 million</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>The tokens come out of the pool's half, never out of what buyers bought. A higher creator fee means fewer tokens in the pool, which also lifts the price trading opens at. <a href="the-pool.html">The pool at sellout</a> explains that.</p>
+
     <h2>The launcher gets no ETH</h2>
-    <p>Worth saying plainly: launching doesn't pay you in ETH. Your share is 2.5% of the supply in tokens, which you receive when the sale sells out. Everything else goes into the market or the platform fee.</p>
+    <p>Worth saying plainly: launching doesn't pay you in ETH. Your share is your creator fee, in tokens, which you receive when the sale sells out. Everything else goes into the market or the platform fee.</p>
 
     <h2>If the sale doesn't sell out</h2>
     <p>No fees are taken at all. Buyers withdraw exactly what they paid.</p>

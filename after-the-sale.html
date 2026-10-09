@@ -27,7 +27,6 @@
             <div class="nav-group-title">For buyers</div>
             <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
             <a class="nav-link" href="pricing.html">Pricing</a>
-            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
             <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
             <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
         </div>
@@ -52,10 +51,11 @@
     <p class="lead">When a sale sells out, everything below happens inside that final buy. Nobody has to press anything except to claim their own tokens.</p>
 
     <ol class="steps">
-        <li><strong>Fees are taken</strong>5% of the ETH goes to the platform, and 5% of the reserve tokens (2.5% of supply) go to the launcher.</li>
+        <li><strong>Price differences are set aside</strong>ETH owed back to buyers who paid more than their batch's final price is held for them to collect.</li>
+        <li><strong>Fees are taken</strong>5% of the remaining ETH goes to the platform, and the launcher's creator fee is paid in reserve tokens.</li>
         <li><strong>The pool is seeded</strong>The remaining ETH and reserve tokens are paired in a Uniswap pool.</li>
         <li><strong>The liquidity is locked for good</strong>The pool's LP tokens are sent to a dead address that nobody controls, so the liquidity can never be withdrawn.</li>
-        <li><strong>Claims open</strong>Buyers can collect their tokens.</li>
+        <li><strong>Claims open</strong>Buyers can collect their tokens, and any ETH they're owed back.</li>
     </ol>
 
     <figure class="shot wide">
@@ -68,7 +68,10 @@
         <img src="img/claim-panel.webp" alt="The Claim Your Tokens panel showing 150,000,000 DINGO claimable and a Claim button" loading="lazy">
         <figcaption>One press claims everything you're owed.</figcaption>
     </figure>
-    <p>One transaction claims everything you're owed. There's no deadline. In a batch-average sale your final amount is set when your batch closes, which has always happened by the time claims open.</p>
+    <p>One transaction claims all your tokens. There's no deadline.</p>
+
+    <h2>Collecting ETH back</h2>
+    <p>If you paid more than your batch's final price, which only happens when a sale has price decay, you're owed the difference in ETH. You collect it with its own transaction, separate from claiming your tokens. There's no deadline for this either. <a href="pricing.html#one-price">Pricing</a> explains how it's worked out.</p>
     <p>Your <strong>Profile</strong> page lists everything you can claim or withdraw across all sales, plus your open positions in live ones.</p>
 
     <figure class="shot wide">
@@ -77,14 +80,14 @@
     </figure>
 
     <h2>Trading</h2>
-    <p>Once you've claimed, you can trade the token in its Uniswap pool. The sale page has a <strong>Trade on Uniswap</strong> button that takes you there. Trading opens at the average price paid across the sale, not the last batch's price. <a href="the-pool.html">The pool at sellout</a> explains what that means for you.</p>
+    <p>Once you've claimed, you can trade the token in its Uniswap pool. The sale page has a <strong>Trade on Uniswap</strong> button that takes you there. Trading opens at roughly the average price paid across the sale, not the last batch's price. <a href="the-pool.html">The pool at sellout</a> explains what that means for you.</p>
 
     <h2>The liquidity</h2>
     <p>No one holds the pool position: not the launcher, not punk.fun. It can't be withdrawn, staked or moved, and there are no rewards attached to it.</p>
 
     <div class="callout">
         <span class="callout-label">What "unruggable" covers</span>
-        <p>It means the pool's liquidity can't be pulled. It doesn't mean the price can't fall. Anyone holding tokens can sell them into the pool, including the launcher with their 2.5%.</p>
+        <p>It means the pool's liquidity can't be pulled. It doesn't mean the price can't fall. Anyone holding tokens can sell them into the pool, including the launcher with their creator fee.</p>
     </div>
 
     <h2>What "done" looks like</h2>

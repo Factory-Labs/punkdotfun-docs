@@ -2,96 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Batch-average pricing | punk.fun docs</title>
-<meta name="description" content="The two pricing modes on punk.fun, pay at buy time and batch average, and when the difference matters.">
-<link rel="stylesheet" href="styles.css">
+<title>Pricing | punk.fun docs</title>
+<meta http-equiv="refresh" content="0; url=pricing.html#one-price">
+<link rel="canonical" href="pricing.html">
 </head>
 <body>
-<div class="wrap">
-
-<aside class="sidebar">
-    <a href="index.html" style="text-decoration:none">
-        <div class="brand"><span class="punk">punk</span><span class="dot">.</span><span class="fun">fun</span></div>
-    </a>
-    <div class="brand-sub">Documentation</div>
-    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
-    <div class="nav-body">
-        <div class="nav-group">
-            <div class="nav-group-title">Start here</div>
-            <a class="nav-link" href="index.html">Overview</a>
-            <a class="nav-link" href="how-it-works.html">How it works</a>
-            <a class="nav-link" href="punk.html">PUNK<span class="soon-tag">Soon</span></a>
-        </div>
-        <div class="nav-group">
-            <div class="nav-group-title">For buyers</div>
-            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
-            <a class="nav-link" href="pricing.html">Pricing</a>
-            <a class="nav-link" href="batch-average.html">Batch-average pricing</a>
-            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
-            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
-        </div>
-        <div class="nav-group">
-            <div class="nav-group-title">For launchers</div>
-            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
-            <a class="nav-link" href="fees.html">Fees and who gets what</a>
-            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
-        </div>
-        <div class="nav-group">
-            <div class="nav-group-title">Reference</div>
-            <a class="nav-link" href="sale-states.html">Sale states</a>
-            <a class="nav-link" href="glossary.html">Glossary</a>
-            <a class="nav-link" href="faq.html">FAQ</a>
-        </div>
-    </div>
-</aside>
-
-<main class="content">
-<div class="eyebrow">Guide &middot; For buyers</div>
-    <h1>Batch-average pricing</h1>
-    <p class="lead">Launchers choose between two ways of working out how many tokens each buyer gets. Most of the time you won't notice the difference, but it's worth knowing which one a sale uses.</p>
-
-    <div class="table-wrap">
-    <table>
-        <thead><tr><th>Mode</th><th>What it means</th></tr></thead>
-        <tbody>
-            <tr><td><strong>Pay at buy time</strong></td><td>You get the tokens your ETH bought at the price when you bought. This is the default.</td></tr>
-            <tr><td><strong>Batch average</strong></td><td>Everyone who buys in the same batch is allocated at that batch's average price.</td></tr>
-        </tbody>
-    </table>
-    </div>
-
-    <h2>When it makes a difference</h2>
-    <p>Only when the price decays inside a batch. If there's no decay, everyone in a batch pays the same price anyway, so both modes give the same result.</p>
-    <p>With decay, batch average evens out the difference between buying early and late in the same batch. Nobody loses out for being first.</p>
-
-    <h2>What you see while a batch is open</h2>
-    <p>In a batch-average sale, the token amount shown when you buy is an estimate. It's final once the batch closes and the average is known. Your ETH is committed either way, and the refund rules are the same.</p>
-
-    <div class="callout">
-        <span class="callout-label">The price cap works on the quote</span>
-        <p>In a batch-average sale, the price cap on your buy limits the price quoted when your buy lands. It doesn't limit the batch average you end up being allocated at.</p>
-    </div>
-
-    <p>By the time claims open every batch has closed, so the amount you claim is always final.</p>
-
-    <div class="page-nav">
-        <a href="pricing.html">
-            <span class="dir">Previous</span>
-            <span class="ttl">&larr; Pricing</span>
-        </a>
-        <a class="next" href="refunds.html">
-            <span class="dir">Next</span>
-            <span class="ttl">When a sale doesn't sell out &rarr;</span>
-        </a>
-    </div>
-
-    <footer>
-        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; Screenshots are from the punk.fun alpha on a test network, so the names and numbers in them are test data.
-    </footer>
-</main>
-
-</div>
-<script src="app.js"></script>
+<p>Batch-average pricing has been replaced. Everyone in a batch now pays the same price: see <a href="pricing.html#one-price">Pricing</a>.</p>
 </body>
 </html>
