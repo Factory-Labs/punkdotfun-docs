@@ -357,6 +357,8 @@ tr:hover td { background: var(--accent-soft); }
 }
 .pill.fun  { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
 .pill.punk { color: var(--c-blue); border-color: rgba(95,190,245,0.4); background: rgba(95,190,245,0.08); }
+/* Fun and Punk are site names, so keep their case; all caps is reserved for the FUN and PUNK tokens */
+.pill.fun, .pill.punk { text-transform: none; }
 .pill.soon {
     color: var(--c-purple);
     border-color: rgba(152,92,230,0.45);
