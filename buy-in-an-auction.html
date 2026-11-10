@@ -64,7 +64,7 @@
     <p class="lead">Buying in a punk.fun sale works differently from a normal fixed-price sale. The price moves as batches sell, and you collect your tokens after the sale sells out rather than straight away. Here's what you need to know.</p>
 
     <h2>Finding a sale</h2>
-    <p>The Explore page lists every launch with a badge showing where it's at. LIVE means you can buy now. The rest are explained on <a href="sale-states.html">Sale states</a>.</p>
+    <p>The Explore page shows every launch as a list or a grid of tiles, each with a badge showing where it's at. You can filter by Upcoming, Live or Sold out, or switch on <strong>Verified X only</strong> to see only creators who've proved their X account. <strong>Live</strong> means you can buy now. The other badges are explained on <a href="sale-states.html">Sale states</a>.</p>
 
     <figure class="shot">
         <img src="img/explore-list.webp" alt="The All Tokens list on the Explore page, with CLAIM, LIVE, UNSOLD, EXPIRED, SOON and NOT FUNDED badges" loading="lazy">
@@ -72,7 +72,7 @@
     </figure>
 
     <h2>How the price works</h2>
-    <p>The sale is split into batches. The app calls them tranches, so you'll see T1, T2 and so on. A batch opens at a set price. If the launcher set a price decay, the price drifts down block by block towards a floor. When a batch sells out, the next one opens, usually bigger and at a higher price.</p>
+    <p>The sale is split into batches, shown as B1, B2 and so on. A batch opens at a set price. Unless the creator has switched decay off, the price drifts down block by block towards a floor. When a batch sells out, the next one opens, bigger and usually at a higher price.</p>
     <p>So the price drifts down, then steps up at each new batch. <a href="pricing.html">Pricing</a> covers this in detail.</p>
 
     <h2>Commit now, claim later</h2>
@@ -83,16 +83,19 @@
     </ol>
     <p>This applies to everyone, the launcher included. The launcher holds no tokens while the sale runs.</p>
 
+    <h2>Check the sale before you buy</h2>
+    <p>Every sale page has a <strong>Token Details</strong> card. It shows the platform fee and the creator's fee, written as a share of supply with a rating of Healthy, High or Very high. <a href="fees.html">Fees and who gets what</a> explains the ratings. Under the token's name, the creator's address links to their creator page, which lists everything that wallet has launched.</p>
+
     <h2>Placing a buy</h2>
     <figure class="shot narrow">
-        <img src="img/buy-panel.webp" alt="The Buy Tokens panel with the current price, an amount to spend, quick amounts, the Buy at any price option and the Buy button" loading="lazy">
-        <figcaption>The Buy Tokens panel. Enter the ETH you want to spend, or tap one of the quick amounts. The network fee is estimated before you sign.</figcaption>
+        <img src="img/buy-panel.webp" alt="The Buy Tokens panel with the current price, an amount to spend, quick amounts, the price limit option and the Buy button" loading="lazy">
+        <figcaption>The Buy Tokens panel. Enter the ETH you want to spend, or tap one of the quick amounts. The network fee is estimated before you sign. Beneath the price you'll see roughly what the whole token would be worth in dollars at that price, its FDV.</figcaption>
     </figure>
     <p>You enter an amount of ETH. The sale works out how many tokens that buys at the current price and records them against your wallet. That number of tokens is fixed from then on. Three things are worth knowing.</p>
 
     <h3>Your buy is capped at this batch's price</h3>
     <p>By default your buy only goes through in the batch that's open now, at up to its current price. If that batch sells out before your transaction lands, your buy is refused rather than filled at the next batch's higher price. Nothing is spent except gas.</p>
-    <p>If you'd rather it went through whatever the price, tick <strong>Buy at any price</strong>. Then if the batch sells out first, your buy fills at whatever the next batch costs.</p>
+    <p>That's <strong>Price limit</strong> set to <strong>This batch</strong>. If you'd rather it went through whatever happens, set it to <strong>Any batch</strong>. Then if the batch sells out first, your buy fills in the next batch at its current price.</p>
 
     <h3>You end up paying the batch's final price</h3>
     <p>Everyone in a batch pays the price the batch sold out at. If the price decayed after you bought, you keep your tokens and get the difference back in ETH once the sale sells out. <a href="pricing.html#one-price">Pricing</a> has a worked example.</p>
@@ -106,8 +109,8 @@
     </div>
 
     <h2>Claiming your tokens</h2>
-    <p>Once the sale has sold out, the panel changes to <strong>Claim Your Tokens</strong>. One transaction sends everything you're owed to your wallet. There's no deadline and no rush. <a href="after-the-sale.html">Claiming and after the sale</a> has more.</p>
-    <p>If you're owed ETH back because your batch's price fell after you bought, you collect that once the sale has sold out too. It's separate from claiming your tokens.</p>
+    <p>Once the sale has sold out, the panel changes to <strong>Claim</strong>. One transaction sends all your tokens to your wallet. There's no deadline and no rush. <a href="after-the-sale.html">Claiming and after the sale</a> has more.</p>
+    <p>If you're owed ETH back because your batch's price fell after you bought, the buy panel shows the amount while the sale is still running, and you collect it with <strong>Claim ETH</strong> once the sale has sold out. If your wallet can batch transactions, <strong>Claim all</strong> takes your tokens and your ETH in one go.</p>
 
     <h2>If the sale doesn't sell out</h2>
     <p>Every sale has a deadline. If it passes without the sale selling out, buying stops and you can withdraw exactly the ETH you paid, with no time limit. <a href="refunds.html">When a sale doesn't sell out</a> has the detail.</p>
@@ -117,7 +120,7 @@
     <table>
         <thead><tr><th>Situation</th><th>What happens</th></tr></thead>
         <tbody>
-            <tr><td>The batch sells out before your buy lands</td><td>Your buy is refused. Only gas is spent. Try again at the new price, or tick Buy at any price.</td></tr>
+            <tr><td>The batch sells out before your buy lands</td><td>Your buy is refused. Only gas is spent. Try again at the new price, or set Price limit to Any batch.</td></tr>
             <tr><td>Your buy is bigger than what's left in the batch</td><td>You get what's left and the extra ETH comes back in the same transaction.</td></tr>
             <tr><td>The sale doesn't sell out by its deadline</td><td>Buying stops and you withdraw exactly what you paid.</td></tr>
             <tr><td>The final buy can't create the pool</td><td>That buy is rejected and the sale stays open. Nothing is left half-finished.</td></tr>

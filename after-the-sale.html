@@ -61,7 +61,7 @@
 <main class="content">
 <div class="eyebrow">Guide &middot; For buyers</div>
     <h1>Claiming and after the sale</h1>
-    <p class="lead">When a sale sells out, everything below happens inside that final buy. Nobody has to press anything except to claim their own tokens.</p>
+    <p class="lead">When a sale sells out, everything below happens inside that final buy. Nobody has to press anything except to claim their own tokens and ETH.</p>
 
     <ol class="steps">
         <li><strong>Price differences are set aside</strong>ETH owed back to buyers who paid more than their batch's final price is held for them to collect.</li>
@@ -81,16 +81,15 @@
         <img src="img/claim-panel.webp" alt="The Claim Your Tokens panel showing 150,000,000 DINGO claimable and a Claim button" loading="lazy">
         <figcaption>One press claims everything you're owed.</figcaption>
     </figure>
-    <p>One transaction claims all your tokens. There's no deadline.</p>
+    <p>Once a sale has sold out, the buy panel becomes the <strong>Claim</strong> panel. One transaction claims all your tokens. There's no deadline.</p>
 
     <h2>Collecting ETH back</h2>
-    <p>If you paid more than your batch's final price, which only happens when a sale has price decay, you're owed the difference in ETH. You collect it with its own transaction, separate from claiming your tokens. There's no deadline for this either. <a href="pricing.html#one-price">Pricing</a> explains how it's worked out.</p>
+    <p>If you paid more than your batch's final price, which only happens when a sale has price decay, you're owed the difference in ETH. You collect it with <strong>Claim ETH</strong> on the Claim panel, in its own transaction. If your wallet can batch transactions, <strong>Claim all</strong> takes your tokens and your ETH together. There's no deadline for this either. <a href="pricing.html#one-price">Pricing</a> explains how it's worked out.</p>
 
     <figure class="diagram">
         <img src="img/diagram-collect.svg" alt="If a sale sells out you claim your tokens and, if you paid above your batch's final price, collect ETH back in a separate transaction. If it misses its deadline you withdraw a full refund instead. Never both.">
-        <figcaption>Collecting ETH back isn't in the app yet, so there's no screenshot of it here.</figcaption>
     </figure>
-    <p>Your <strong>Profile</strong> page lists everything you can claim or withdraw across all sales, plus your open positions in live ones.</p>
+    <p>Your <strong>Profile</strong> page lists everything you can claim or withdraw across all sales, including ETH you're owed back, plus your open positions in live ones.</p>
 
     <figure class="shot wide">
         <img src="img/profile.webp" alt="The Profile page showing claimable items, open positions and your launches" loading="lazy">
@@ -98,7 +97,7 @@
     </figure>
 
     <h2>Trading</h2>
-    <p>Once you've claimed, you can trade the token in its Uniswap pool. The sale page has a <strong>Trade on Uniswap</strong> button that takes you there. Trading opens at roughly the average price paid across the sale, not the last batch's price. <a href="the-pool.html">The pool at sellout</a> explains what that means for you.</p>
+    <p>Once you've claimed, you can trade the token in its Uniswap pool. The sale page has a <strong>Trade $TICKER on Uniswap</strong> button that takes you there, and a <strong>Sale result</strong> card showing how many batches filled and the price the last one cleared at. Under it, the <strong>Uniswap V2 pool</strong> row gives the pool's address, with links to <strong>View on Etherscan</strong> and a live <strong>Price chart</strong>. Trading opens at roughly the average price paid across the sale, not the last batch's price. <a href="the-pool.html">The pool at sellout</a> explains what that means for you.</p>
 
     <h2>The liquidity</h2>
     <p>No one holds the pool position: not the launcher, not punk.fun. It can't be withdrawn, staked or moved, and there are no rewards attached to it.</p>
