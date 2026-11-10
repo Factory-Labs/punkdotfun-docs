@@ -66,12 +66,13 @@
     <h2>What happens in the final buy</h2>
     <p>The buy that takes the last token also takes the fees, pairs the remaining ETH with the remaining reserve tokens in a Uniswap pool, sends the LP tokens to a dead address and opens claims. All in one transaction.</p>
     <p>Because nobody holds the LP tokens, nobody can withdraw that liquidity. Not the launcher, not punk.fun. There's no unlock date because there's nothing left to unlock.</p>
+    <p>Once a sale has sold out, its page shows the pool under <strong>Uniswap V2 pool</strong>: its address, which you can copy, with links to <strong>View on Etherscan</strong> and a live <strong>Price chart</strong>.</p>
 
     <h2>The price it opens at</h2>
     <p>The starting point is the average price across the whole sale: the ETH the sale keeps after price differences go back to buyers, divided by the 500 million tokens sold. Then two things move it.</p>
     <ul>
         <li><strong>The fees.</strong> The platform's 5% comes out of the pool's ETH, and the creator fee comes out of the pool's tokens. When the creator fee is 5% of the reserve, the two cancel out and the pool opens at the average. A lower creator fee opens it a little below the average, and a higher one a little above.</li>
-        <li><strong>The launch price multiplier</strong>, if the launcher set one. See below.</li>
+        <li><strong>The launch price multiplier</strong>, if the creator set one. See below.</li>
     </ul>
     <div class="table-wrap">
     <table>
@@ -87,7 +88,7 @@
     <p>Either way, the important part is the same: trading doesn't open at the price the last batch paid.</p>
 
     <h2>A worked example</h2>
-    <p>Take a sale on the default settings, where each batch is twice the size and twice the price of the last, with no decay, and a creator fee of 5% of the reserve.</p>
+    <p>Take a sale with a first batch of 500,000 tokens, where each batch is twice the size and twice the price of the last, with no decay, and a creator fee of 5% of the reserve. These aren't the default settings, but they show the effect clearly.</p>
 
     <figure class="diagram">
         <img src="img/diagram-opening-price.svg" alt="Ten batches doubling in price from 1 to 512 gwei per token. The pool opens at the average, about 338 gwei, which is above the first nine batches and about 34% below the last.">
@@ -110,7 +111,7 @@
 
     <figure class="shot wide">
         <img src="img/sale-soldout.webp" alt="A sold-out sale with an average paid line at 4.26 gwei, below the last batch's bar" loading="lazy">
-        <figcaption>The same thing on a real sale on the alpha. The dashed line is the average paid, 4.26 gwei. The last batch paid 7.60 gwei, so trading opened about 44% below it.</figcaption>
+        <figcaption>The same thing on a real sale on the test network, before launch. The dashed line is the average paid, 4.26 gwei. The last batch paid 7.60 gwei, so trading opened about 44% below it.</figcaption>
     </figure>
 
     <div class="callout warn">
@@ -119,13 +120,13 @@
     </div>
 
     <h2>The launch price multiplier</h2>
-    <p>A launcher can choose to open the pool above the average by putting fewer reserve tokens into it and burning the rest. This is the <strong>launch price multiplier</strong> in the launch form's advanced settings, anywhere from 1x to 3x.</p>
+    <p>A creator can choose to open the pool above the average by putting fewer reserve tokens into it and burning the rest. This is the <strong>launch price multiplier</strong> in the launch form's advanced settings, anywhere from 1x to 3x.</p>
     <ul>
         <li>At <strong>1x</strong>, the default, nothing is burned.</li>
-        <li>At <strong>1.5x</strong>, a third of the pool's tokens are burned and the pool opens 1.5 times higher. At the default settings with a 5% creator fee, that's roughly where the last batch breaks even.</li>
+        <li>At <strong>1.5x</strong>, a third of the pool's tokens are burned and the pool opens 1.5 times higher. In the worked example above, that's roughly where the last batch breaks even.</li>
         <li>Above 1x the pool is thinner, because it holds fewer tokens. You're buying price headroom, not depth, so the price moves more on each trade.</li>
     </ul>
-    <p>The burned tokens are destroyed for good, which lowers the total supply. It doesn't change what buyers or the launcher receive.</p>
+    <p>The burned tokens are destroyed for good, which lowers the total supply. It doesn't change how many tokens buyers or the creator receive, but the creator's tokens become a bigger share of the smaller supply, and the app shows that share.</p>
 
     <div class="page-nav">
         <a href="fees.html">

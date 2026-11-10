@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing | punk.fun docs</title>
-<meta name="description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the minimum price, and how to read the auction chart.">
+<meta name="description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the price floor, and how to read the auction chart.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="punk.fun docs">
 <meta property="og:title" content="Pricing | punk.fun docs">
-<meta property="og:description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the minimum price, and how to read the auction chart.">
+<meta property="og:description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the price floor, and how to read the auction chart.">
 <meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/pricing.html">
 <meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -64,20 +64,20 @@
     <p class="lead">A sale doesn't run at one price. It's split into batches, and the price moves in two ways: it steps up at each new batch, and it can drift down inside a batch.</p>
 
     <figure class="diagram">
-        <img src="img/diagram-sawtooth.svg" alt="The price falls inside each batch and steps up when the next batch opens, never going below the minimum price.">
+        <img src="img/diagram-sawtooth.svg" alt="The price falls inside each batch and steps up when the next batch opens, never going below the price floor.">
     </figure>
 
     <h2>Batches</h2>
-    <p>The launcher sets the first batch's size and opening price, then two growth settings: how much bigger each batch is than the last, and how each batch's opening price compares to the average price people paid in the batch before. Both can be anywhere from half to three times. A new batch never opens below the minimum price.</p>
-    <p>With the default settings, each batch is twice the size and twice the price of the one before. That means most of the money is raised in the last few batches. At the defaults, the last batch alone is about three quarters of the total.</p>
+    <p>The creator sets the first batch's size and opening price, then two growth settings: how much bigger each batch is than the last, and how each batch's opening price compares to the average price people paid in the batch before. Both can be anywhere from 1.3 to 3 times. A new batch never opens below the price floor.</p>
+    <p>By default each batch is twice the size of the one before and opens at 1.3 times the average price paid in it, so a sale on the defaults fills in five batches. Most of the money is raised in the last few.</p>
 
     <h2>Decay</h2>
-    <p>If the launcher sets a price decay, the price falls a little every block from the moment the batch opens, until the batch sells out or the price reaches the minimum. Buying doesn't pause it or reset it. Only a new batch resets it.</p>
-    <p>With decay at zero, which is the default, the price is flat inside each batch and only changes when a batch closes.</p>
+    <p>With price decay on, the price falls a little every block from the moment the batch opens, until the batch sells out or the price reaches the floor. Buying doesn't pause it or reset it. Only a new batch resets it.</p>
+    <p>Decay is on by default: unless it sells out first, the first batch's price falls to the floor in about an hour. A creator can set decay to zero instead, which keeps the price flat inside each batch so it only changes when a batch closes.</p>
 
     <div class="callout tip">
         <span class="callout-label">There's always a floor</span>
-        <p>The price never decays below the minimum the launcher set, so it can't fall to nothing while a batch waits for buyers.</p>
+        <p>The price never decays below the price floor the creator set, so it can't fall to nothing while a batch waits for buyers.</p>
     </div>
 
     <h2 id="one-price">Everyone in a batch pays the same price</h2>
@@ -111,21 +111,22 @@
     <ul>
         <li>Your buy fills straight away at the current price. There's no bidding and nobody can outbid you.</li>
         <li>If your buy finishes a batch, the leftover ETH comes back in the same transaction.</li>
-        <li>Your buy is capped at the open batch's price unless you tick Buy at any price.</li>
+        <li>Under <strong>Price limit</strong>, <strong>This batch</strong> only fills your buy in the open batch, at up to its price. <strong>Any batch</strong> lets it fill in the next one if this one sells out first.</li>
         <li>If the sale has decay, buying early in a batch doesn't cost you more in the end: you pay the batch's final price and get the difference back. Waiting only risks the batch selling out without you.</li>
     </ul>
 
     <h2>Reading the chart</h2>
     <figure class="shot wide">
-        <img src="img/chart.webp" alt="The auction history chart with green bars for filled batches, a blue bar for the batch filling now, and a dashed average-paid line" loading="lazy">
-        <figcaption>The chart on a live sale. Three batches have filled and the fourth, in blue, is open now.</figcaption>
+        <img src="img/chart.webp" alt="The auction chart with one square per batch, labelled B1, B2 and so on, on an FDV axis, with a dashed average-paid line" loading="lazy">
+        <figcaption>The chart on a live sale. Three batches have filled and the fourth is open now.</figcaption>
     </figure>
     <ul>
-        <li><strong>Each bar is a batch.</strong> Its height is the price and its width is its size, so bigger batches are wider.</li>
-        <li><strong>Green bars</strong> have filled. The <strong>blue bar</strong> is the batch you'd buy in now, and it fills up as people buy.</li>
+        <li><strong>Each square is a batch</strong>, labelled B1, B2 and so on. A bigger square is a bigger batch, and a square that sits higher has a higher price.</li>
+        <li><strong>The axis shows FDV</strong>: the price times the full 1 billion supply, in dollars. Switch it to a log scale if the early batches are too small to see.</li>
+        <li>The batch open now fills up as people buy. If the price has decayed, a thin line above a square shows how far it fell from its opening price.</li>
         <li><strong>The dashed line</strong> is the average price paid so far. That's roughly where trading would open if the sale sold out now. See <a href="the-pool.html">The pool at sellout</a>.</li>
         <li><strong>The banner</strong> above the chart tells you what just happened, for example that a batch has filled and the next is open.</li>
-        <li>Hover over a bar for its numbers, and use the zoom buttons to look closer.</li>
+        <li>Hover over a square for its numbers, including the per-token price, and use the zoom buttons to look closer. The &#9432; next to the axis explains the chart.</li>
     </ul>
     <p>The <strong>Auction Progress</strong> bar under the price is the share of the 500 million tokens on sale that have been bought. At 100% the sale has sold out.</p>
 

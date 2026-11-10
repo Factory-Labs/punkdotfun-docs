@@ -59,12 +59,12 @@
 </aside>
 
 <main class="content">
-<div class="eyebrow">Guide &middot; For launchers</div>
+<div class="eyebrow">Guide &middot; For creators</div>
     <h1>Launch a token</h1>
     <p class="lead">This is the full walkthrough for launching, from filling in the form to the market going live. Most of it happens automatically.</p>
 
     <h2>Before you start</h2>
-    <p>You need a wallet with a little ETH for gas. That's it. The launch form makes the token for you. If there's a fee for creating a token it's shown at the top of the form before you sign. On the alpha, launching is free apart from gas.</p>
+    <p>You need a wallet on Ethereum with a little ETH for gas, and you'll be asked to confirm you're eligible to use punk.fun on your first visit. punk.fun isn't available in the UK or in sanctioned countries. The launch form makes the token for you. If there's a fee for creating a token, the launch form shows it above the launch button before you sign.</p>
 
     <h2>Step 1: Your token</h2>
     <figure class="shot">
@@ -86,42 +86,37 @@
 
     <h2>Step 2: Sale settings</h2>
     <figure class="shot">
-        <img src="img/launch-sale-settings.webp" alt="The sale settings section: sale start, opening price, sale length with 1 day, 1 week and 30 days buttons, and the amount the sale must raise" loading="lazy">
-        <figcaption>Sale settings. The box under the sale length tells you how much ETH your sale has to raise to sell out.</figcaption>
+        <img src="img/launch-sale-settings.webp" alt="The sale settings section: sale start, opening price and sale timeout with 4 hours, 1 day, 1 week and 30 days buttons" loading="lazy">
+        <figcaption>Sale settings: when the sale opens, the opening price and how long it runs.</figcaption>
     </figure>
     <div class="table-wrap">
     <table>
         <thead><tr><th>Setting</th><th>What it controls</th></tr></thead>
         <tbody>
-            <tr><td>Sale start</td><td>How many blocks from now buying opens. Leave it blank to open as soon as the launch lands. A delay lets you announce the sale in advance.</td></tr>
-            <tr><td>Opening price</td><td>The price per token at the start of the first batch, in ETH.</td></tr>
-            <tr><td>Sale length</td><td>Between 1 and 30 days, set in blocks. There are buttons for 1 day, 1 week and 30 days. If the sale hasn't sold out by then, every buyer is refunded.</td></tr>
+            <tr><td>Sale start</td><td>How many blocks from now buying opens. Leave it blank to open as soon as the launch lands. A delay lets you announce the sale in advance. The form tells you roughly when that is.</td></tr>
+            <tr><td>Opening price</td><td>The price per token at the start of the first batch, in ETH. The default is 0.00000001 ETH, and the form shows roughly what that values the whole token at in dollars.</td></tr>
+            <tr><td>Sale timeout</td><td>Between 4 hours and 30 days, set in blocks. There are buttons for 4 hours, 1 day, 1 week and 30 days, and the default is 1 day. If the sale hasn't sold out by then, every buyer is refunded.</td></tr>
         </tbody>
     </table>
-    </div>
-
-    <div class="callout warn">
-        <span class="callout-label">Check what your sale has to raise</span>
-        <p>The form shows how much ETH the sale must raise to sell out, and how much of that is the last batch. At the default settings that's about 169 ETH across 10 batches, with 74% in the last one. Anything less than a full sellout refunds every buyer, so set a target your community can actually reach.</p>
     </div>
 
     <h2>Step 3: Advanced settings</h2>
     <p>These are filled in with the defaults. You only need to open them if you want a different shape of sale.</p>
     <figure class="shot">
-        <img src="img/launch-advanced.webp" alt="The advanced configuration section with first batch size, minimum price, price decay, batch size growth, batch price growth, decay growth and launch price multiplier" loading="lazy">
-        <figcaption>Advanced settings, filled in with the defaults. Each one shows its allowed range underneath. The creator fee field isn't in the form yet.</figcaption>
+        <img src="img/launch-advanced.webp" alt="The advanced configuration section with first batch size, price floor, price decay, batch size growth, batch price growth, decay growth, launch price multiplier and the creator fee slider" loading="lazy">
+        <figcaption>Advanced settings, filled in with the defaults, with the creator fee slider at the bottom. Each one shows its allowed range underneath.</figcaption>
     </figure>
     <div class="table-wrap">
     <table>
         <thead><tr><th>Setting</th><th>What it controls</th><th>Default</th></tr></thead>
         <tbody>
-            <tr><td>First batch size</td><td>How many tokens are in the first batch.</td><td>500,000</td></tr>
-            <tr><td>Minimum price</td><td>The floor. Decay can never take the price below this, and it can't be above your opening price.</td><td>Same as the opening price</td></tr>
-            <tr><td>Price decay</td><td>How much the price drops each block inside a batch while nobody buys. Zero keeps it flat.</td><td>0</td></tr>
-            <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 0.5x to 3x.</td><td>2x</td></tr>
-            <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of the average price paid in the batch before. Never below the minimum price. 0.5x to 3x.</td><td>2x</td></tr>
-            <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>2x</td></tr>
-            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply. See <a href="fees.html">Fees and who gets what</a>.</td><td>Set by you</td></tr>
+            <tr><td>First batch size</td><td>How many tokens are in the first batch. At the default, the 500 million on sale fill in five batches.</td><td>25,000,000</td></tr>
+            <tr><td>Price floor</td><td>Decay can never take the price below this, and it can't be above your opening price.</td><td>0.000000001 ETH, a tenth of the opening price</td></tr>
+            <tr><td>Price decay</td><td>How much the price drops each block inside a batch while nobody buys. At the default, the first batch reaches the floor in about an hour. Zero keeps it flat.</td><td>0.00000000003125 ETH per block</td></tr>
+            <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 1.3x to 3x.</td><td>2x</td></tr>
+            <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of the average price paid in the batch before. Never below the price floor. 1.3x to 3x.</td><td>1.3x</td></tr>
+            <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>1.1x</td></tr>
+            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply. Set it with the <strong>Set creator fee</strong> slider. See <a href="fees.html">Fees and who gets what</a>.</td><td>5%</td></tr>
             <tr><td>Launch price multiplier</td><td>Opens the trading pool above the average sale price by putting fewer tokens in and burning the rest. 1x to 3x. See <a href="the-pool.html">The pool at sellout</a>.</td><td>1x, burns nothing</td></tr>
         </tbody>
     </table>
@@ -129,8 +124,9 @@
 
     <h3>Choosing your creator fee</h3>
     <p>Your creator fee comes out of the pool's half of the supply. Taking more gives you more tokens and also lifts the price trading opens at, but leaves fewer tokens in the pool.</p>
+    <p>The slider rates your fee by how much of the supply you'd take. Up to 5% of supply shows as <strong>Healthy</strong>, up to 7.5% as <strong>High</strong>, and anything above as <strong>Very high</strong>. Buyers see the same rating on your sale page.</p>
     <figure class="diagram">
-        <img src="img/diagram-creator-fee.svg" alt="Creator fee at 0, 5, 10 and 20 percent of the reserve: 0, 25, 50 and 100 million tokens to the launcher, and the pool opens at 0.95, 1.00, 1.06 and 1.19 times the average price.">
+        <img src="img/diagram-creator-fee.svg" alt="Creator fee at 0, 5, 10 and 20 percent of the reserve: 0, 25, 50 and 100 million tokens to the creator, and the pool opens at 0.95, 1.00, 1.06 and 1.19 times the average price.">
     </figure>
 
     <div class="callout tip">

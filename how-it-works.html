@@ -95,7 +95,7 @@
     <p>The split is automatic and can't be changed. It's why a market exists at the end: half the tokens were always set aside to build it.</p>
 
     <h2>Stage 3: The auction</h2>
-    <p>The sale runs in batches, which the app also calls tranches. Each batch has a size and an opening price. When one sells out the next opens, usually bigger and at a higher price. If the launcher has set a price decay, the price also drifts down inside a batch, block by block, towards a floor.</p>
+    <p>The sale runs in batches. Each batch has a size and an opening price. When one sells out the next opens, bigger and usually at a higher price. Unless the creator has switched decay off, the price also drifts down inside a batch, block by block, towards a floor.</p>
     <p>Everyone in a batch ends up paying the same price: the price it sold out at. If you bought earlier in the batch at a higher price, you keep your tokens and get the difference back in ETH once the sale sells out.</p>
     <p><a href="pricing.html">Pricing</a> covers the settings and what to expect as a buyer.</p>
 
@@ -114,7 +114,7 @@
     <h3>It sells out</h3>
     <p>The buy that takes the last token does everything else in the same transaction. Fees are taken, the remaining ETH and reserve tokens are paired in a Uniswap pool, the pool's LP tokens are sent to a dead address, and claims open. There's no separate settlement step to wait for and nothing for anyone to press.</p>
     <h3>It runs out of time</h3>
-    <p>Every sale has a deadline, set at launch between 1 and 30 days. If it hasn't sold out by then, buying stops and every buyer can withdraw exactly the ETH they paid. No pool is created. <a href="refunds.html">When a sale doesn't sell out</a> has the detail.</p>
+    <p>Every sale has a deadline, set at launch between 4 hours and 30 days. If it hasn't sold out by then, buying stops and every buyer can withdraw exactly the ETH they paid. No pool is created. <a href="refunds.html">When a sale doesn't sell out</a> has the detail.</p>
 
     <div class="callout">
         <span class="callout-label">If the pool can't be created</span>

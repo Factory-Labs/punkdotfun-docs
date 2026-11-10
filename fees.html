@@ -80,23 +80,25 @@
     </div>
 
     <figure class="shot narrow">
-        <img src="img/token-details.webp" alt="The Token Details card on a sale page listing Platform Fee 5% of ETH raised and Launcher Fee 2.5% of supply" loading="lazy">
-        <figcaption>Every sale page shows its fees in the Token Details card, so buyers can see them before they buy. The app shows the creator fee as Launcher Fee. This sale's was 2.5% of supply.</figcaption>
+        <img src="img/token-details.webp" alt="The Token Details card on a sale page listing Platform Fee 5% of ETH raised and Launcher Fee 2.5% of supply (Healthy)" loading="lazy">
+        <figcaption>Every sale page shows its fees in the Token Details card, so buyers can see them before they buy. The app shows the creator fee as Launcher Fee, with its rating. This sale's was 2.5% of supply (Healthy).</figcaption>
     </figure>
 
     <h2>The creator fee</h2>
     <p>The launcher picks their creator fee when they launch. It's a share of the liquidity reserve, the half of the supply held back for the pool, paid in tokens when the sale sells out. It can't be changed after launch.</p>
     <div class="table-wrap">
     <table>
-        <thead><tr><th>Creator fee (share of the reserve)</th><th>Share of total supply</th><th>Tokens</th></tr></thead>
+        <thead><tr><th>Creator fee (share of the reserve)</th><th>Share of total supply</th><th>Tokens</th><th>Rating</th></tr></thead>
         <tbody>
-            <tr><td>0%</td><td>0%</td><td>None</td></tr>
-            <tr><td>5%</td><td>2.5%</td><td>25 million</td></tr>
-            <tr><td>10%</td><td>5%</td><td>50 million</td></tr>
-            <tr><td>20%, the most allowed</td><td>10%</td><td>100 million</td></tr>
+            <tr><td>0%</td><td>0%</td><td>None</td><td>Healthy</td></tr>
+            <tr><td>5%, the default</td><td>2.5%</td><td>25 million</td><td>Healthy</td></tr>
+            <tr><td>10%</td><td>5%</td><td>50 million</td><td>Healthy</td></tr>
+            <tr><td>15%</td><td>7.5%</td><td>75 million</td><td>High</td></tr>
+            <tr><td>20%, the most allowed</td><td>10%</td><td>100 million</td><td>Very high</td></tr>
         </tbody>
     </table>
     </div>
+    <p>The app rates every creator fee by the share of supply it takes: up to 5% is Healthy, up to 7.5% is High, and anything above is Very high. The creator sees the rating on the slider when they launch, and buyers see it on the sale page. These shares assume a 1x launch price multiplier. Above that, part of the reserve is burned, so the same fee is a bigger share of what's left, and the rating goes up with it.</p>
     <p>The tokens come out of the pool's half, never out of what buyers bought. A higher creator fee means fewer tokens in the pool, which also lifts the price trading opens at. <a href="the-pool.html">The pool at sellout</a> explains that.</p>
 
     <h2>The launcher gets no ETH</h2>
@@ -106,7 +108,7 @@
     <p>No fees are taken at all. Buyers withdraw exactly what they paid.</p>
 
     <h2>Other costs</h2>
-    <p>There may be a fee for creating a token. If there is, the launch form shows it before you sign. On the alpha it's free. Network gas applies to every transaction, as it does anywhere on-chain, and the app shows an estimate before you sign.</p>
+    <p>There may be a fee for creating a token. If there is, the launch form shows it above the launch button before you sign. Network gas applies to every transaction, as it does anywhere on-chain, and the app shows an estimate before you sign.</p>
 
     <div class="page-nav">
         <a href="launch-a-token.html">
