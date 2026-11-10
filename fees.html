@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fees and who gets what | punk.fun docs</title>
-<meta name="description" content="punk.fun's fees: 5% of the ETH to the platform and a creator fee in tokens to the launcher, both only when a sale sells out.">
+<meta name="description" content="punk.fun's fees: 5% of the ETH to the platform and a fee in tokens to the creator, both only when a sale sells out.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="punk.fun docs">
 <meta property="og:title" content="Fees and who gets what | punk.fun docs">
-<meta property="og:description" content="punk.fun's fees: 5% of the ETH to the platform and a creator fee in tokens to the launcher, both only when a sale sells out.">
+<meta property="og:description" content="punk.fun's fees: 5% of the ETH to the platform and a fee in tokens to the creator, both only when a sale sells out.">
 <meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/fees.html">
 <meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -44,7 +44,7 @@
             <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
         </div>
         <div class="nav-group">
-            <div class="nav-group-title">For launchers</div>
+            <div class="nav-group-title">For creators</div>
             <a class="nav-link" href="launch-a-token.html">Launch a token</a>
             <a class="nav-link" href="fees.html">Fees and who gets what</a>
             <a class="nav-link" href="the-pool.html">The pool at sellout</a>
@@ -59,12 +59,12 @@
 </aside>
 
 <main class="content">
-<div class="eyebrow">Guide &middot; For launchers</div>
+<div class="eyebrow">Guide &middot; For creators</div>
     <h1>Fees and who gets what</h1>
-    <p class="lead">There are two fees. The platform fee is fixed and the same for every launch. The creator fee is set by the launcher when they launch. Both are only taken if a sale sells out.</p>
+    <p class="lead">There are two fees. The platform fee is fixed and the same for every launch. Each creator sets their own creator fee when they launch. Both are only taken if a sale sells out.</p>
 
     <figure class="diagram">
-        <img src="img/diagram-eth.svg" alt="At sellout any price differences are set aside for buyers first. Of the ETH the sale keeps, 95% goes into the Uniswap pool and 5% is the platform fee. The launcher gets no ETH.">
+        <img src="img/diagram-eth.svg" alt="At sellout any price differences are set aside for buyers first. Of the ETH the sale keeps, 95% goes into the Uniswap pool and 5% is the platform fee. The creator gets no ETH.">
     </figure>
 
     <div class="table-wrap">
@@ -72,7 +72,7 @@
         <thead><tr><th>Who</th><th>Gets</th></tr></thead>
         <tbody>
             <tr><td>The platform</td><td>5% of the ETH the sale keeps, after any price differences have been set aside for buyers</td></tr>
-            <tr><td>The launcher</td><td>The creator fee: a share of the liquidity reserve, in tokens, set at launch between 0% and 20% of the reserve</td></tr>
+            <tr><td>The creator</td><td>The creator fee: a share of the liquidity reserve, in tokens, set at launch between 0% and 20% of the reserve</td></tr>
             <tr><td>The pool</td><td>The remaining 95% of the ETH and the rest of the reserve tokens</td></tr>
             <tr><td>Buyers</td><td>Exactly the tokens they bought, plus any ETH owed back from their batch's final price. Fees never reduce either.</td></tr>
         </tbody>
@@ -85,7 +85,7 @@
     </figure>
 
     <h2>The creator fee</h2>
-    <p>The launcher picks their creator fee when they launch. It's a share of the liquidity reserve, the half of the supply held back for the pool, paid in tokens when the sale sells out. It can't be changed after launch.</p>
+    <p>The creator picks their creator fee when they launch. It's a share of the liquidity reserve, the half of the supply held back for the pool, paid in tokens when the sale sells out. It can't be changed after launch.</p>
     <div class="table-wrap">
     <table>
         <thead><tr><th>Creator fee (share of the reserve)</th><th>Share of total supply</th><th>Tokens</th><th>Rating</th></tr></thead>
@@ -101,7 +101,7 @@
     <p>The app rates every creator fee by the share of supply it takes: up to 5% is Healthy, up to 7.5% is High, and anything above is Very high. The creator sees the rating on the slider when they launch, and buyers see it on the sale page. These shares assume a 1x launch price multiplier. Above that, part of the reserve is burned, so the same fee is a bigger share of what's left, and the rating goes up with it.</p>
     <p>The tokens come out of the pool's half, never out of what buyers bought. A higher creator fee means fewer tokens in the pool, which also lifts the price trading opens at. <a href="the-pool.html">The pool at sellout</a> explains that.</p>
 
-    <h2>The launcher gets no ETH</h2>
+    <h2>The creator gets no ETH</h2>
     <p>Worth saying plainly: launching doesn't pay you in ETH. Your share is your creator fee, in tokens, which you receive when the sale sells out. Everything else goes into the market or the platform fee.</p>
 
     <h2>If the sale doesn't sell out</h2>

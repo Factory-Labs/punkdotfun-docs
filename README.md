@@ -14,7 +14,7 @@ step, no dependencies, no framework. It works the moment the files are served.
 | `pricing.html` | Batches, growth, decay, reading the chart |
 | `refunds.html` | When a sale doesn't sell out |
 | `after-the-sale.html` | Claiming, the pool, trading |
-| `launch-a-token.html` | Launcher guide, every form setting |
+| `launch-a-token.html` | Creator guide, every form setting |
 | `fees.html` | Fees and who gets what |
 | `the-pool.html` | The pool at sellout and the opening price |
 | `sale-states.html` | Every sale badge explained |
