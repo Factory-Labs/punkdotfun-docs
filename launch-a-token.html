@@ -112,7 +112,7 @@
         <tbody>
             <tr><td>First batch size</td><td>How many tokens are in the first batch. At the default, the 500 million on sale fill in five batches.</td><td>25,000,000</td></tr>
             <tr><td>Price floor</td><td>Decay can never take the price below this, and it can't be above your opening price.</td><td>0.000000001 ETH, a tenth of the opening price</td></tr>
-            <tr><td>Price decay</td><td>How much the price drops each block inside a batch while nobody buys. At the default, the first batch reaches the floor in about an hour. Zero keeps it flat.</td><td>0.00000000003125 ETH per block</td></tr>
+            <tr><td>Price decay</td><td>How much the price drops each block inside a batch, until the batch sells out or reaches the floor. Buying doesn't pause it. At the default, the first batch reaches the floor in about an hour. Zero keeps it flat.</td><td>0.00000000003125 ETH per block</td></tr>
             <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 1.3x to 3x.</td><td>2x</td></tr>
             <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of the average price paid in the batch before. Never below the price floor. 1.3x to 3x.</td><td>1.3x</td></tr>
             <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>1.1x</td></tr>
