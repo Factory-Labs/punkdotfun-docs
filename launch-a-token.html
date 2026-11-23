@@ -75,7 +75,7 @@
     <table>
         <thead><tr><th>Field</th><th>What it's for</th></tr></thead>
         <tbody>
-            <tr><td>Name and ticker</td><td>Required. How your token shows up everywhere.</td></tr>
+            <tr><td>Name and ticker</td><td>Required. How your token shows up everywhere. The ticker is up to six characters. The form shows the $ in front, so you don't type it.</td></tr>
             <tr><td>Number of tokens</td><td>Fixed at 1 billion. Half is sold in the auction and half backs the pool.</td></tr>
             <tr><td>Description</td><td>Optional. Stored off-chain and shown on your sale page.</td></tr>
             <tr><td>Project X account</td><td>Optional. Log in with X to prove you own the account, and buyers see it marked as verified on the sale page.</td></tr>
@@ -140,7 +140,8 @@
         <figcaption>If your wallet can batch transactions, you sign the whole launch once.</figcaption>
     </figure>
     <p>Press <strong>Launch Token</strong>. If your wallet can batch transactions, you sign once and that one signature creates your token, creates the sale, funds it with the full supply and opens it.</p>
-    <p>If your wallet can't batch, the launch takes four confirmations instead. If one gets interrupted, come back to the form and you can pick up where you left off. Until you finish, the sale shows as <strong>Not funded</strong> and nobody can buy.</p>
+    <p>If your wallet can't batch, the launch takes four confirmations instead. If one gets interrupted, open the launch page again in the same browser. It shows that your token wasn't finished and checks what's already on chain. Press <strong>Resume launch</strong> to carry on from the next step. It won't create a second token, and it has to be the same wallet. <strong>Discard</strong> drops the unfinished launch instead.</p>
+    <p>Resuming takes care not to send a step twice. If a step was already sent, it waits for that to confirm first. If your wallet never answered a request, the form asks whether you rejected it or approved it and it failed, because it can't tell those apart on its own. If your browser can't save the launch, the form warns you before you sign, because an interrupted launch then can't be resumed there. Until you finish, the sale shows as <strong>Not funded</strong> and nobody can buy.</p>
     <p>If you set a start in the future, the sale shows as <strong>Upcoming</strong> until buying opens.</p>
 
     <h2>While the sale runs</h2>
