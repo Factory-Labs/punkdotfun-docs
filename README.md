@@ -22,7 +22,7 @@ step, no dependencies, no framework. It works the moment the files are served.
 | `faq.html` | Frequently asked questions |
 | `fun-vs-punk.html` | Redirect to `punk.html`, kept so old links work |
 | `batch-average.html` | Redirect to the one-price section of `pricing.html`; batch-average mode was removed from the contracts |
-| `img/` | Screenshots from the alpha (`.webp`) and diagrams (`.svg`) |
+| `img/` | Screenshots of the punk.fun app (`.webp`) and diagrams (`.svg`) |
 | `styles.css` / `app.js` | Shared styling and the mobile-nav script |
 
 ## Publishing on GitHub Pages
