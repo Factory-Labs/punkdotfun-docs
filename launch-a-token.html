@@ -116,7 +116,7 @@
             <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 1.3x to 3x.</td><td>2x</td></tr>
             <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of the average price paid in the batch before. Never below the price floor. 1.3x to 3x.</td><td>1.3x</td></tr>
             <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>1.1x</td></tr>
-            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply. Set it with the <strong>Set creator fee</strong> slider. See <a href="fees.html">Fees and who gets what</a>.</td><td>5%</td></tr>
+            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply at a 1x launch price multiplier. Set it with the <strong>Set creator fee</strong> slider. See <a href="fees.html">Fees and who gets what</a>.</td><td>5%</td></tr>
             <tr><td>Launch price multiplier</td><td>Opens the trading pool above the average sale price by putting fewer tokens in and burning the rest. 1x to 3x. See <a href="the-pool.html">The pool at sellout</a>.</td><td>1x, burns nothing</td></tr>
         </tbody>
     </table>
@@ -148,7 +148,7 @@
     <p>There's nothing for you to do. Buyers commit, batches roll over, and the price follows the rules you set. You can watch progress on your sale page. You hold no tokens while the sale runs, and if you buy in your own sale you pay the same price as everyone else.</p>
 
     <h2>How it ends</h2>
-    <p>If the sale sells out, the pool is created in the same transaction as the final buy and buyers can claim. You receive your creator fee in tokens at that point. You don't receive any ETH from the sale: it all goes into the pool apart from the platform's 5%. See <a href="fees.html">Fees and who gets what</a>.</p>
+    <p>If the sale sells out, the pool is created in the same transaction as the final buy and buyers can claim. You receive your creator fee in tokens at that point. You don't receive any ETH from the sale. Any ETH buyers can claim back is set aside first, the platform takes 5% of the rest, and everything else goes into the pool. See <a href="fees.html">Fees and who gets what</a>.</p>
     <p>If the sale doesn't sell out by its deadline, buying stops and everyone is refunded in full. No pool is created and no fees are taken.</p>
 
     <div class="callout warn">
