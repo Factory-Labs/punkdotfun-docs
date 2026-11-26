@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale states | punk.fun docs</title>
+<meta name="description" content="Every badge a punk.fun sale can show, what it means, and what you can do.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="punk.fun docs">
+<meta property="og:title" content="Sale states | punk.fun docs">
+<meta property="og:description" content="Every badge a punk.fun sale can show, what it means, and what you can do.">
+<meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/sale-states.html">
+<meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <img class="brand-logo" src="img/brand/logo.png" alt="punk.fun" width="200" height="38">
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">Punk<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For creators</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Reference</div>
+    <h1>Sale states</h1>
+    <p class="lead">Every sale shows a badge next to its name. Here's what each one means and what you can do.</p>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Badge</th><th>What it means</th><th>What you can do</th></tr></thead>
+        <tbody>
+            <tr><td><span class="pill st-soon">Upcoming</span></td><td>Funded and scheduled. Buying hasn't opened yet.</td><td>Wait for it to open.</td></tr>
+            <tr><td><span class="pill st-live">Live</span></td><td>Buying is open. The price follows the batch rules.</td><td>Buy.</td></tr>
+            <tr><td><span class="pill st-claim">Selling out</span></td><td>Sold out, and the pool is being created. This normally happens inside the final buy, so you'll rarely see it.</td><td>Nothing. Give it a moment.</td></tr>
+            <tr><td><span class="pill st-claim">Sold out</span></td><td>Sold out. The pool is live.</td><td>Claim your tokens and any ETH you're owed, then trade.</td></tr>
+            <tr><td><span class="pill st-bad">Ended &ndash; ETH&nbsp;to&nbsp;claim</span></td><td>The deadline passed without a sellout. Every buyer can withdraw what they paid.</td><td>Withdraw exactly what you paid, whenever you like. The first withdrawal also closes the sale for everyone.</td></tr>
+            <tr><td><span class="pill st-grey">Not funded</span></td><td>The launch was started but not finished, so the sale never opened.</td><td>Nothing to buy or claim. Whoever launched it needs to finish the launch.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h2>Upcoming</h2>
+    <figure class="shot wide">
+        <img src="img/sale-upcoming.webp" alt="A sale marked Upcoming, saying the auction begins in about 2 hours, with the start block and a Notify Me When Live button" loading="lazy">
+        <figcaption>A scheduled sale. The page counts down to the block where buying opens.</figcaption>
+    </figure>
+
+    <h2>Live</h2>
+    <figure class="shot wide">
+        <img src="img/sale-live-overview.webp" alt="A sale marked Live with the current price, batch, progress, the batch chart and the Buy Tokens panel" loading="lazy">
+        <figcaption>A live sale. See <a href='buy-in-an-auction.html'>Buy in an auction</a>.</figcaption>
+    </figure>
+
+    <h2>Sold out</h2>
+    <figure class="shot wide">
+        <img src="img/sale-soldout.webp" alt="A sale marked Sold out with the Claim panel and the Trade on Uniswap button" loading="lazy">
+        <figcaption>A sold-out sale. See <a href='after-the-sale.html'>Claiming and after the sale</a>.</figcaption>
+    </figure>
+
+    <h2>Ended &ndash; ETH to claim</h2>
+    <figure class="shot wide">
+        <img src="img/sale-expired.webp" alt="A sale marked Ended &ndash; ETH to claim with an Auction Expired note, a Your Refund card and a Withdraw button" loading="lazy">
+        <figcaption>A sale that missed its deadline, with refunds open. See <a href='refunds.html'>When a sale doesn't sell out</a>.</figcaption>
+    </figure>
+
+    <h2>Not funded</h2>
+    <figure class="shot wide">
+        <img src="img/sale-notfunded.webp" alt="A sale marked Not funded with a Setup incomplete card saying whoever launched it needs to finish the last step" loading="lazy">
+        <figcaption>A launch that was started but not finished. This only happens with wallets that need four confirmations to launch.</figcaption>
+    </figure>
+
+    <div class="page-nav">
+        <a href="the-pool.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; The pool at sellout</span>
+        </a>
+        <a class="next" href="glossary.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Glossary &rarr;</span>
+        </a>
+    </div>
+
+    <img class="beads-strip" src="img/brand/beads-strip.png" alt="" aria-hidden="true">
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; punk.fun is in alpha on Ethereum. The screenshots are from punk.fun on Ethereum, and the names and numbers in them are examples.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing | punk.fun docs</title>
+<meta name="description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the price floor, and how to read the auction chart.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="punk.fun docs">
+<meta property="og:title" content="Pricing | punk.fun docs">
+<meta property="og:description" content="How prices move in a punk.fun sale: batches, batch growth, price decay, the price floor, and how to read the auction chart.">
+<meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/pricing.html">
+<meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <img class="brand-logo" src="img/brand/logo.png" alt="punk.fun" width="200" height="38">
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">Punk<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For creators</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Guide &middot; For buyers</div>
+    <h1>Pricing: batches, growth and decay</h1>
+    <p class="lead">A sale doesn't run at one price. It's split into batches, and the price moves in two ways: it steps up at each new batch, and it can drift down inside a batch.</p>
+
+    <figure class="diagram">
+        <img src="img/diagram-sawtooth.svg" alt="The price falls inside each batch and steps up when the next batch opens, never going below the price floor.">
+    </figure>
+
+    <h2>Batches</h2>
+    <p>The creator sets the first batch's size and opening price, then two growth settings: how much bigger each batch is than the last, and how each batch's opening price compares to the average price people paid in the batch before. Both can be anywhere from 1.3 to 3 times. A new batch never opens below the price floor.</p>
+    <p>By default each batch is twice the size of the one before and opens at 1.3 times the average price paid in the batch before, so a sale on the defaults fills in five batches. Most of the money is raised in the last few.</p>
+
+    <h2>Decay</h2>
+    <p>With price decay on, the price falls a little every block from the moment the batch opens, until the batch sells out or the price reaches the floor. Buying doesn't pause it or reset it. Only a new batch resets it.</p>
+    <p>Decay is on by default: unless it sells out first, the first batch's price falls to the floor in about an hour. A creator can set decay to zero instead, which keeps the price flat inside each batch so it only changes when a batch closes.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">There's always a floor</span>
+        <p>The price never decays below the price floor the creator set, so it can't fall to nothing while a batch waits for buyers.</p>
+    </div>
+
+    <h2 id="one-price">Everyone in a batch pays the same price</h2>
+    <p>When a batch sells out, the price at that moment becomes the batch's <strong>final price</strong>, and everyone who bought in that batch pays it. With decay switched on, that's the lowest price the batch reached.</p>
+    <p>You keep exactly the number of tokens you bought. If you paid more per token than the final price, the difference is yours, in ETH. You collect it once the whole sale has sold out, from the same place you claim your tokens.</p>
+
+    <figure class="diagram">
+        <img src="img/diagram-one-price.svg" alt="Three buyers in one batch pay 10, 8 and 6 gwei as the price decays. The batch sells out at 6 gwei, so everyone pays 6 and the first two get 4 and 2 gwei per token back in ETH.">
+    </figure>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Buyer</th><th>Bought at</th><th>Tokens</th><th>Paid</th><th>Final price cost</th><th>ETH back</th></tr></thead>
+        <tbody>
+            <tr><td>Ana</td><td>10 gwei</td><td>1,000,000</td><td>0.010 ETH</td><td>0.006 ETH</td><td>0.004 ETH</td></tr>
+            <tr><td>Ben</td><td>8 gwei</td><td>1,000,000</td><td>0.008 ETH</td><td>0.006 ETH</td><td>0.002 ETH</td></tr>
+            <tr><td>Cat, whose buy sells out the batch</td><td>6 gwei</td><td>1,000,000</td><td>0.006 ETH</td><td>0.006 ETH</td><td>None</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <p>So nobody loses out for buying early in a batch. Being early gets you into the batch before it sells out, and you still end up paying the same as the last buyer.</p>
+    <p>With decay at zero, the price inside a batch never changes, so everyone pays the same anyway and there's nothing to get back.</p>
+
+    <div class="callout">
+        <span class="callout-label">This isn't a refund</span>
+        <p>The ETH back only exists if the whole sale sells out. If the sale misses its deadline instead, you get back everything you paid, through the normal refund. You never get both. See <a href="refunds.html">When a sale doesn't sell out</a>.</p>
+    </div>
+
+    <h2>What this means when you buy</h2>
+    <ul>
+        <li>Your buy fills straight away at the current price. There's no bidding and nobody can outbid you.</li>
+        <li>If your buy finishes a batch, the leftover ETH comes back in the same transaction.</li>
+        <li>Under <strong>Price limit</strong>, <strong>This batch</strong> only fills your buy in the open batch, at up to its price. <strong>Any batch</strong> lets it fill in whichever batch is open when it lands, as long as the sale is still open.</li>
+        <li>If the sale has decay, buying early in a batch doesn't cost you more in the end: you pay the batch's final price and get the difference back. Waiting only risks the batch selling out without you.</li>
+    </ul>
+
+    <h2>Reading the chart</h2>
+    <figure class="shot wide">
+        <img src="img/chart.webp" alt="The auction chart with one block per batch, labelled B1 to B6, on an FDV axis in dollars, with a dashed average-paid line and Batch 6 half filled" loading="lazy">
+        <figcaption>The chart on a live sale. Five batches have filled and the sixth is open now, half sold.</figcaption>
+    </figure>
+    <ul>
+        <li><strong>Each square is a batch</strong>, labelled B1, B2 and so on. A bigger square is a bigger batch, and a square that sits higher has a higher price.</li>
+        <li><strong>The axis shows FDV</strong>: the price times the full 1 billion supply, in dollars. Switch it to a log scale if the early batches are too small to see.</li>
+        <li>The batch open now fills up as people buy. If the price has decayed, a thin line above a square shows how far it fell from its opening price.</li>
+        <li><strong>The dashed line</strong> is the average price paid so far. That's roughly where trading would open if the sale sold out now. See <a href="the-pool.html">The pool at sellout</a>.</li>
+        <li><strong>The banner</strong> above the chart tells you what just happened, for example that a batch has filled and the next is open.</li>
+        <li>Hover over a square for its numbers, including the per-token price, and use the zoom buttons to look closer. The &#9432; next to the axis explains the chart.</li>
+    </ul>
+    <p>The <strong>Auction Progress</strong> bar under the price is the share of the 500 million tokens on sale that have been bought. At 100% the sale has sold out.</p>
+
+    <div class="page-nav">
+        <a href="buy-in-an-auction.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Buy in an auction</span>
+        </a>
+        <a class="next" href="refunds.html">
+            <span class="dir">Next</span>
+            <span class="ttl">When a sale doesn't sell out &rarr;</span>
+        </a>
+    </div>
+
+    <img class="beads-strip" src="img/brand/beads-strip.png" alt="" aria-hidden="true">
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; punk.fun is in alpha on Ethereum. The screenshots are from punk.fun on Ethereum, and the names and numbers in them are examples.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

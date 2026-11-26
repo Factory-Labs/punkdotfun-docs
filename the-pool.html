@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The pool at sellout | punk.fun docs</title>
+<meta name="description" content="What goes into the Uniswap pool when a punk.fun sale sells out, why trading opens at the average price paid, and the launch price multiplier.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="punk.fun docs">
+<meta property="og:title" content="The pool at sellout | punk.fun docs">
+<meta property="og:description" content="What goes into the Uniswap pool when a punk.fun sale sells out, why trading opens at the average price paid, and the launch price multiplier.">
+<meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/the-pool.html">
+<meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <img class="brand-logo" src="img/brand/logo.png" alt="punk.fun" width="200" height="38">
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">Punk<span class="soon-tag">Soon</span></a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For creators</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Guide &middot; For creators and buyers</div>
+    <h1>The pool at sellout</h1>
+    <p class="lead">When a sale sells out, a market is created straight away. This page explains what goes into it and what price it opens at, because that price surprises people.</p>
+
+    <h2>What happens in the final buy</h2>
+    <p>The buy that takes the last token also takes the fees, pairs the remaining ETH with the remaining reserve tokens in a Uniswap pool, sends the LP tokens to a dead address and opens claims. All in one transaction.</p>
+    <p>Because nobody holds the LP tokens, nobody can withdraw that liquidity. Not the creator, not punk.fun. There's no unlock date because there's nothing left to unlock.</p>
+    <p>Once a sale has sold out, its page has <strong>Chart on DexScreener</strong> and <strong>Pool on Etherscan</strong> buttons under <strong>Trade on Uniswap</strong>, and the <strong>Sale result</strong> card shows the pool's address under <strong>Uniswap V2 pool</strong>, which you can copy.</p>
+
+    <h2>The price it opens at</h2>
+    <p>The starting point is the average price across the whole sale: the ETH the sale keeps after price differences go back to buyers, divided by the 500 million tokens sold. Then two things move it.</p>
+    <ul>
+        <li><strong>The fees.</strong> The platform's 5% comes out of the pool's ETH, and the creator fee comes out of the pool's tokens. When the creator fee is 5% of the reserve, the two cancel out and the pool opens at the average. A lower creator fee opens it a little below the average, and a higher one a little above.</li>
+        <li><strong>The launch price multiplier</strong>, if the creator set one. See below.</li>
+    </ul>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Creator fee (share of the reserve)</th><th>Pool opens at, with no multiplier</th></tr></thead>
+        <tbody>
+            <tr><td>0%</td><td>About 5% below the average</td></tr>
+            <tr><td>5%</td><td>The average</td></tr>
+            <tr><td>10%</td><td>About 6% above the average</td></tr>
+            <tr><td>20%</td><td>About 19% above the average</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Either way, the important part is the same: trading doesn't open at the price the last batch paid.</p>
+
+    <h2>A worked example</h2>
+    <p>Take a sale with a first batch of 500,000 tokens opening at 1 gwei per token, where each batch is twice the size and twice the price of the last, with no decay, and a creator fee of 5% of the reserve. These aren't the default settings, but they show the effect clearly.</p>
+
+    <figure class="diagram">
+        <img src="img/diagram-opening-price.svg" alt="Ten batches doubling in price from 1 to 512 gwei per token. The pool opens at the average, about 338 gwei, which is above the first nine batches and about 34% below the last.">
+    </figure>
+
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th></th><th>Figure</th></tr></thead>
+        <tbody>
+            <tr><td>Total raised</td><td>About 169 ETH across 10 batches</td></tr>
+            <tr><td>Share raised in the last batch</td><td>74%</td></tr>
+            <tr><td>Price the last batch paid</td><td>512 gwei per token</td></tr>
+            <tr><td>Average price across the sale</td><td>About 338 gwei per token</td></tr>
+            <tr><td>Price the pool opens at</td><td>About 338 gwei per token</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <p>So the last batch, which is three quarters of the money in the sale, starts about 34% below what it paid before anyone has traded. Earlier batches start above what they paid. This isn't a bug or a fee, it's arithmetic: the average is always below the top of a rising price ladder.</p>
+
+    <figure class="shot wide">
+        <img src="img/sale-soldout.webp" alt="A sold-out sale whose chart has a dashed average-paid line at an FDV of $84.8K, well below the last batch's bar" loading="lazy">
+        <figcaption>The same thing on a sale page. The chart shows prices as FDV in dollars. The dashed line is the average paid, an FDV of $84.8K. The last batch cleared at 0.0000000376 ETH, an FDV of about $120K, so trading opened about 30% below it.</figcaption>
+    </figure>
+
+    <div class="callout warn">
+        <span class="callout-label">What that means for you</span>
+        <p>If you buy early, you're likely to be up when trading opens. If you buy in one of the last batches, you may be down straight away. The gap is bigger the more the price climbs during the sale.</p>
+    </div>
+
+    <h2>The launch price multiplier</h2>
+    <p>A creator can choose to open the pool above the average by putting fewer reserve tokens into it and burning the rest. This is the <strong>launch price multiplier</strong> in the launch form's advanced settings, anywhere from 1x to 3x.</p>
+    <ul>
+        <li>At <strong>1x</strong>, the default, nothing is burned.</li>
+        <li>At <strong>1.5x</strong>, a third of the pool's tokens are burned and the pool opens 1.5 times higher. In the worked example above, that's roughly where the last batch breaks even.</li>
+        <li>Above 1x the pool is thinner, because it holds fewer tokens. You're buying price headroom, not depth, so the price moves more on each trade.</li>
+    </ul>
+    <p>The burned tokens are destroyed for good, which lowers the total supply. It doesn't change how many tokens buyers or the creator receive, but the creator's tokens become a bigger share of the smaller supply, and the app shows that share.</p>
+
+    <div class="page-nav">
+        <a href="fees.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Fees and who gets what</span>
+        </a>
+        <a class="next" href="sale-states.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Sale states &rarr;</span>
+        </a>
+    </div>
+
+    <img class="beads-strip" src="img/brand/beads-strip.png" alt="" aria-hidden="true">
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; punk.fun is in alpha on Ethereum. The screenshots are from punk.fun on Ethereum, and the names and numbers in them are examples.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
