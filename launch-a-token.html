@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Launch a token | punk.fun docs</title>
-<meta name="description" content="A walkthrough of launching a token on punk.fun: every setting on the launch form, launching in one signature, and how the sale ends.">
+<meta name="description" content="A walkthrough of launching a token on punk.fun: the sale presets, every Advanced setting, launching in one signature, and how the sale ends.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="punk.fun docs">
 <meta property="og:title" content="Launch a token | punk.fun docs">
-<meta property="og:description" content="A walkthrough of launching a token on punk.fun: every setting on the launch form, launching in one signature, and how the sale ends.">
+<meta property="og:description" content="A walkthrough of launching a token on punk.fun: the sale presets, every Advanced setting, launching in one signature, and how the sale ends.">
 <meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/launch-a-token.html">
 <meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -35,6 +35,7 @@
             <a class="nav-link" href="index.html">Overview</a>
             <a class="nav-link" href="how-it-works.html">How it works</a>
             <a class="nav-link" href="punk.html">Punk<span class="soon-tag">Soon</span></a>
+            <a class="nav-link" href="use-with-ai.html">Use with AI</a>
         </div>
         <div class="nav-group">
             <div class="nav-group-title">For buyers</div>
@@ -65,6 +66,7 @@
 
     <h2>Before you start</h2>
     <p>You need a wallet on Ethereum with a little ETH for gas, and you'll be asked to confirm you're eligible to use punk.fun on your first visit. punk.fun isn't available in the UK or in sanctioned countries. The launch form makes the token for you. If there's a fee for creating a token, it shows at the top of the launch form before you sign.</p>
+    <p>You don't need to connect a wallet to start. You can open the launch form, fill it in and pick your settings first, then press <strong>Connect wallet to launch</strong> at the bottom when you're ready. If the form can't find a wallet in your browser, it shows you how to get one there instead. The one exception is linking your X account, which needs your wallet connected first. If your browser allows it, the form keeps what you type for 24 hours after your last change, so a reload doesn't lose it, for example after you install a wallet. Your token image and X account aren't kept, so add those again.</p>
 
     <h2>Step 1: Your token</h2>
     <figure class="shot">
@@ -78,49 +80,84 @@
             <tr><td>Name and ticker</td><td>Required. How your token shows up everywhere. The ticker is up to six characters. The form shows the $ in front, so you don't type it.</td></tr>
             <tr><td>Number of tokens</td><td>Fixed at 1 billion. Half is sold in the auction and half backs the pool.</td></tr>
             <tr><td>Description</td><td>Optional. Stored off-chain and shown on your sale page.</td></tr>
-            <tr><td>Project X account</td><td>Optional. Log in with X to prove you own the account, and buyers see it marked as verified on the sale page.</td></tr>
+            <tr><td>Project X account</td><td>Optional. Log in with X to prove you own the account, and buyers see it marked as verified on the sale page. The proof is tied to your wallet, so connect your wallet first.</td></tr>
             <tr><td>Token image</td><td>Optional. PNG, JPG or GIF up to 4MB.</td></tr>
         </tbody>
     </table>
     </div>
 
-    <h2>Step 2: Sale settings</h2>
+    <h2 id="sale-settings">Step 2: Sale settings</h2>
+    <p>Sale settings open on six boxes: five presets and <strong>Advanced</strong>. Each preset is a complete set of sale settings, so one click sets everything except when the sale starts. <strong>Standard</strong> is picked for you, and it's the right choice for most launches.</p>
     <figure class="shot">
-        <img src="img/launch-sale-settings.webp" alt="The sale settings section: sale start, opening price of 0.00000001 ETH with its starting FDV, and sale timeout with 4 hours, 1 day, 1 week and 30 days buttons and 1 day picked" loading="lazy">
-        <figcaption>Sale settings: when the sale opens, the opening price and how long it runs.</figcaption>
+        <img src="img/launch-presets.webp" alt="The sale settings card with six boxes: Nano, Micro, Small, Standard, Large and Advanced, each preset showing its opening FDV in dollars and Standard picked. Underneath, a summary of the Standard sale and the Sale start choices Now, 1h, 6h, 24h and Custom, with Now picked" loading="lazy">
+        <figcaption>The six boxes, with Standard picked. Each preset shows what its opening price values the whole token at, and the line underneath sums up the sale you've picked.</figcaption>
     </figure>
+
+    <h3 id="presets">The five presets</h3>
+    <p>The presets differ only in price: where the price opens, the lowest it can fall to, and how fast it falls while nobody buys. Bigger presets open at a higher price, so the whole token is valued higher from the start. Pick a smaller one if you're testing or expect a small crowd, and a bigger one if your launch is already well known.</p>
     <div class="table-wrap">
     <table>
-        <thead><tr><th>Setting</th><th>What it controls</th></tr></thead>
+        <thead><tr><th>Preset</th><th>Opening price</th><th>Price floor</th><th>Reaches the floor if nobody buys</th></tr></thead>
         <tbody>
-            <tr><td>Sale start</td><td>How many blocks from now buying opens. Leave it blank to open as soon as the launch lands. A delay lets you announce the sale in advance. The form tells you roughly when that is.</td></tr>
-            <tr><td>Opening price</td><td>The price per token at the start of the first batch, in ETH. The default is 0.00000001 ETH, and the form shows roughly what that values the whole token at in dollars.</td></tr>
-            <tr><td>Sale timeout</td><td>Between 4 hours and 30 days, set in blocks. There are buttons for 4 hours, 1 day, 1 week and 30 days, and the default is 1 day. If the sale hasn't sold out by then, every buyer is refunded.</td></tr>
+            <tr><td><strong>Nano</strong></td><td>1 gwei</td><td>0.1 gwei</td><td>About 3 hours</td></tr>
+            <tr><td><strong>Micro</strong></td><td>2.5 gwei</td><td>0.25 gwei</td><td>About 2 hours</td></tr>
+            <tr><td><strong>Small</strong></td><td>5 gwei</td><td>0.5 gwei</td><td>About 1.5 hours</td></tr>
+            <tr><td><strong>Standard</strong> (picked for you)</td><td>10 gwei</td><td>1 gwei</td><td>About 58 minutes</td></tr>
+            <tr><td><strong>Large</strong></td><td>30 gwei</td><td>3 gwei</td><td>About 58 minutes</td></tr>
         </tbody>
     </table>
     </div>
+    <p>Prices are per token. A gwei is a billionth of an ETH, so Standard opens at 0.00000001 ETH a token. The box shows the same price as the token's value in dollars, called the opening FDV, which moves with the price of ETH.</p>
+    <p>Everything else is the same in every preset: a first batch of 25 million tokens, each batch twice the size of the last and opening at 1.3 times the last one's average price, decay growth of 1.1x, a sale timeout of 1 day, a 1x launch price multiplier and a 5% creator fee. Each setting is explained under <a href="#advanced">Step 3</a>. Press the <strong>i</strong> on a box to see its numbers before you pick it.</p>
+    <p>Some networks have their own limits on these settings. If a preset is outside them, its box says <strong>Not allowed here</strong> and you can't pick it.</p>
 
-    <h2>Step 3: Advanced settings</h2>
-    <p>These are filled in with the defaults. You only need to open them if you want a different shape of sale.</p>
+    <h3 id="sale-start">Sale start</h3>
+    <p>Sale start sits under the presets, and no preset changes it. Pick when buying opens:</p>
+    <ul>
+        <li><strong>Now</strong> opens the sale as soon as your launch lands. This is picked for you.</li>
+        <li><strong>1h</strong>, <strong>6h</strong> or <strong>24h</strong> open it roughly that long after the launch, which gives you time to announce it. The sale shows as <strong>Upcoming</strong> until then.</li>
+        <li><strong>Custom</strong> lets you type any delay. The form counts in blocks, which come about every 12 seconds, and tells you roughly when that is. A typed number, even 0, becomes a fixed block when you press <strong>Launch Token</strong>, so pick Now if you want the sale to open as soon as the launch lands.</li>
+    </ul>
+    <div class="callout warn">
+        <span class="callout-label">Confirm promptly</span>
+        <p>A delay starts counting down when you press <strong>Launch Token</strong>, while you're still confirming in your wallet. The sale timeout counts from the start, and so does the price drop in the first batch. So the clock can already be running before buying opens, even with one confirmation if you leave it waiting, and more so if the launch takes four (because your wallet can't batch, or a batch fails). A slow finish can then open the first batch at a lower price, down to the floor. If the deadline passes before the last confirmation, the tokens can end up in a sale that can never open, and you still pay the gas and any launch fee. If you come back to a launch prompt that has been open a long time, reject it and follow <a href="#interrupted">If a launch gets interrupted</a>.</p>
+    </div>
+
+    <h2 id="advanced">Step 3: Advanced</h2>
+    <p>You don't need this unless you want a different shape of sale. Pick <strong>Advanced</strong> to set every number yourself. It starts from the preset you had picked, so you only change what you want. The line under the boxes says which preset you started from, and the picker stays on Advanced while you change the numbers.</p>
     <figure class="shot">
-        <img src="img/launch-advanced.webp" alt="The advanced configuration section with first batch size, price floor, price decay, batch size growth, batch price growth, decay growth, launch price multiplier and the Set creator fee slider at 5%, rated Healthy" loading="lazy">
-        <figcaption>Advanced settings, filled in with the defaults, with the creator fee slider at the bottom. Each one shows its default underneath, and the multiples show their allowed range too.</figcaption>
+        <img src="img/launch-advanced.webp" alt="Advanced picked, starting from Standard, with its four sections closed: Sale timeout at 7200 blocks, about 1 day; Pricing at 0.00000001 ETH open and 0.000000001 ETH floor; Batches at 25M first batch, 2x size, 1.3x price and 1.1x decay; and Post-sale and fees at 1x launch price and 5% creator fee" loading="lazy">
+        <figcaption>Advanced, with all four sections closed. Sale timeout and Pricing open by default. A closed section sums up its settings, and you open it to change them.</figcaption>
     </figure>
+    <p>Advanced has four sections. The table shows what each setting does and its value on Standard. The multiples also show their allowed range under each box.</p>
     <div class="table-wrap">
     <table>
-        <thead><tr><th>Setting</th><th>What it controls</th><th>Default</th></tr></thead>
+        <thead><tr><th>Setting</th><th>What it controls</th><th>On Standard</th></tr></thead>
         <tbody>
-            <tr><td>First batch size</td><td>How many tokens are in the first batch. At the default, the 500 million on sale fill in five batches.</td><td>25,000,000</td></tr>
+            <tr><th colspan="3" scope="rowgroup">Sale timeout</th></tr>
+            <tr><td>Sale timeout</td><td>The longest the sale can run, usually from 4 hours to 30 days. Pick 4 hours, 1 day, 1 week or 30 days, or Custom to type a number of blocks. A button only shows if this network's limits allow it, and the 4 hours button only shows once the form has read those limits. If it never appears, the form couldn't read the limits or this network doesn't allow a sale that short. It ends sooner if it sells out. If it hasn't sold out by then, every buyer can take back exactly what they paid.</td><td>1 day</td></tr>
+        </tbody>
+        <tbody>
+            <tr><th colspan="3" scope="rowgroup">Pricing</th></tr>
+            <tr><td>Opening price</td><td>The price per token at the start of the first batch, in ETH. The form shows roughly what that values the whole token at in dollars.</td><td>0.00000001 ETH</td></tr>
             <tr><td>Price floor</td><td>Decay can never take the price below this, and it can't be above your opening price.</td><td>0.000000001 ETH, a tenth of the opening price</td></tr>
-            <tr><td>Price decay</td><td>How much the price drops each block inside a batch, until the batch sells out or reaches the floor. Buying doesn't pause it. At the default, the first batch reaches the floor in about an hour. Zero keeps it flat.</td><td>0.00000000003125 ETH per block</td></tr>
+            <tr><td>Price decay</td><td>How much the price drops each block inside a batch, until the batch sells out or reaches the floor. Buying doesn't pause it. Zero keeps it flat.</td><td>0.00000000003125 ETH per block, so the first batch reaches the floor in about an hour</td></tr>
+        </tbody>
+        <tbody>
+            <tr><th colspan="3" scope="rowgroup">Batches</th></tr>
+            <tr><td>First batch size</td><td>How many tokens are in the first batch. At 25 million, the 500 million on sale fill in five batches.</td><td>25,000,000</td></tr>
             <tr><td>Batch size growth</td><td>How many times bigger each batch is than the last. 1.3x to 3x.</td><td>2x</td></tr>
             <tr><td>Batch price growth</td><td>Each batch's opening price as a multiple of the average price paid in the batch before. Never below the price floor. 1.3x to 3x.</td><td>1.3x</td></tr>
             <tr><td>Decay growth</td><td>How the decay rate changes from batch to batch. Only matters if decay is above zero. 0.5x to 3x.</td><td>1.1x</td></tr>
-            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply at a 1x launch price multiplier. Set it with the <strong>Set creator fee</strong> slider. See <a href="fees.html">Fees and who gets what</a>.</td><td>5%</td></tr>
+        </tbody>
+        <tbody>
+            <tr><th colspan="3" scope="rowgroup">Post-sale &amp; fees</th></tr>
             <tr><td>Launch price multiplier</td><td>Opens the trading pool above the average sale price by putting fewer tokens in and burning the rest. 1x to 3x. See <a href="the-pool.html">The pool at sellout</a>.</td><td>1x, burns nothing</td></tr>
+            <tr><td>Creator fee</td><td>Your share of the liquidity reserve, paid in tokens at sellout. 0% to 20% of the reserve, which is 0% to 10% of supply at a 1x launch price multiplier. Set it with the slider. See <a href="fees.html">Fees and who gets what</a>.</td><td>5%</td></tr>
         </tbody>
     </table>
     </div>
+    <p>If a number you type is outside this network's limits, the form flags it before you can launch.</p>
 
     <h3>Choosing your creator fee</h3>
     <p>Your creator fee comes out of the pool's half of the supply. Taking more gives you more tokens and also lifts the price trading opens at, but leaves fewer tokens in the pool.</p>
@@ -140,9 +177,14 @@
         <figcaption>If your wallet can batch transactions, you sign the whole launch once.</figcaption>
     </figure>
     <p>Press <strong>Launch Token</strong>. If your wallet can batch transactions, you sign once and that one signature creates your token, creates the sale, funds it with the full supply and opens it.</p>
-    <p>If your wallet can't batch, the launch takes four confirmations instead. If one gets interrupted, open the launch page again in the same browser. It shows that your token wasn't finished and checks what's already on chain. Press <strong>Resume launch</strong> to carry on from the next step. It won't create a second token, and it has to be the same wallet. <strong>Discard</strong> drops the unfinished launch instead.</p>
-    <p>Resuming takes care not to send a step twice. If a step was already sent, it waits for that to confirm first. If your wallet never answered a request, the form asks whether you rejected it or approved it and it failed, because it can't tell those apart on its own. If your browser can't save the launch, the form warns you before you sign, because an interrupted launch then can't be resumed there. Until you finish, the sale shows as <strong>Not funded</strong> and nobody can buy.</p>
+    <p>If your wallet can't batch, the launch takes four confirmations instead. Stay on the page in one tab until it finishes, and keep it in the foreground on a phone.</p>
     <p>If you set a start in the future, the sale shows as <strong>Upcoming</strong> until buying opens.</p>
+    <h3 id="interrupted">If a launch gets interrupted</h3>
+    <p>Go back to the launch page in the same browser, with the same wallet account on Ethereum mainnet. If the original launch tab is still open, use it and don't reload it. The page can resume a launch saved in that browser for about a week, or one held in the original tab until it's reloaded or closed. It shows that your token wasn't finished and checks what's already on chain. Press <strong>Resume launch</strong> to carry on from the next step. It won't create a second token. <strong>Discard</strong> forgets the unfinished launch, even if some steps already landed. Never press it in a second launch tab.</p>
+    <p>Once the full supply is in the sale, you can also press <strong>Finish setup</strong> on your sale page, from any browser. It doesn't check the deadline, so don't press it if the sale's deadline may already have passed.</p>
+    <p>Before you press anything, check your wallet's activity: reject any launch prompt still open there and wait for any pending transaction to finish. No Resume banner, or a form that comes back filled in, doesn't mean nothing landed. Don't press <strong>Launch Token</strong> again while you're unsure whether an earlier attempt went through, because a second launch can create a second token and cost gas again.</p>
+    <p>Resuming takes care not to send a step twice. If a step was already sent, it waits for that to confirm first. If your wallet never answered a request, the form asks whether you rejected it or approved it and it failed, because it can't tell those apart on its own. If your browser can't save the launch, the form warns you before you sign, because an interrupted launch then can't be resumed there. Until you finish, the sale shows as <strong>Not funded</strong> and nobody can buy.</p>
+    <p>While a launch runs, or while an unfinished launch is waiting, the presets, Sale start and Advanced are locked. They show the settings that <strong>Resume launch</strong> will send. To pick different settings, discard the unfinished launch first.</p>
 
     <h2>While the sale runs</h2>
     <p>There's nothing for you to do. Buyers commit, batches roll over, and the price follows the rules you set. You can watch progress on your sale page. You hold no tokens while the sale runs, and if you buy in your own sale you pay the same price as everyone else.</p>

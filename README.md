@@ -1,6 +1,6 @@
 # punk.fun documentation
 
-Non-technical documentation site for punk.fun. Plain static HTML/CSS/JS — no build
+Non-technical documentation site for punk.fun. Plain static HTML/CSS/JS - no build
 step, no dependencies, no framework. It works the moment the files are served.
 
 ## Pages
@@ -10,11 +10,12 @@ step, no dependencies, no framework. It works the moment the files are served.
 | `index.html` | Overview / home |
 | `how-it-works.html` | Full launch lifecycle |
 | `punk.html` | Punk, coming soon |
+| `use-with-ai.html` | Using punk.fun with an AI assistant or agent through `punk.fun/skill.md` |
 | `buy-in-an-auction.html` | Buyer guide |
 | `pricing.html` | Batches, growth, decay, reading the chart |
 | `refunds.html` | When a sale doesn't sell out |
 | `after-the-sale.html` | Claiming, the pool, trading |
-| `launch-a-token.html` | Creator guide, every form setting |
+| `launch-a-token.html` | Creator guide: the sale presets, Sale start and every Advanced setting |
 | `fees.html` | Fees and who gets what |
 | `the-pool.html` | The pool at sellout and the opening price |
 | `sale-states.html` | Every sale badge explained |
@@ -45,7 +46,7 @@ The `CNAME` file currently contains:
 docs.punk.fun
 ```
 
-**Change this to whatever subdomain you actually want** — e.g. `docs.punk.fun`
+**Change this to whatever subdomain you actually want** - e.g. `docs.punk.fun`
 or `learn.punk.fun`. Then add a matching DNS record at your domain registrar:
 
 - Type: `CNAME`
