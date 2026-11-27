@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use punk.fun with your AI | punk.fun docs</title>
+<meta name="description" content="How to use punk.fun with ChatGPT, Claude or an AI agent through the read-only guide at punk.fun/skill.md.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="punk.fun docs">
+<meta property="og:title" content="Use punk.fun with your AI | punk.fun docs">
+<meta property="og:description" content="How to use punk.fun with ChatGPT, Claude or an AI agent through the read-only guide at punk.fun/skill.md.">
+<meta property="og:url" content="https://factory-labs.github.io/punkdotfun-docs/use-with-ai.html">
+<meta property="og:image" content="https://factory-labs.github.io/punkdotfun-docs/img/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<aside class="sidebar">
+    <a href="index.html" style="text-decoration:none">
+        <img class="brand-logo" src="img/brand/logo.png" alt="punk.fun" width="200" height="38">
+    </a>
+    <div class="brand-sub">Documentation</div>
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <div class="nav-body">
+        <div class="nav-group">
+            <div class="nav-group-title">Start here</div>
+            <a class="nav-link" href="index.html">Overview</a>
+            <a class="nav-link" href="how-it-works.html">How it works</a>
+            <a class="nav-link" href="punk.html">Punk<span class="soon-tag">Soon</span></a>
+            <a class="nav-link" href="use-with-ai.html">Use with AI</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For buyers</div>
+            <a class="nav-link" href="buy-in-an-auction.html">Buy in an auction</a>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+            <a class="nav-link" href="refunds.html">When a sale doesn't sell out</a>
+            <a class="nav-link" href="after-the-sale.html">Claiming and after the sale</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">For creators</div>
+            <a class="nav-link" href="launch-a-token.html">Launch a token</a>
+            <a class="nav-link" href="fees.html">Fees and who gets what</a>
+            <a class="nav-link" href="the-pool.html">The pool at sellout</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Reference</div>
+            <a class="nav-link" href="sale-states.html">Sale states</a>
+            <a class="nav-link" href="glossary.html">Glossary</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+        </div>
+    </div>
+</aside>
+
+<main class="content">
+<div class="eyebrow">Guide &middot; Start here</div>
+    <h1>Use punk.fun with your AI</h1>
+    <p class="lead">punk.fun publishes a guide written for AI assistants at <a href="https://punk.fun/skill.md"><code>punk.fun/skill.md</code></a>. Give it to ChatGPT, Claude or any other AI, and it can answer your questions about punk.fun in plain English. If your AI can make web requests of its own, it can use live sale data too. Searching the web isn't enough.</p>
+
+    <div class="callout tip">
+        <span class="callout-label">Read-only, always</span>
+        <p>The guide only lets an AI read and explain. An AI using it never connects to your wallet, never signs anything and never sends a transaction. Buying, claiming, refunds and launching all happen in the app at <a href="https://punk.fun">punk.fun</a>, from your own wallet.</p>
+    </div>
+
+    <h2 id="what-you-can-ask">What you can ask</h2>
+    <ul>
+        <li>Which sales look open right now, and how far along each one is.</li>
+        <li>What batch a sale is in, what earlier batches sold at, and when its deadline is.</li>
+        <li>How fees work, and what happens to your ETH if a sale doesn't sell out.</li>
+        <li>What you can claim or take back from a wallet address you give it.</li>
+        <li>Which launch settings fit your token, and what each setting on the launch form means.</li>
+    </ul>
+    <p>It describes facts. It won't tell you whether a token is a good buy, predict prices or call a sale safe. The public data it reads can run a little behind, so for the price right now and exactly what you can claim, it sends you to the sale page in the app.</p>
+
+    <h2 id="ai-chat">In ChatGPT, Claude or any AI chat</h2>
+    <ol class="steps">
+        <li><strong>Get the guide</strong>Open <a href="https://punk.fun/skill.md">punk.fun/skill.md</a> and save it as a file. If your AI can open web links itself, you can just paste the link instead.</li>
+        <li><strong>Give it to your AI</strong>Start a new chat and upload the file, or paste the link, with a message such as "Use this guide to answer my questions about punk.fun."</li>
+        <li><strong>Ask in plain English</strong>For example: "What does price decay do on the launch form?", "Which punk.fun sales are live right now?" or "How long has this sale got left?". Questions about current sales, or about a wallet's buys, claims, refunds or launches, need live sale data, and for that you need an AI or agent that can make web requests of its own, for example by running code that can reach the internet. Searching the web or opening a link isn't enough. Without it, your AI can still explain how punk.fun works and send you to the right page in the app.</li>
+    </ol>
+
+    <h2 id="ai-agents">For AI agents</h2>
+    <p>If you use an AI agent or build one, point it at <code>https://punk.fun/skill.md</code>. It's a plain text file that any agent can read before it answers questions about punk.fun. It explains how a sale works, gives ready-made queries for the public data on Ethereum mainnet, links into the right pages of the app, and walks someone through the launch form step by step.</p>
+    <p>The guide tells the agent never to build, sign or send a transaction, never to ask for a private key or recovery phrase, and never to route anyone around the app.</p>
+
+    <h2 id="stay-safe">Stay safe</h2>
+    <div class="callout warn">
+        <span class="callout-label">Never share your recovery phrase</span>
+        <p>No AI needs your private key, recovery phrase or wallet password to help you, and the guide tells it never to ask. If anything asks for one, stop. Only ever connect your wallet on <a href="https://punk.fun">punk.fun</a> itself.</p>
+    </div>
+    <p>An AI can get things wrong. Before you buy or launch, check the numbers on the sale page or the launch form in the app, because that's what your wallet signs. The guide follows the same regional rules as the app, so it doesn't open where punk.fun isn't available, including the UK.</p>
+
+    <div class="page-nav">
+        <a href="punk.html">
+            <span class="dir">Previous</span>
+            <span class="ttl">&larr; Punk</span>
+        </a>
+        <a class="next" href="buy-in-an-auction.html">
+            <span class="dir">Next</span>
+            <span class="ttl">Buy in an auction &rarr;</span>
+        </a>
+    </div>
+
+    <img class="beads-strip" src="img/brand/beads-strip.png" alt="" aria-hidden="true">
+
+    <footer>
+        punk.fun documentation &middot; <a href="https://punk.fun">punk.fun</a> &middot; punk.fun is in alpha on Ethereum. The screenshots are from punk.fun on Ethereum, and the names and numbers in them are examples.
+    </footer>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

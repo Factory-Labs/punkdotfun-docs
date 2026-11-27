@@ -1,9 +1,9 @@
 /* ============================================================
-   punk.fun documentation — shared styles
+   punk.fun documentation - shared styles
    Themed to the official punk.fun brand sheet:
    green primary (Green Apple), blue secondary (Blue Raspberry),
    utility accents, typewriter type. Calmer than the marketing
-   site — built for sustained reading.
+   site - built for sustained reading.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap');
@@ -17,18 +17,18 @@
     --text: #d6d6d6;          /* brand off-white */
     --text-dim: #989890;
     --text-faint: #6a6a64;
-    --accent: #7ed760;        /* Green Apple — primary brand */
+    --accent: #7ed760;        /* Green Apple - primary brand */
     --accent-dim: #5fa847;
     --accent-soft: rgba(126, 215, 96, 0.08);
     --accent-line: rgba(126, 215, 96, 0.42);
-    /* brand utility accent set — used per their stated roles */
+    /* brand utility accent set - used per their stated roles */
     --c-green:  #7ed760;      /* primary / CTAs / active */
-    --c-blue:   #5fbef5;      /* Blue Raspberry — links, secondary */
+    --c-blue:   #5fbef5;      /* Blue Raspberry - links, secondary */
     --c-lime:   #e5f4ad;      /* highlight / tags / glow */
-    --c-orange: #ec9750;      /* Orange Sunshine — warnings, special moments */
-    --c-purple: #985ce6;      /* Purple Haze — hover, tags, badges */
-    --c-yellow: #f7f752;      /* Lemondrop — small spice */
-    --c-pink:   #ed74ed;      /* Bubblegum — tags, highlights, glow */
+    --c-orange: #ec9750;      /* Orange Sunshine - warnings, special moments */
+    --c-purple: #985ce6;      /* Purple Haze - hover, tags, badges */
+    --c-yellow: #f7f752;      /* Lemondrop - small spice */
+    --c-pink:   #ed74ed;      /* Bubblegum - tags, highlights, glow */
     --c-grey:   #a8b0b7;      /* brand cool grey */
     --blue: #5fbef5;
     --green: #7ed760;
@@ -52,7 +52,7 @@ body {
     font-size: 15px;
 }
 
-/* subtle grid backdrop — very faint, no busy watermark behind text */
+/* subtle grid backdrop - very faint, no busy watermark behind text */
 body::before {
     content: '';
     position: fixed;
